@@ -18,6 +18,31 @@ https://benchmark.wea017.net
 
 ウェブサイトの改善やベンチマークデータの誤りの修正に関する Pull Request を歓迎します。手順と注意事項は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
+## OGP画像の生成
+
+用途別の全コマンドは [COMMANDS.md](COMMANDS.md) にまとめています。
+
+Node.js 22以降で依存パッケージをインストールしたあと、次のコマンドを実行します。画像内の日本語表示には Noto Sans JP（または Noto Sans CJK JP）が必要です。
+
+```console
+npm install
+npm run generate:ogp
+```
+
+特定のベンチマークだけを再生成する場合はIDを指定します。
+
+```console
+npm run generate:ogp -- 260813_overwatch_rtx4070s_r5-5600
+```
+
+ホームページの画像だけを再生成する場合は `--home` を指定します。
+
+```console
+npm run generate:ogp -- --home
+```
+
+1200×630pxのPNG（ホームは `assets/ogp/home.png`）が `assets/ogp/` に、SNSクローラー向けメタデータを含む結果ページが `benchmarks/` に生成されます。
+
 ## その他
 
 ウェブサイトの構築には Codex を使用しています。

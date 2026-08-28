@@ -1,0 +1,14 @@
+{
+  "name": "weabenchmark-archive",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:index": "node scripts/generate-benchmark-index.mjs",
+    "generate:ogp": "node scripts/generate-ogp.mjs",
+    "generate": "npm run generate:index && npm run generate:ogp",
+    "check:ogp": "node scripts/check-ogp.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.35.4"
+  }
+}

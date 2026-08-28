@@ -5,6 +5,11 @@ on:
     paths:
       - 'data/benchmarks/**'
       - 'scripts/generate-benchmark-index.mjs'
+      - 'scripts/generate-ogp.mjs'
+      - 'benchmark.html'
+      - 'assets/WeaBenchmark_600px.webp'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 
 permissions:
@@ -22,17 +27,26 @@ jobs:
         with:
           node-version: 22
 
-      - name: Generate index
-        run: node scripts/generate-benchmark-index.mjs
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install OGP font
+        run: sudo apt-get update && sudo apt-get install --yes fonts-noto-cjk
+
+      - name: Generate index and OGP assets
+        run: npm run generate
+
+      - name: Validate OGP assets
+        run: npm run check:ogp
 
       - name: Commit generated index
         run: |
-          if git diff --quiet -- data/benchmarks.json; then
-            echo "The benchmark index is already up to date."
+          if git diff --quiet -- data/benchmarks.json assets/ogp benchmarks; then
+            echo "The generated files are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/benchmarks.json
-          git commit -m "chore: update benchmark index"
+          git add data/benchmarks.json assets/ogp benchmarks
+          git commit -m "chore: update generated benchmark files"
           git push

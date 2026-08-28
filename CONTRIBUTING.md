@@ -8,7 +8,7 @@
 
 1. 変更内容を小さく、目的が分かる単位にまとめてください。
 2. 既存のファイル形式・表記・コードスタイルに合わせてください。
-3. データを変更した場合は、`node scripts/generate-benchmark-index.mjs` を実行し、`data/benchmarks.json` も更新してください。
+3. データを変更した場合は、`npm install` 後に `npm run generate` を実行し、`data/benchmarks.json`、`assets/ogp/`、`benchmarks/` も更新してください。
 4. JSON を変更した場合は、JSONとして正しく読み込めることを確認してください。
 
 ## ベンチマークデータの修正

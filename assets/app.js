@@ -1,5 +1,6 @@
 const DATA_INDEX = 'data/benchmarks.json';
 const FILTER_OPTIONS = 'data/filter-options.json';
+const SITE_ROOT = new URL('../', import.meta.url);
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -136,7 +137,11 @@ const t = (key) => translations[language][key] ?? translations.ja[key] ?? key;
 
 const localized = (value) => typeof value === 'object' && value !== null ? value[language] ?? value.ja ?? value.en ?? '' : value;
 
-const benchmarkPath = (id) => `data/benchmarks/${String(id).split('/').map(encodeURIComponent).join('/')}.json`;
+const siteUrl = (path) => new URL(path, SITE_ROOT).href;
+
+const benchmarkPath = (id) => siteUrl(`data/benchmarks/${String(id).split('/').map(encodeURIComponent).join('/')}.json`);
+
+const benchmarkPagePath = (id) => siteUrl(`benchmarks/${String(id).split('/').map(encodeURIComponent).join('/')}.html`);
 
 const memoryLabel = (memory) => typeof memory === 'string' ? memory : [memory?.frequency, memory?.capacity].filter(Boolean).join(' / ');
 
@@ -271,7 +276,7 @@ function vendorClass(component, type) {
 
 function card(item) {
   const gameDetail = localized(item.season) || localized(item.version);
-  return `<a class="benchmark-card" href="benchmark.html?id=${encodeURIComponent(item.id)}"><div class="card-top"><h3>${escapeHtml(localized(item.game))}${gameDetail ? ` <span class="card-game-detail">· ${escapeHtml(gameDetail)}</span>` : ''}</h3><span class="date">${escapeHtml(formatIndexDate(item.testedAt))}</span></div><div class="specs"><span class="tag ${vendorClass(item.system.gpu, 'gpu')}">${escapeHtml(item.system.gpu)}</span><span class="tag ${vendorClass(item.system.cpu, 'cpu')}">${escapeHtml(item.system.cpu)}</span></div><p class="meta">${escapeHtml(localized(item.summary))}</p></a>`;
+  return `<a class="benchmark-card" href="${benchmarkPagePath(item.id)}"><div class="card-top"><h3>${escapeHtml(localized(item.game))}${gameDetail ? ` <span class="card-game-detail">· ${escapeHtml(gameDetail)}</span>` : ''}</h3><span class="date">${escapeHtml(formatIndexDate(item.testedAt))}</span></div><div class="specs"><span class="tag ${vendorClass(item.system.gpu, 'gpu')}">${escapeHtml(item.system.gpu)}</span><span class="tag ${vendorClass(item.system.cpu, 'cpu')}">${escapeHtml(item.system.cpu)}</span></div><p class="meta">${escapeHtml(localized(item.summary))}</p></a>`;
 }
 
 let indexItems = [];
@@ -406,12 +411,21 @@ async function copyCurrentUrl() {
 
 function setupCopyLink() {
   const button = $('#copy-link');
+  let resetTimer;
   button.addEventListener('click', async () => {
     try {
       await copyCurrentUrl();
       const label = button.querySelector('.copy-label');
+      const icon = button.querySelector('.copy-icon');
+      clearTimeout(resetTimer);
       label.textContent = t('copied');
-      setTimeout(() => label.textContent = t('copyLink'), 1600);
+      icon.textContent = 'check';
+      button.setAttribute('aria-label', t('copied'));
+      resetTimer = setTimeout(() => {
+        label.textContent = t('copyLink');
+        icon.textContent = 'link';
+        button.setAttribute('aria-label', t('copyLink'));
+      }, 2000);
     } catch {
       // Browsers may block clipboard access outside a secure context.
     }
@@ -419,9 +433,7 @@ function setupCopyLink() {
 }
 
 function setDetailSearchMetadata(id, data, game, cpu, gpu) {
-  const canonicalUrl = new URL(location.href);
-  canonicalUrl.hash = '';
-  canonicalUrl.search = new URLSearchParams({ id }).toString();
+  const canonicalUrl = new URL(benchmarkPagePath(id));
   const description = language === 'en'
     ? `${game} benchmark results on ${cpu} and ${gpu}, including graphics settings, average FPS, and 1% low FPS.`
     : `${cpu} と ${gpu} で実施した ${game} のベンチマーク結果。グラフィック設定、平均 FPS、1% Low FPS を掲載。`;
@@ -460,11 +472,18 @@ function setDetailSearchMetadata(id, data, game, cpu, gpu) {
 }
 
 async function renderDetail() {
-  const target = $('#benchmark-detail'), id = new URLSearchParams(location.search).get('id');
+  const target = $('#benchmark-detail');
+  const generatedPageId = document.body.dataset.benchmarkId;
+  const id = generatedPageId || new URLSearchParams(location.search).get('id');
   if (!id) {
     target.innerHTML = `<p class="error">${t('idMissing')}</p>`;
     return;
-  } try {
+  }
+  if (!generatedPageId) {
+    document.body.dataset.benchmarkId = id;
+    history.replaceState(null, '', benchmarkPagePath(id));
+  }
+  try {
     const d = await getJson(benchmarkPath(id)), game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season), display = d.display;
     const cpuShortName = d.system.cpuShortName || d.system.cpu;
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
@@ -476,10 +495,10 @@ async function renderDetail() {
     const xPostUrl = `https://x.com/intent/post?text=${encodeURIComponent(`${document.title}\n${location.href}\n\n#WeaBenchmark\n@Wea017net `)}`;
     target.innerHTML = `
       <div class="detail-actions">
-        <a class="back-button" href="index.html"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>${t('back')}</a>
+        <a class="back-button" href="${siteUrl('index.html')}" aria-label="${t('back')}"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="action-label">${t('back')}</span></a>
         <div class="detail-share-actions">
-          <a class="post-to-x" href="${xPostUrl}" target="_blank" rel="noopener"><img class="x-logo" src="assets/x-logo.svg" alt="">${t('postToX')}</a>
-          <button class="copy-link" id="copy-link" type="button"><span class="material-symbols-outlined" aria-hidden="true">link</span><span class="copy-label">${t('copyLink')}</span></button>
+          <a class="post-to-x" href="${xPostUrl}" target="_blank" rel="noopener" aria-label="${t('postToX')}"><img class="x-logo" src="${siteUrl('assets/x-logo.svg')}" alt=""><span class="action-label">${t('postToX')}</span></a>
+          <button class="copy-link" id="copy-link" type="button" aria-label="${t('copyLink')}"><span class="material-symbols-outlined copy-icon" aria-hidden="true">link</span><span class="copy-label action-label">${t('copyLink')}</span></button>
         </div>
       </div>
       <p class="eyebrow detail-eyebrow">BENCHMARK RESULT</p>
@@ -518,7 +537,7 @@ async function renderDetail() {
         <p class="note">${escapeHtml(localized(d.notes) || '—')}</p>
       </section>
       <div class="detail-actions detail-actions-bottom">
-        <a class="back-button" href="index.html"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>${t('back')}</a>
+        <a class="back-button" href="${siteUrl('index.html')}" aria-label="${t('back')}"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="action-label">${t('back')}</span></a>
       </div>`;
     setupCopyLink();
   } catch (e) {

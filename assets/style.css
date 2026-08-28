@@ -503,7 +503,7 @@ footer {
 
 .version-season-pair {
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:2fr 3fr;
   gap:12px
 }
 
@@ -587,13 +587,25 @@ tbody tr:last-child td {
   }
 
   .language-select {
-    width: 58px;
+    width: 54px;
     padding: 0;
-    justify-content: center
+    justify-content: center;
+    gap: .32rem
   }
 
-  .theme-toggle span:last-child,.language-current,.language-arrow {
+  .theme-toggle span:last-child,.language-current {
     display: none
+  }
+
+  .language-select > .material-symbols-outlined {
+    font-size: 1.1rem;
+    transform: translateX(3px)
+  }
+
+  .language-select .language-arrow {
+    display: block;
+    margin: 0;
+    pointer-events: none
   }
 
   .filters {
@@ -616,6 +628,51 @@ tbody tr:last-child td {
 
   .hero {
     padding-top: 40px
+  }
+
+  .hero h1 {
+    font-size: clamp(1rem, 7vw, 2rem)
+  }
+
+  .hero h1 > span {
+    min-width: 0;
+    white-space: nowrap
+  }
+
+  html[lang="en"] .hero h1 {
+    font-size: clamp(1rem, 5vw, 2rem)
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .back-button,
+  .detail-actions:not(.detail-actions-bottom) .copy-link,
+  .detail-actions:not(.detail-actions-bottom) .post-to-x {
+    width: 40px;
+    min-height: 40px;
+    padding: 0;
+    justify-content: center;
+    gap: 0
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .action-label {
+    display: none
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .x-logo {
+    width: 1rem;
+    height: 1rem
+  }
+
+  .table-wrap table {
+    font-size: .86rem
+  }
+
+  .table-wrap th {
+    font-size: .74rem
+  }
+
+  .table-wrap th,
+  .table-wrap td {
+    padding: .62rem
   }
 }
 
