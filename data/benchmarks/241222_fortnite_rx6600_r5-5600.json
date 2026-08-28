@@ -1,0 +1,141 @@
+{
+  "id": "241222_fortnite_rx6600_r5-5600",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2024-12-22",
+  "summary": {
+    "ja": "1080p  |  全設定",
+    "en": "1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "v33.10",
+    "en": "v33.10"
+  },
+  "season": {
+    "ja": "ORIGIN チャプター1 シーズン1",
+    "en": "OG Chapter 1 Season 1"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "AMD Radeon RX 6600",
+    "graphicsCardName": "MSI Radeon RX 6600 MECH 2X 8G",
+    "gpuShortName": "RX 6600",
+    "gpuDriver": "24.12.1",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 24H2"
+  },
+  "method": {
+    "ja": "フォートナイト ORIGINをプレイして計測",
+    "en": "Played Fortnite OG"
+  },
+  "videoUrl": "https://youtu.be/xfEMDOWRHXM",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 240,
+      "onePercentLowFps": 138
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (描画距離: 最高)",
+        "en": "Low (View Distance: Epic)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 215,
+      "onePercentLowFps": 124
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 172,
+      "onePercentLowFps": 128
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 119,
+      "onePercentLowFps": 93
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Epic"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 105,
+      "onePercentLowFps": 80
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高 (+ Lumen 高)",
+        "en": "Epic (+ Lumen High)"
+      },
+      "upscalingType": "TSR High",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 71,
+      "onePercentLowFps": 24
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (描画距離: 最高)",
+        "en": "Low (View Distance: Epic)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 279,
+      "onePercentLowFps": 138
+    }
+  ],
+  "notes": {
+    "ja": "「パフォーマンス」は現在の「レガシーパフォーマンス」（DirectX 11）に相当する設定。",
+    "en": "'Performance' corresponds to the current 'Legacy Performance' (DirectX 11) setting."
+  }
+}

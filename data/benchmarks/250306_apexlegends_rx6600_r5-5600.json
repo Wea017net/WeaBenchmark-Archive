@@ -1,0 +1,102 @@
+{
+  "id": "250306_apexlegends_rx6600_r5-5600",
+  "game": {
+    "ja": "エーペックスレジェンズ",
+    "en": "Apex Legends"
+  },
+  "testedAt": "2025-03-06",
+  "summary": {
+    "ja": "1080p · 1440p  |  低 · 最高",
+    "en": "1080p · 1440p  |  Low · Ultra"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン24",
+    "en": "Season 24"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "AMD Radeon RX 6600",
+    "graphicsCardName": "MSI Radeon RX 6600 MECH 2X 8G",
+    "gpuShortName": "RX 6600",
+    "gpuDriver": "24.12.1",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 24H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/g1jD-u3UVUs",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 172,
+      "onePercentLowFps": 97
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 148,
+      "onePercentLowFps": 84
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 180,
+      "onePercentLowFps": 99
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 104,
+      "onePercentLowFps": 72
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

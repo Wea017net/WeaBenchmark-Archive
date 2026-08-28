@@ -1,0 +1,89 @@
+{
+  "id": "240120_minecraft-java_uhd620_i5-8350u",
+  "game": {
+    "ja": "Minecraft: Java Edition",
+    "en": "Minecraft: Java Edition"
+  },
+  "testedAt": "2024-01-20",
+  "summary": {
+    "ja": "720p · 900p · 1080p  |  低",
+    "en": "720p · 900p · 1080p  |  Low"
+  },
+  "version": {
+    "ja": "1.20.4 (OptiFine)",
+    "en": "1.20.4 (OptiFine)"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "Intel Core i5-8350U",
+    "cpuShortName": "Core i5-8350U",
+    "gpu": "Intel UHD Graphics 620",
+    "graphicsCardName": "",
+    "gpuShortName": "UHD Graphics 620",
+    "gpuDriver": "",
+    "motherboard": "",
+    "memory": {
+      "frequency": "DDR4-2400",
+      "capacity": "12.0 GB"
+    },
+    "os": "Windows 11 Pro 23H2"
+  },
+  "method": {
+    "ja": "チュートリアルワールド（移植版）で計測",
+    "en": "Measured in the tutorial world (ported version)"
+  },
+  "videoUrl": "https://youtu.be/mBp_b5EzG9E",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 61,
+      "onePercentLowFps": 33
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 42,
+      "onePercentLowFps": 8
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 47,
+      "onePercentLowFps": 29
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

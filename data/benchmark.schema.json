@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "benchmark.schema.json",
+  "title": "Wea's Benchmark Archive record",
+  "description": "One PC game benchmark session. Fields not defined here may be added in future versions.",
+  "type": "object",
+  "required": ["id", "game", "testedAt", "system", "display", "results"],
+  "properties": {
+    "id": { "type": "string", "description": "Filename without the .json extension." },
+    "game": { "$ref": "#/$defs/localizedText" },
+    "testedAt": { "type": "string", "format": "date" },
+    "summary": { "$ref": "#/$defs/localizedText" },
+    "version": { "$ref": "#/$defs/localizedText" },
+    "season": { "$ref": "#/$defs/localizedText" },
+    "system": {
+      "type": "object",
+      "required": ["cpu", "gpu"],
+      "properties": {
+        "pcModel": { "type": "string", "description": "Optional desktop or laptop model name." },
+        "cpu": { "type": "string" },
+        "cpuShortName": { "type": "string" },
+        "gpu": { "type": "string" },
+        "graphicsCardName": { "type": "string", "description": "Specific graphics card product name for the result page." },
+        "gpuShortName": { "type": "string" },
+        "gpuDriver": { "type": "string" },
+        "motherboard": { "type": "string" },
+        "memory": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "object", "properties": { "frequency": { "type": "string" }, "capacity": { "type": "string" } } }
+          ]
+        },
+        "os": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "method": { "$ref": "#/$defs/localizedText" },
+    "videoUrl": { "type": "string", "format": "uri" },
+    "display": {
+      "type": "object",
+      "description": "Site presentation settings. Benchmark facts remain in system and results.",
+      "required": ["showUpscaling", "showGraphicsApi"],
+      "properties": {
+        "showUpscaling": { "type": "boolean" },
+        "showGraphicsApi": { "type": "boolean" },
+        "graphicsApiLabel": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["resolutionX", "resolutionY", "preset", "averageFps", "onePercentLowFps"],
+        "properties": {
+          "resolutionX": { "type": "number" },
+          "resolutionY": { "type": "number" },
+          "preset": { "$ref": "#/$defs/localizedText" },
+          "upscalingType": { "type": "string" },
+          "upscalingQuality": { "type": "string" },
+          "graphicsApi": { "type": "string" },
+          "averageFps": { "type": "number" },
+          "onePercentLowFps": { "type": "number" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "notes": { "$ref": "#/$defs/localizedText" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "localizedText": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "object", "properties": { "ja": { "type": "string" }, "en": { "type": "string" } }, "additionalProperties": { "type": "string" } }
+      ]
+    }
+  }
+}

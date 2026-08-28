@@ -1,0 +1,103 @@
+{
+  "id": "240625_fortnite_gtx960m_i5-6300hq",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2024-06-25",
+  "summary": {
+    "ja": "720p · 900p · 1080p  |  低",
+    "en": "720p · 900p · 1080p  |  Low"
+  },
+  "version": {
+    "ja": "v30.20",
+    "en": "v30.20"
+  },
+  "season": {
+    "ja": "チャプター5 シーズン3",
+    "en": "Chapter 5 Season 3"
+  },
+  "system": {
+    "pcModel": "Dell Inspiron 15 7559",
+    "cpu": "Intel Core i5-6300HQ",
+    "cpuShortName": "Core i5-6300HQ",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "graphicsCardName": "",
+    "gpuShortName": "GTX 960M",
+    "gpuDriver": "552.22",
+    "motherboard": "",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイしてリプレイモードで計測",
+    "en": "Played Battle Royale and measured using the replay mode"
+  },
+  "videoUrl": "https://youtu.be/1qrKWb6Yv6k",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 136,
+      "onePercentLowFps": 63
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 116,
+      "onePercentLowFps": "0*"
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 94,
+      "onePercentLowFps": "0*"
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (描画距離: 最高)",
+        "en": "Low (View Distance: Epic)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 96,
+      "onePercentLowFps": "0*"
+    }
+  ],
+  "notes": {
+    "ja": "「パフォーマンス」は現在の「レガシーパフォーマンス」（DirectX 11）に相当する設定。\n900p, 1080pでは大幅なフレームドロップが発生するため、1%Lowが0fpsとなる。",
+    "en": "'Performance' corresponds to the current 'Legacy Performance' (DirectX 11) setting.\nAt 900p and 1080p, significant frame drops occur, causing 1% Low to be 0 fps."
+  }
+}

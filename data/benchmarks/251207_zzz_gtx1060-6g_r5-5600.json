@@ -1,0 +1,115 @@
+{
+  "id": "251207_zzz_gtx1060-6g_r5-5600",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2025-12-07",
+  "summary": {
+    "ja": "1080p  |  全設定",
+    "en": "1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "Ver.2.4",
+    "en": "Ver.2.4"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "graphicsCardName": "MSI GeForce GTX 1060 6G OC",
+    "gpuShortName": "GTX 1060 6GB",
+    "gpuDriver": "581.80",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "",
+    "en": ""
+  },
+  "videoUrl": "https://youtu.be/bVERneOF8Uw",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 96,
+      "onePercentLowFps": 17
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 85,
+      "onePercentLowFps": 28
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 82,
+      "onePercentLowFps": 35
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 67,
+      "onePercentLowFps": 32
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Maximum"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 60,
+      "onePercentLowFps": 30
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

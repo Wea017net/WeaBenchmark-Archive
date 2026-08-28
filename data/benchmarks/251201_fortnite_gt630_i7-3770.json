@@ -1,0 +1,115 @@
+{
+  "id": "251201_fortnite_gt630_i7-3770",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2025-12-01",
+  "summary": {
+    "ja": "720p  |  低",
+    "en": "720p  |  Low"
+  },
+  "version": {
+    "ja": "v39.00",
+    "en": "v39.00"
+  },
+  "season": {
+    "ja": "チャプター7 シーズン1",
+    "en": "Chapter 7 Season 1"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GT 630",
+    "graphicsCardName": "Leadtek WinFast GT 630",
+    "gpuShortName": "GT 630",
+    "gpuDriver": "391.35",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/QhaL-qHvnBc",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 426,
+      "resolutionY": 240,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 79,
+      "onePercentLowFps": 35
+    },
+    {
+      "resolutionX": 640,
+      "resolutionY": 360,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 68,
+      "onePercentLowFps": 36
+    },
+    {
+      "resolutionX": 854,
+      "resolutionY": 480,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 64,
+      "onePercentLowFps": 31
+    },
+    {
+      "resolutionX": 960,
+      "resolutionY": 540,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 52,
+      "onePercentLowFps": 31
+    },
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 38,
+      "onePercentLowFps": 21
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

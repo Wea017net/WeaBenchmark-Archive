@@ -1,0 +1,207 @@
+{
+  "id": "241226_zzz_gtx960m_i5-6300hq",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2024-12-26",
+  "summary": {
+    "ja": "720p · 900p · 1080p  |  全設定",
+    "en": "720p · 900p · 1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "Ver.1.4",
+    "en": "Ver.1.4"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "pcModel": "Dell Inspiron 15 7559",
+    "cpu": "Intel Core i5-6300HQ",
+    "cpuShortName": "Core i5-6300HQ",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "graphicsCardName": "",
+    "gpuShortName": "GTX 960M",
+    "gpuDriver": "566.14",
+    "motherboard": "",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "",
+    "en": ""
+  },
+  "videoUrl": "https://youtu.be/brWgd_bcnd4",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 50,
+      "onePercentLowFps": 15
+    },
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 49,
+      "onePercentLowFps": 14
+    },
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 48,
+      "onePercentLowFps": 14
+    },
+    {
+      "resolutionX": 1280,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 41,
+      "onePercentLowFps": 8
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 52,
+      "onePercentLowFps": 15
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 49,
+      "onePercentLowFps": 17
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 47,
+      "onePercentLowFps": 16
+    },
+    {
+      "resolutionX": 1600,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 40,
+      "onePercentLowFps": 17
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 50,
+      "onePercentLowFps": 20
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 44,
+      "onePercentLowFps": 20
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 37,
+      "onePercentLowFps": 22
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 32,
+      "onePercentLowFps": 18
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "240601_valorant_gtx1060-6g_r5-5600",
+  "game": {
+    "ja": "VALORANT",
+    "en": "VALORANT"
+  },
+  "testedAt": "2024-06-01",
+  "summary": {
+    "ja": "1080p  |  低 · 高",
+    "en": "1080p  |  Low · High"
+  },
+  "version": {
+    "ja": "Patch 8.09",
+    "en": "Patch 8.09"
+  },
+  "season": {
+    "ja": "Episode 8 Act 2",
+    "en": "Episode 8 Act 2"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "graphicsCardName": "MSI GeForce GTX 1060 6G OC",
+    "gpuShortName": "GTX 1060 6GB",
+    "gpuDriver": "552.22",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Home 23H2"
+  },
+  "method": {
+    "ja": "スイフトプレイをプレイして計測",
+    "en": "Played Swiftplay"
+  },
+  "videoUrl": "https://youtu.be/jOUpXuAoPgs",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 322,
+      "onePercentLowFps": 150
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 241,
+      "onePercentLowFps": 122
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

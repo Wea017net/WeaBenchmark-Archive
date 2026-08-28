@@ -1,0 +1,337 @@
+{
+  "id": "260604_fh6_arc-140v_u7-258v",
+  "game": {
+    "ja": "Forza Horizon 6",
+    "en": "Forza Horizon 6"
+  },
+  "testedAt": "2026-06-04",
+  "summary": {
+    "ja": "1200p  |  最低 · 低 · 中 · 高 · 高 + RT · エクストリーム + RT",
+    "en": "1200p  |  Very Low · Low · Medium · High · High + RT · Extreme + RT"
+  },
+  "version": {
+    "ja": "364.933",
+    "en": "364.933"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "pcModel": "Fujitsu FMV WU1-K1 FMVUH06001",
+    "cpu": "Intel Core Ultra 7 258V",
+    "cpuShortName": "Core Ultra 7 258V",
+    "gpu": "Intel Arc 140V",
+    "graphicsCardName": "",
+    "gpuShortName": "Arc 140V",
+    "gpuDriver": "32.0.101.8801",
+    "motherboard": "",
+    "memory": {
+      "frequency": "LPDDR5X-8533",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Home 25H2"
+  },
+  "method": {
+    "ja": "ベンチマークモードを使用",
+    "en": "Used benchmark mode"
+  },
+  "videoUrl": "https://youtu.be/r_W2lAT80HY",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Native AA",
+      "graphicsApi": "",
+      "averageFps": 43,
+      "onePercentLowFps": 38
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Ultra Quality",
+      "graphicsApi": "",
+      "averageFps": 57,
+      "onePercentLowFps": 49
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "",
+      "averageFps": 57,
+      "onePercentLowFps": 50
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Balanced",
+      "graphicsApi": "",
+      "averageFps": 63,
+      "onePercentLowFps": 54
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Performance",
+      "graphicsApi": "",
+      "averageFps": 67,
+      "onePercentLowFps": 58
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Native AA",
+      "graphicsApi": "",
+      "averageFps": 37,
+      "onePercentLowFps": 32
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Ultra Quality",
+      "graphicsApi": "",
+      "averageFps": 45,
+      "onePercentLowFps": 39
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "",
+      "averageFps": 47,
+      "onePercentLowFps": 41
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Balanced",
+      "graphicsApi": "",
+      "averageFps": 50,
+      "onePercentLowFps": 43
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Performance",
+      "graphicsApi": "",
+      "averageFps": 51,
+      "onePercentLowFps": 44
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Native AA",
+      "graphicsApi": "",
+      "averageFps": 29,
+      "onePercentLowFps": 25
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Ultra Quality",
+      "graphicsApi": "",
+      "averageFps": 35,
+      "onePercentLowFps": 30
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "",
+      "averageFps": 37,
+      "onePercentLowFps": 32
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Balanced",
+      "graphicsApi": "",
+      "averageFps": 39,
+      "onePercentLowFps": 33
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Performance",
+      "graphicsApi": "",
+      "averageFps": 40,
+      "onePercentLowFps": 34
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Native AA",
+      "graphicsApi": "",
+      "averageFps": 27,
+      "onePercentLowFps": 23
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Ultra Quality",
+      "graphicsApi": "",
+      "averageFps": 31,
+      "onePercentLowFps": 27
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "",
+      "averageFps": 33,
+      "onePercentLowFps": 29
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Balanced",
+      "graphicsApi": "",
+      "averageFps": 34,
+      "onePercentLowFps": 30
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Performance",
+      "graphicsApi": "",
+      "averageFps": 35,
+      "onePercentLowFps": 30
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "高 + RT",
+        "en": "High + RT"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Ultra Performance",
+      "graphicsApi": "",
+      "averageFps": 30,
+      "onePercentLowFps": 26
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "エクストリーム + RT",
+        "en": "Extreme + RT"
+      },
+      "upscalingType": "Intel XeSS 2.1",
+      "upscalingQuality": "Native AA",
+      "graphicsApi": "",
+      "averageFps": 8,
+      "onePercentLowFps": 7
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

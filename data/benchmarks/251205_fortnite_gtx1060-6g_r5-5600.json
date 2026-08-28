@@ -1,0 +1,141 @@
+{
+  "id": "251205_fortnite_gtx1060-6g_r5-5600",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2025-12-05",
+  "summary": {
+    "ja": "1080p  |  全設定",
+    "en": "1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "v39.00",
+    "en": "v39.00"
+  },
+  "season": {
+    "ja": "チャプター7 シーズン1",
+    "en": "Chapter 7 Season 1"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "graphicsCardName": "MSI GeForce GTX 1060 6G OC",
+    "gpuShortName": "GTX 1060 6GB",
+    "gpuDriver": "581.80",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/OmU8C0eA_5E",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低（競技設定）",
+        "en": "Low (Competitive)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 230,
+      "onePercentLowFps": 107
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低（競技設定）",
+        "en": "Low (Competitive)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Legacy Performance",
+      "averageFps": 223,
+      "onePercentLowFps": 71
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 156,
+      "onePercentLowFps": 81
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 93,
+      "onePercentLowFps": 58
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 65,
+      "onePercentLowFps": 40
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Epic"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 46,
+      "onePercentLowFps": 31
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高 (+ Lumen 高)",
+        "en": "High (+ Lumen High)"
+      },
+      "upscalingType": "TSR Low",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 38,
+      "onePercentLowFps": 26
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "251114_apexlegends_gtx1060-6g_i7-3770",
+  "game": {
+    "ja": "エーペックスレジェンズ",
+    "en": "Apex Legends"
+  },
+  "testedAt": "2025-11-14",
+  "summary": {
+    "ja": "1080p  |  低 · 高",
+    "en": "1080p  |  Low · High"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン27",
+    "en": "Season 27"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "graphicsCardName": "MSI GeForce GTX 1060 6G OC",
+    "gpuShortName": "GTX 1060 6GB",
+    "gpuDriver": "581.80",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/LG9krFR3oZ4",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 88,
+      "onePercentLowFps": 43
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 71,
+      "onePercentLowFps": 40
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

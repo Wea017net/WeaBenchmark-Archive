@@ -1,0 +1,180 @@
+{
+  "id": "260726_asphalt-legends_rx6600_r5-5600",
+  "game": {
+    "ja": "アスファルト:Legends",
+    "en": "Asphalt Legends"
+  },
+  "testedAt": "2026-07-26",
+  "summary": {
+    "ja": "1080p · 1440p  |  全設定",
+    "en": "1080p · 1440p  |  All Settings"
+  },
+  "version": {
+    "ja": "v52.0.8a",
+    "en": "v52.0.8a"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "AMD Radeon RX 6600",
+    "graphicsCardName": "MSI Radeon RX 6600 MECH 2X 8G",
+    "gpuShortName": "RX 6600",
+    "gpuDriver": "26.6.4",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "マルチプレイをプレイして計測",
+    "en": "Played Multiplayer"
+  },
+  "videoUrl": "https://youtu.be/9IuRKXMkU24",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 386,
+      "onePercentLowFps": 223
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 394,
+      "onePercentLowFps": 212
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 246,
+      "onePercentLowFps": 182
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 169,
+      "onePercentLowFps": 123
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "ウルトラ",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 130,
+      "onePercentLowFps": 93
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 476,
+      "onePercentLowFps": 283
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 342,
+      "onePercentLowFps": 228
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 127,
+      "onePercentLowFps": 101
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 106,
+      "onePercentLowFps": 75
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "ウルトラ",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 110,
+      "onePercentLowFps": 80
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

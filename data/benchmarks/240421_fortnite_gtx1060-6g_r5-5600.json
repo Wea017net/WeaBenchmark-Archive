@@ -1,0 +1,102 @@
+{
+  "id": "240421_fortnite_gtx1060-6g_r5-5600",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2024-04-21",
+  "summary": {
+    "ja": "1080p  |  低 · 高",
+    "en": "1080p  |  Low · High"
+  },
+  "version": {
+    "ja": "v29.20",
+    "en": "v29.20"
+  },
+  "season": {
+    "ja": "チャプター5 シーズン2",
+    "en": "Chapter 5 Season 2"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "graphicsCardName": "MSI GeForce GTX 1060 6G OC",
+    "gpuShortName": "GTX 1060 6GB",
+    "gpuDriver": "552.22",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Home 23H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイしてリプレイモードで計測",
+    "en": "Played Battle Royale and measured in replay mode"
+  },
+  "videoUrl": "https://youtu.be/3cqVcru6ZBQ",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (描画距離: 最高)",
+        "en": "Low (View Distance: Epic)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 159,
+      "onePercentLowFps": 39
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 62,
+      "onePercentLowFps": 40
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (メッシュ: 低)",
+        "en": "Low (Meshes: Low)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 319,
+      "onePercentLowFps": 154
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (メッシュ: 高)",
+        "en": "Low (Meshes: High)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 320,
+      "onePercentLowFps": 159
+    }
+  ],
+  "notes": {
+    "ja": "「パフォーマンス」は現在の「レガシーパフォーマンス」（DirectX 11）に相当する設定。",
+    "en": "'Performance' corresponds to the current 'Legacy Performance' (DirectX 11) setting."
+  }
+}

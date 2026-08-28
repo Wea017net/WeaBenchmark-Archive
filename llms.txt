@@ -1,0 +1,19 @@
+# Wea's Benchmark Archive
+
+Machine-readable PC game benchmark data from the WeaBenchmark channel.
+
+## Data access
+
+- Index: `data/benchmarks.json`
+- Individual records: `data/benchmarks/*.json`
+- Schema: `data/benchmark.schema.json`
+- Dataset documentation: `DATASET.md`
+
+## License
+
+Benchmark data under `data/` is dedicated to the public domain under CC0 1.0.
+AI training, commercial use, analysis, modification, and redistribution are
+permitted. See `LICENSE-DATA`.
+
+Data is provided as-is, without warranty. Do not imply endorsement by
+Wea017net or Wea's Benchmark Archive.

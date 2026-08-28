@@ -1,0 +1,674 @@
+[
+  {
+    "id": "260828_fortnite_rtx4070s_r5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2026-08-28",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1080p · 1440p  |  全設定",
+      "en": "1080p · 1440p  |  All Settings"
+    },
+    "version": {
+      "ja": "v42.00",
+      "en": "v42.00"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン4",
+      "en": "Chapter 7 Season 4"
+    }
+  },
+  {
+    "id": "260813_overwatch_rtx4070s_r5-5600",
+    "game": {
+      "ja": "オーバーウォッチ",
+      "en": "Overwatch"
+    },
+    "testedAt": "2026-08-23",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1080p · 1440p · 4K  |  低 · エピック",
+      "en": "1080p · 1440p · 4K  |  Low · Epic"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン4",
+      "en": "Season 4"
+    }
+  },
+  {
+    "id": "260822_overwatch_gtx980_i7-3770",
+    "game": {
+      "ja": "オーバーウォッチ",
+      "en": "Overwatch"
+    },
+    "testedAt": "2026-08-22",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "1080p  |  低・エピック",
+      "en": "1080p  |  Low · Epic"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン4",
+      "en": "Season 4"
+    }
+  },
+  {
+    "id": "260726_asphalt-legends_rx6600_r5-5600",
+    "game": {
+      "ja": "アスファルト:Legends",
+      "en": "Asphalt Legends"
+    },
+    "testedAt": "2026-07-26",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p · 1440p  |  全設定",
+      "en": "1080p · 1440p  |  All Settings"
+    },
+    "version": {
+      "ja": "v52.0.8a",
+      "en": "v52.0.8a"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "260604_fh6_arc-140v_u7-258v",
+    "game": {
+      "ja": "Forza Horizon 6",
+      "en": "Forza Horizon 6"
+    },
+    "testedAt": "2026-06-04",
+    "system": {
+      "cpu": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V"
+    },
+    "summary": {
+      "ja": "1200p  |  最低 · 低 · 中 · 高 · 高 + RT · エクストリーム + RT",
+      "en": "1200p  |  Very Low · Low · Medium · High · High + RT · Extreme + RT"
+    },
+    "version": {
+      "ja": "364.933",
+      "en": "364.933"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "251214_apexlegends_gtx1060-6g_r5-5600",
+    "game": {
+      "ja": "エーペックスレジェンズ",
+      "en": "Apex Legends"
+    },
+    "testedAt": "2025-12-14",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン27",
+      "en": "Season 27"
+    }
+  },
+  {
+    "id": "251207_zzz_gtx1060-6g_r5-5600",
+    "game": {
+      "ja": "ゼンレスゾーンゼロ",
+      "en": "Zenless Zone Zero"
+    },
+    "testedAt": "2025-12-07",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "Ver.2.4",
+      "en": "Ver.2.4"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "251205_fortnite_gtx1060-6g_r5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2025-12-05",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "v39.00",
+      "en": "v39.00"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン1",
+      "en": "Chapter 7 Season 1"
+    }
+  },
+  {
+    "id": "251201_fortnite_gt630_i7-3770",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2025-12-01",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GT 630"
+    },
+    "summary": {
+      "ja": "720p  |  低",
+      "en": "720p  |  Low"
+    },
+    "version": {
+      "ja": "v39.00",
+      "en": "v39.00"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン1",
+      "en": "Chapter 7 Season 1"
+    }
+  },
+  {
+    "id": "251114_apexlegends_gtx1060-6g_i7-3770",
+    "game": {
+      "ja": "エーペックスレジェンズ",
+      "en": "Apex Legends"
+    },
+    "testedAt": "2025-11-14",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン27",
+      "en": "Season 27"
+    }
+  },
+  {
+    "id": "250927_nfsmw2012_rx6600_r5-5600",
+    "game": {
+      "ja": "Need for Speed: Most Wanted (2012)",
+      "en": "Need for Speed: Most Wanted (2012)"
+    },
+    "testedAt": "2025-09-27",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1440p · 4K  |  高",
+      "en": "1440p · 4K  |  High"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "250818_overwatch-2_gtx680_i7-3770",
+    "game": {
+      "ja": "オーバーウォッチ 2",
+      "en": "Overwatch 2"
+    },
+    "testedAt": "2025-08-18",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 680"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 中 · 高",
+      "en": "1080p  |  Low · Medium · High"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン17",
+      "en": "Season 17"
+    }
+  },
+  {
+    "id": "250818_valorant_gtx680_i7-3770",
+    "game": {
+      "ja": "VALORANT",
+      "en": "VALORANT"
+    },
+    "testedAt": "2025-08-18",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 680"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "Patch 11.02",
+      "en": "Patch 11.02"
+    },
+    "season": {
+      "ja": "Season 2025 Act 4",
+      "en": "Season 2025 Act 4"
+    }
+  },
+  {
+    "id": "250808_cs2_gtx680_i7-3770",
+    "game": {
+      "ja": "Counter-Strike 2",
+      "en": "Counter-Strike 2"
+    },
+    "testedAt": "2025-08-08",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 680"
+    },
+    "summary": {
+      "ja": "1080p  |  低",
+      "en": "1080p  |  Low"
+    },
+    "version": {
+      "ja": "1.40.9.4",
+      "en": "1.40.9.4"
+    },
+    "season": {
+      "ja": "プレミアシーズン3",
+      "en": "Premier Season 3"
+    }
+  },
+  {
+    "id": "250730_zzz_gtx680_i7-3770",
+    "game": {
+      "ja": "ゼンレスゾーンゼロ",
+      "en": "Zenless Zone Zero"
+    },
+    "testedAt": "2025-07-30",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 680"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "Ver.2.1",
+      "en": "Ver.2.1"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "250729_fortnite_gtx680_i7-3770",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2025-07-29",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 680"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 中 · 高",
+      "en": "1080p  |  Low · Medium · High"
+    },
+    "version": {
+      "ja": "v36.20",
+      "en": "v36.20"
+    },
+    "season": {
+      "ja": "チャプター6 シーズン3",
+      "en": "Chapter 6 Season 3"
+    }
+  },
+  {
+    "id": "250306_apexlegends_rx6600_r5-5600",
+    "game": {
+      "ja": "エーペックスレジェンズ",
+      "en": "Apex Legends"
+    },
+    "testedAt": "2025-03-06",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p · 1440p  |  低 · 最高",
+      "en": "1080p · 1440p  |  Low · Ultra"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン24",
+      "en": "Season 24"
+    }
+  },
+  {
+    "id": "241226_zzz_gtx960m_i5-6300hq",
+    "game": {
+      "ja": "ゼンレスゾーンゼロ",
+      "en": "Zenless Zone Zero"
+    },
+    "testedAt": "2024-12-26",
+    "system": {
+      "cpu": "Intel Core i5-6300HQ",
+      "gpu": "NVIDIA GeForce GTX 960M"
+    },
+    "summary": {
+      "ja": "720p · 900p · 1080p  |  全設定",
+      "en": "720p · 900p · 1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "Ver.1.4",
+      "en": "Ver.1.4"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "241225_zzz_rx6600_r5-5600",
+    "game": {
+      "ja": "ゼンレスゾーンゼロ",
+      "en": "Zenless Zone Zero"
+    },
+    "testedAt": "2024-12-25",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p · 1440p · 4K  |  高",
+      "en": "1080p · 1440p · 4K  |  High"
+    },
+    "version": {
+      "ja": "Ver.1.4",
+      "en": "Ver.1.4"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "241222_fortnite_rx6600_r5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2024-12-22",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "v33.10",
+      "en": "v33.10"
+    },
+    "season": {
+      "ja": "ORIGIN チャプター1 シーズン1",
+      "en": "OG Chapter 1 Season 1"
+    }
+  },
+  {
+    "id": "241024_overwatch-2_rx6600_r5-5600",
+    "game": {
+      "ja": "オーバーウォッチ 2",
+      "en": "Overwatch 2"
+    },
+    "testedAt": "2024-10-24",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p · 1440p  |  全設定",
+      "en": "1080p · 1440p  |  All Settings"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン13",
+      "en": "Season 13"
+    }
+  },
+  {
+    "id": "240625_fortnite_gtx960m_i5-6300hq",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2024-06-25",
+    "system": {
+      "cpu": "Intel Core i5-6300HQ",
+      "gpu": "NVIDIA GeForce GTX 960M"
+    },
+    "summary": {
+      "ja": "720p · 900p · 1080p  |  低",
+      "en": "720p · 900p · 1080p  |  Low"
+    },
+    "version": {
+      "ja": "v30.20",
+      "en": "v30.20"
+    },
+    "season": {
+      "ja": "チャプター5 シーズン3",
+      "en": "Chapter 5 Season 3"
+    }
+  },
+  {
+    "id": "240622_valorant_gtx960m_i5-6300hq",
+    "game": {
+      "ja": "VALORANT",
+      "en": "VALORANT"
+    },
+    "testedAt": "2024-06-22",
+    "system": {
+      "cpu": "Intel Core i5-6300HQ",
+      "gpu": "NVIDIA GeForce GTX 960M"
+    },
+    "summary": {
+      "ja": "720p · 900p · 1080p  |  低",
+      "en": "720p · 900p · 1080p  |  Low"
+    },
+    "version": {
+      "ja": "Patch 8.11",
+      "en": "Patch 8.11"
+    },
+    "season": {
+      "ja": "Episode 8 Act 3",
+      "en": "Episode 8 Act 3"
+    }
+  },
+  {
+    "id": "240601_valorant_gtx1060-6g_r5-5600",
+    "game": {
+      "ja": "VALORANT",
+      "en": "VALORANT"
+    },
+    "testedAt": "2024-06-01",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "Patch 8.09",
+      "en": "Patch 8.09"
+    },
+    "season": {
+      "ja": "Episode 8 Act 2",
+      "en": "Episode 8 Act 2"
+    }
+  },
+  {
+    "id": "240421_fortnite_gtx1060-6g_r5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2024-04-21",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce GTX 1060 6GB"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "v29.20",
+      "en": "v29.20"
+    },
+    "season": {
+      "ja": "チャプター5 シーズン2",
+      "en": "Chapter 5 Season 2"
+    }
+  },
+  {
+    "id": "240330_valorant_rx6600_r5-5600",
+    "game": {
+      "ja": "VALORANT",
+      "en": "VALORANT"
+    },
+    "testedAt": "2024-03-30",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p · 1440p · 4K  |  低・高",
+      "en": "1080p · 1440p · 4K  |  Low · High"
+    },
+    "version": {
+      "ja": "Patch 8.05",
+      "en": "Patch 8.05"
+    },
+    "season": {
+      "ja": "Episode 8 Act 1",
+      "en": "Episode 8 Act 1"
+    }
+  },
+  {
+    "id": "240120_minecraft-java_uhd620_i5-8350u",
+    "game": {
+      "ja": "Minecraft: Java Edition",
+      "en": "Minecraft: Java Edition"
+    },
+    "testedAt": "2024-01-20",
+    "system": {
+      "cpu": "Intel Core i5-8350U",
+      "gpu": "Intel UHD Graphics 620"
+    },
+    "summary": {
+      "ja": "720p · 900p · 1080p  |  低",
+      "en": "720p · 900p · 1080p  |  Low"
+    },
+    "version": {
+      "ja": "1.20.4 (OptiFine)",
+      "en": "1.20.4 (OptiFine)"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "231208_fortnite_rx-6600_ryzen-5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2023-12-08",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "AMD Radeon RX 6600"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 最高",
+      "en": "1080p  |  Low · Epic"
+    },
+    "version": {
+      "ja": "v28.00",
+      "en": "v28.00"
+    },
+    "season": {
+      "ja": "チャプター5 シーズン1",
+      "en": "Chapter 5 Season 1"
+    }
+  }
+]

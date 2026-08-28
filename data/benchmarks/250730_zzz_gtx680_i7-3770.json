@@ -1,0 +1,102 @@
+{
+  "id": "250730_zzz_gtx680_i7-3770",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2025-07-30",
+  "summary": {
+    "ja": "1080p  |  全設定",
+    "en": "1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "Ver.2.1",
+    "en": "Ver.2.1"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "graphicsCardName": "MSI N680GTX Twin Frozr III OC",
+    "gpuShortName": "GTX 680",
+    "gpuDriver": "475.14",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "",
+    "en": ""
+  },
+  "videoUrl": "https://youtu.be/_PC_m1neubo",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 72,
+      "onePercentLowFps": 26
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 66,
+      "onePercentLowFps": 14
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 62,
+      "onePercentLowFps": 13
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高*",
+        "en": "High*"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 67,
+      "onePercentLowFps": 32
+    }
+  ],
+  "notes": {
+    "ja": "「キャラクター動的解像度」を「ダイナミック」または「グローバル」に設定するとキャラクターが正しく描画されない問題があるため、高設定の検証では「オフ」に設定して検証。",
+    "en": "Since setting 'High-Precision Character Resolution' to 'Dynamic' or 'Global' causes characters to be rendered incorrectly, it was set to 'Off' for testing in the High preset."
+  }
+}

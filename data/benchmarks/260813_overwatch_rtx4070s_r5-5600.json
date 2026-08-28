@@ -1,0 +1,128 @@
+{
+  "id": "260813_overwatch_rtx4070s_r5-5600",
+  "game": {
+    "ja": "オーバーウォッチ",
+    "en": "Overwatch"
+  },
+  "testedAt": "2026-08-23",
+  "summary": {
+    "ja": "1080p · 1440p · 4K  |  低 · エピック",
+    "en": "1080p · 1440p · 4K  |  Low · Epic"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン4",
+    "en": "Season 4"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphicsCardName": "",
+    "gpuShortName": "RTX 4070 SUPER",
+    "gpuDriver": "610.88",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "クイック・プレイをプレイして計測",
+    "en": "Played Quick Play"
+  },
+  "videoUrl": "https://youtu.be/ZOmTHH5mZh4",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 336,
+      "onePercentLowFps": 153
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "DLAA",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 198,
+      "onePercentLowFps": 103
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 313,
+      "onePercentLowFps": 134
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "DLAA",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 146,
+      "onePercentLowFps": 83
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 190,
+      "onePercentLowFps": 93
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "DLAA",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 76,
+      "onePercentLowFps": 56
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "250808_cs2_gtx680_i7-3770",
+  "game": {
+    "ja": "Counter-Strike 2",
+    "en": "Counter-Strike 2"
+  },
+  "testedAt": "2025-08-08",
+  "summary": {
+    "ja": "1080p  |  低",
+    "en": "1080p  |  Low"
+  },
+  "version": {
+    "ja": "1.40.9.4",
+    "en": "1.40.9.4"
+  },
+  "season": {
+    "ja": "プレミアシーズン3",
+    "en": "Premier Season 3"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "graphicsCardName": "MSI N680GTX Twin Frozr III OC",
+    "gpuShortName": "GTX 680",
+    "gpuDriver": "475.14",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "デスマッチをプレイして計測",
+    "en": "Played Deathmatch"
+  },
+  "videoUrl": "https://youtu.be/6q7znu_vzO8",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 69,
+      "onePercentLowFps": 38
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "Performance",
+      "graphicsApi": "",
+      "averageFps": 74,
+      "onePercentLowFps": 42
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "250729_fortnite_gtx680_i7-3770",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2025-07-29",
+  "summary": {
+    "ja": "1080p  |  低 · 中 · 高",
+    "en": "1080p  |  Low · Medium · High"
+  },
+  "version": {
+    "ja": "v36.20",
+    "en": "v36.20"
+  },
+  "season": {
+    "ja": "チャプター6 シーズン3",
+    "en": "Chapter 6 Season 3"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "graphicsCardName": "MSI N680GTX Twin Frozr III OC",
+    "gpuShortName": "GTX 680",
+    "gpuDriver": "475.14",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/XgsdNIDhEaY",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 127,
+      "onePercentLowFps": 24
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低 (60fps制限)",
+        "en": "Low (60fps cap)"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 60,
+      "onePercentLowFps": 27
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 87,
+      "onePercentLowFps": 14
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 59,
+      "onePercentLowFps": 12
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 43,
+      "onePercentLowFps": 17
+    }
+  ],
+  "notes": {
+    "ja": "「パフォーマンス」は現在の「レガシーパフォーマンス」（DirectX 11）に相当する設定。",
+    "en": "'Performance' corresponds to the current 'Legacy Performance' (DirectX 11) setting."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "250818_overwatch-2_gtx680_i7-3770",
+  "game": {
+    "ja": "オーバーウォッチ 2",
+    "en": "Overwatch 2"
+  },
+  "testedAt": "2025-08-18",
+  "summary": {
+    "ja": "1080p  |  低 · 中 · 高",
+    "en": "1080p  |  Low · Medium · High"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン17",
+    "en": "Season 17"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "graphicsCardName": "MSI N680GTX Twin Frozr III OC",
+    "gpuShortName": "GTX 680",
+    "gpuDriver": "475.14",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "クイック・プレイをプレイして計測",
+    "en": "Played Quick Play"
+  },
+  "videoUrl": "https://youtu.be/oqgsDYnAk3Y",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 149,
+      "onePercentLowFps": 109
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 121,
+      "onePercentLowFps": 63
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 77,
+      "onePercentLowFps": 49
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

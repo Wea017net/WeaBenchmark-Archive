@@ -1,0 +1,76 @@
+{
+  "id": "260822_overwatch_gtx980_i7-3770",
+  "game": {
+    "ja": "オーバーウォッチ",
+    "en": "Overwatch"
+  },
+  "testedAt": "2026-08-22",
+  "summary": {
+    "ja": "1080p  |  低・エピック",
+    "en": "1080p  |  Low · Epic"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン4",
+    "en": "Season 4"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "graphicsCardName": "Palit GeForce GTX 980 JetStream",
+    "gpuShortName": "GTX 980",
+    "gpuDriver": "582.66",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "クイック・プレイをプレイして計測",
+    "en": "Played Quick Play"
+  },
+  "videoUrl": "https://youtu.be/Y0cBfIyyHl0",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 156,
+      "onePercentLowFps": 83
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "100%",
+      "graphicsApi": "",
+      "averageFps": 64,
+      "onePercentLowFps": 45
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

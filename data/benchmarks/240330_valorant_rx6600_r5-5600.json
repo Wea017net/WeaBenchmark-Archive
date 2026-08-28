@@ -1,0 +1,128 @@
+{
+  "id": "240330_valorant_rx6600_r5-5600",
+  "game": {
+    "ja": "VALORANT",
+    "en": "VALORANT"
+  },
+  "testedAt": "2024-03-30",
+  "summary": {
+    "ja": "1080p · 1440p · 4K  |  低・高",
+    "en": "1080p · 1440p · 4K  |  Low · High"
+  },
+  "version": {
+    "ja": "Patch 8.05",
+    "en": "Patch 8.05"
+  },
+  "season": {
+    "ja": "Episode 8 Act 1",
+    "en": "Episode 8 Act 1"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "AMD Radeon RX 6600",
+    "graphicsCardName": "MSI Radeon RX 6600 MECH 2X 8G",
+    "gpuShortName": "RX 6600",
+    "gpuDriver": "24.2.1",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Home 23H2"
+  },
+  "method": {
+    "ja": "スイフトプレイをプレイして計測",
+    "en": "Played Swiftplay"
+  },
+  "videoUrl": "https://youtu.be/eyRKerBdsUA",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 279,
+      "onePercentLowFps": 142
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 292,
+      "onePercentLowFps": 155
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 288,
+      "onePercentLowFps": 92
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 150,
+      "onePercentLowFps": 66
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 233,
+      "onePercentLowFps": 76
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 89,
+      "onePercentLowFps": 49
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "id": "241024_overwatch-2_rx6600_r5-5600",
+  "game": {
+    "ja": "オーバーウォッチ 2",
+    "en": "Overwatch 2"
+  },
+  "testedAt": "2024-10-24",
+  "summary": {
+    "ja": "1080p · 1440p  |  全設定",
+    "en": "1080p · 1440p  |  All Settings"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン13",
+    "en": "Season 13"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "AMD Radeon RX 6600",
+    "graphicsCardName": "",
+    "gpuShortName": "RX 6600",
+    "gpuDriver": "24.10.1",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 23H2"
+  },
+  "method": {
+    "ja": "クイック・プレイをプレイしてリプレイ機能で計測",
+    "en": "Played Quick Play and measured using the replay feature"
+  },
+  "videoUrl": "https://youtu.be/VgqlY7DOdI4",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 335,
+      "onePercentLowFps": 201
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 334,
+      "onePercentLowFps": 176
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 261,
+      "onePercentLowFps": 145
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 211,
+      "onePercentLowFps": 111
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "ウルトラ",
+        "en": "Ultra"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "100%",
+      "graphicsApi": "",
+      "averageFps": 159,
+      "onePercentLowFps": 103
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "100%",
+      "graphicsApi": "",
+      "averageFps": 105,
+      "onePercentLowFps": 78
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 187,
+      "onePercentLowFps": 92
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 180,
+      "onePercentLowFps": 91
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 142,
+      "onePercentLowFps": 70
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 121,
+      "onePercentLowFps": 73
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "ウルトラ",
+        "en": "Ultra"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "100%",
+      "graphicsApi": "",
+      "averageFps": 90,
+      "onePercentLowFps": 49
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "エピック",
+        "en": "Epic"
+      },
+      "upscalingType": "AMD FSR 1.0",
+      "upscalingQuality": "100%",
+      "graphicsApi": "",
+      "averageFps": 66,
+      "onePercentLowFps": 40
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}
