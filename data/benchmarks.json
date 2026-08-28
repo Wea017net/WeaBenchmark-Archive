@@ -1,29 +1,5 @@
 [
   {
-    "id": "260813_overwatch_rtx4070s_r5-5600",
-    "game": {
-      "ja": "オーバーウォッチ",
-      "en": "Overwatch"
-    },
-    "testedAt": "2026-08-23",
-    "system": {
-      "cpu": "AMD Ryzen 5 5600",
-      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
-    },
-    "summary": {
-      "ja": "1080p · 1440p · 4K  |  低 · エピック",
-      "en": "1080p · 1440p · 4K  |  Low · Epic"
-    },
-    "version": {
-      "ja": "",
-      "en": ""
-    },
-    "season": {
-      "ja": "シーズン4",
-      "en": "Season 4"
-    }
-  },
-  {
     "id": "260822_overwatch_gtx980_i7-3770",
     "game": {
       "ja": "オーバーウォッチ",
@@ -37,6 +13,30 @@
     "summary": {
       "ja": "1080p  |  低・エピック",
       "en": "1080p  |  Low · Epic"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン4",
+      "en": "Season 4"
+    }
+  },
+  {
+    "id": "260813_overwatch_rtx4070s_r5-5600",
+    "game": {
+      "ja": "オーバーウォッチ",
+      "en": "Overwatch"
+    },
+    "testedAt": "2026-08-13",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1080p · 1440p · 4K  |  低 · エピック",
+      "en": "1080p · 1440p · 4K  |  Low · Epic"
     },
     "version": {
       "ja": "",
