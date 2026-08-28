@@ -4,6 +4,7 @@ import sharp from 'sharp';
 
 const SITE_ORIGIN = 'https://benchmark.wea017.net';
 const BENCHMARKS_DIRECTORY = 'data/benchmarks';
+const BENCHMARK_INDEX_FILE = 'data/benchmarks.json';
 const PAGE_TEMPLATE = 'benchmark.html';
 const PAGE_DIRECTORY = 'benchmarks';
 const IMAGE_DIRECTORY = 'assets/ogp';
@@ -16,7 +17,7 @@ const HOME_DESCRIPTION_LINES = [
   '動画で検証したPCゲームのベンチマーク結果を、',
   '検索可能なテキストデータとして公開しています。'
 ];
-const HOME_DESCRIPTION_EN = 'Browse PC game benchmark results from WeaBenchmark as searchable, text-based data.';
+const HOME_DESCRIPTION_EN = 'Browse PC game benchmark results from WeaBenchmark in a searchable, text-based archive.';
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, character => ({
@@ -214,7 +215,9 @@ const records = await Promise.all(files.map(async file => {
   if (data.id !== id) throw new Error(`${file}: "id" must be "${id}"`);
   return data;
 }));
-const selectedRecords = target.homeOnly ? [] : target.id ? records.filter(record => record.id === target.id) : records;
+const publishedIds = new Set(JSON.parse(await readFile(BENCHMARK_INDEX_FILE, 'utf8')).map(record => record.id));
+const publishedRecords = records.filter(record => publishedIds.has(record.id));
+const selectedRecords = target.homeOnly ? [] : target.id ? publishedRecords.filter(record => record.id === target.id) : publishedRecords;
 if (target.id && !selectedRecords.length) throw new Error(`Unknown benchmark ID: ${target.id}`);
 
 const template = await readFile(PAGE_TEMPLATE, 'utf8');
@@ -223,7 +226,7 @@ const logoPng = await sharp(logo).resize(216, 216).png().toBuffer();
 
 if (target.generateHome) {
   await mkdir(IMAGE_DIRECTORY, { recursive: true });
-  await sharp(Buffer.from(createHomeSvg(records)))
+  await sharp(Buffer.from(createHomeSvg(publishedRecords)))
     .composite([{ input: logoPng, left: 912, top: 68 }])
     .png({ compressionLevel: 9, adaptiveFiltering: true })
     .toFile(HOME_IMAGE_FILE);
