@@ -380,6 +380,11 @@ footer {
   border-top: 1px solid var(--line)
 }
 
+footer a {
+  color: inherit;
+  text-underline-offset: .15em
+}
+
 .detail {
   padding-top: 38px
 }
