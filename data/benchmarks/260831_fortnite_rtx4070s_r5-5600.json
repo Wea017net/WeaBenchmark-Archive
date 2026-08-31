@@ -1,0 +1,284 @@
+{
+  "id": "260831_fortnite_rtx4070s_r5-5600",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2026-08-31",
+  "summary": {
+    "ja": "1080p · 1440p · 4K  |  全設定",
+    "en": "1080p · 1440p · 4K  |  All Settings"
+  },
+  "version": {
+    "ja": "v42.00",
+    "en": "v42.00"
+  },
+  "season": {
+    "ja": "チャプター7 シーズン4",
+    "en": "Chapter 7 Season 4"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 5 5600",
+    "cpuShortName": "Ryzen 5 5600",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphicsCardName": "ZOTAC GAMING GeForce RTX 4070 SUPER Twin Edge OC 12GB GDDR6X",
+    "gpuShortName": "RTX 4070 SUPER",
+    "gpuDriver": "610.88",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/kKXI-Z_hFXc",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 211,
+      "onePercentLowFps": 94
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 208,
+      "onePercentLowFps": 100
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 204,
+      "onePercentLowFps": 105
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 166,
+      "onePercentLowFps": 76
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 147,
+      "onePercentLowFps": 88
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 109,
+      "onePercentLowFps": 75
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 114,
+      "onePercentLowFps": 71
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高 (+ Lumen Epic)",
+        "en": "Epic (+ Lumen Epic)"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 75,
+      "onePercentLowFps": 51
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 170,
+      "onePercentLowFps": 90
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 143,
+      "onePercentLowFps": 70
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 113,
+      "onePercentLowFps": 76
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最高",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 123,
+      "onePercentLowFps": 64
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最高 (+ Lumen Epic)",
+        "en": "Epic (+ Lumen Epic)"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 67,
+      "onePercentLowFps": 41
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 154,
+      "onePercentLowFps": 84
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 161,
+      "onePercentLowFps": 118
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 86,
+      "onePercentLowFps": 57
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "最高",
+        "en": "Epic"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 76,
+      "onePercentLowFps": 42
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "最高 (+ Lumen Epic)",
+        "en": "Epic (+ Lumen Epic)"
+      },
+      "upscalingType": "NVIDIA DLSS 4",
+      "upscalingQuality": "Quality",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 42,
+      "onePercentLowFps": 28
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}
