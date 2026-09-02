@@ -1,5 +1,53 @@
 [
   {
+    "id": "260902_fortnite_arc-140v_u7-258v",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2026-09-02",
+    "system": {
+      "cpu": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V"
+    },
+    "summary": {
+      "ja": "1200p  |  低 · 中 · 高",
+      "en": "1200p  |  Low · Medium · High"
+    },
+    "version": {
+      "ja": "v42.00",
+      "en": "v42.00"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン4",
+      "en": "Chapter 7 Season 4"
+    }
+  },
+  {
+    "id": "260831_fortnite_rtx4070s_r5-5600",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2026-08-31",
+    "system": {
+      "cpu": "AMD Ryzen 5 5600",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1080p · 1440p · 4K  |  全設定",
+      "en": "1080p · 1440p · 4K  |  All Settings"
+    },
+    "version": {
+      "ja": "v42.00",
+      "en": "v42.00"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン4",
+      "en": "Chapter 7 Season 4"
+    }
+  },
+  {
     "id": "260822_overwatch_gtx980_i7-3770",
     "game": {
       "ja": "オーバーウォッチ",
