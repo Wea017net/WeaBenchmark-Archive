@@ -17,7 +17,7 @@ fitness, accuracy, and reproducibility for their own use.
 - `data/benchmarks.json`: generated index of every benchmark
 - `data/benchmarks/*.json`: one detailed result file per benchmark
 - `data/benchmark.schema.json`: documented JSON Schema
-- `data/filter-options.json`: human-maintained filter choices for the website
+- `data/filter-options.json`: generated game, GPU, and CPU filter choices for the website
 
 ## Scope and methodology
 

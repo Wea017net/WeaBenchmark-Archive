@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "generate:index": "node scripts/generate-benchmark-index.mjs",
+    "generate:filters": "node scripts/generate-filter-options.mjs",
     "generate:ogp": "node scripts/generate-ogp.mjs",
-    "generate": "npm run generate:index && npm run generate:ogp",
+    "generate": "npm run generate:index && npm run generate:filters && npm run generate:ogp",
+    "generate:ci": "npm run generate:index && npm run generate:ogp",
     "check:ogp": "node scripts/check-ogp.mjs"
   },
   "devDependencies": {

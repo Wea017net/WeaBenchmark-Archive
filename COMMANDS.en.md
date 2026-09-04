@@ -14,7 +14,7 @@ Noto Sans JP or Noto Sans CJK JP is required to render Japanese text in OGP imag
 
 ## Generate everything
 
-Generates the benchmark index, the home-page OGP image, every benchmark OGP image, and static result pages.
+Generates the benchmark index, game/GPU/CPU filter options, the home-page OGP image, every benchmark OGP image, and static result pages.
 
 ```console
 npm run generate
@@ -23,6 +23,7 @@ npm run generate
 Generated files:
 
 - `data/benchmarks.json`
+- `data/filter-options.json`
 - `assets/ogp/home.png`
 - `assets/ogp/<benchmark-id>.png`
 - `assets/ogp/generation-manifest.json` (hashes that prevent environment-only image regeneration)
@@ -66,6 +67,14 @@ Regenerates `data/benchmarks.json` from files under `data/benchmarks/`.
 npm run generate:index
 ```
 
+## Generate only the filter options
+
+Updates the game, GPU, and CPU choices in `data/filter-options.json` from the generated `data/benchmarks.json`. This is normally handled by `npm run generate`.
+
+```console
+npm run generate:filters
+```
+
 ## Validate generated assets
 
 Checks that the home and benchmark images are 1200×630 PNG files, and that `index.html` and every result page include the required OGP and Twitter Card metadata.
@@ -83,4 +92,4 @@ npm run generate
 npm run check:ogp
 ```
 
-GitHub Actions runs the same generation and validation when benchmark data changes.
+Filter options are updated locally by `npm run generate`. GitHub Actions only generates and validates the benchmark index, OGP images, and static result pages.

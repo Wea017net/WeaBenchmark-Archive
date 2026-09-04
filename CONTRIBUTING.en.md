@@ -8,7 +8,7 @@ Contributions to Wea's Game Benchmark Archive are welcome. Please open a pull re
 
 1. Keep each change focused and small enough that its purpose is clear.
 2. Follow the existing file formats, terminology, and code style.
-3. When changing benchmark data, run `npm install` followed by `npm run generate`, and include the updated `data/benchmarks.json`, `assets/ogp/`, and `benchmarks/` files.
+3. When changing benchmark data, run `npm install` followed by `npm run generate`, and include the updated `data/benchmarks.json`, `data/filter-options.json`, `assets/ogp/`, and `benchmarks/` files.
 4. When changing JSON, confirm that it can be parsed correctly.
 
 ## Correcting benchmark data

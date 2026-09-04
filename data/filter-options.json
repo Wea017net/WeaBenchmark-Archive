@@ -2,47 +2,87 @@
   "games": [
     {
       "value": "overwatch",
-      "label": { "ja": "オーバーウォッチ", "en": "Overwatch" }
+      "label": {
+        "ja": "オーバーウォッチ",
+        "en": "Overwatch"
+      }
     },
     {
       "value": "fortnite",
-      "label": { "ja": "フォートナイト", "en": "Fortnite" }
+      "label": {
+        "ja": "フォートナイト",
+        "en": "Fortnite"
+      }
     },
     {
       "value": "asphalt legends",
-      "label": { "ja": "アスファルト:Legends", "en": "Asphalt Legends" }
+      "label": {
+        "ja": "アスファルト:Legends",
+        "en": "Asphalt Legends"
+      }
     },
     {
       "value": "valorant",
-      "label": { "ja": "VALORANT", "en": "VALORANT" }
+      "label": {
+        "ja": "VALORANT",
+        "en": "VALORANT"
+      }
     },
     {
       "value": "apex legends",
-      "label": { "ja": "Apex Legends", "en": "Apex Legends" }
+      "label": {
+        "ja": "エーペックスレジェンズ",
+        "en": "Apex Legends"
+      }
     },
     {
       "value": "overwatch 2",
-      "label": { "ja": "オーバーウォッチ 2", "en": "Overwatch 2" }
+      "label": {
+        "ja": "オーバーウォッチ 2",
+        "en": "Overwatch 2"
+      }
     },
     {
       "value": "zenless zone zero",
-      "label": { "ja": "ゼンレスゾーンゼロ", "en": "Zenless Zone Zero" }
+      "label": {
+        "ja": "ゼンレスゾーンゼロ",
+        "en": "Zenless Zone Zero"
+      }
     },
     {
       "value": "need for speed: most wanted (2012)",
-      "label": { "ja": "Need for Speed: Most Wanted (2012)", "en": "Need for Speed: Most Wanted (2012)" }
+      "label": {
+        "ja": "Need for Speed: Most Wanted (2012)",
+        "en": "Need for Speed: Most Wanted (2012)"
+      }
     },
     {
       "value": "counter-strike 2",
-      "label": { "ja": "Counter-Strike 2", "en": "Counter-Strike 2" }
+      "label": {
+        "ja": "Counter-Strike 2",
+        "en": "Counter-Strike 2"
+      }
     },
     {
       "value": "minecraft: java edition",
-      "label": { "ja": "Minecraft: Java Edition", "en": "Minecraft: Java Edition" }
+      "label": {
+        "ja": "Minecraft: Java Edition",
+        "en": "Minecraft: Java Edition"
+      }
     },
     {
       "value": "forza horizon 6",
-      "label": { "ja": "Forza Horizon 6", "en": "Forza Horizon 6" }
+      "label": {
+        "ja": "Forza Horizon 6",
+        "en": "Forza Horizon 6"
+      }
+    },
+    {
+      "value": "gakuen idolmaster",
+      "label": {
+        "ja": "学園アイドルマスター",
+        "en": "Gakuen Idolmaster"
+      }
     }
   ],
   "gpus": [
@@ -60,6 +100,8 @@
     "AMD Ryzen 5 5600",
     "Intel Core Ultra 7 258V",
     "Intel Core i5-8350U",
-    "Intel Core i7-3770"
+    "Intel Core i7-3770",
+    "AMD Ryzen 7 5800X3D",
+    "Intel Core i5-6300HQ"
   ]
 }

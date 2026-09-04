@@ -16,7 +16,7 @@ OGP画像内の日本語表示には Noto Sans JP、または Noto Sans CJK JP�
 
 ## すべて生成
 
-ベンチマーク一覧、ホームページ用OGP画像、全ベンチマーク用OGP画像、結果HTMLをまとめて生成します。
+ベンチマーク一覧、ゲーム・GPU・CPUのフィルター選択肢、ホームページ用OGP画像、全ベンチマーク用OGP画像、結果HTMLをまとめて生成します。
 
 ```console
 npm run generate
@@ -25,6 +25,7 @@ npm run generate
 生成対象:
 
 - `data/benchmarks.json`
+- `data/filter-options.json`
 - `assets/ogp/home.png`
 - `assets/ogp/<ベンチマークID>.png`
 - `assets/ogp/generation-manifest.json`（環境差による不要な画像の再生成を防ぐハッシュ）
@@ -68,6 +69,14 @@ npm run generate:ogp -- --id 260813_overwatch_rtx4070s_r5-5600
 npm run generate:index
 ```
 
+## フィルター選択肢のみ生成
+
+生成済みの `data/benchmarks.json` から、ゲーム・GPU・CPUの選択肢を `data/filter-options.json` に反映します。通常は `npm run generate` に含まれるため、個別に実行する必要はありません。
+
+```console
+npm run generate:filters
+```
+
 ## 生成結果を検証
 
 ホーム画像と全ベンチマーク画像が1200×630のPNGであること、結果HTMLと `index.html` に必要なOGP・Twitter Card情報があることを検証します。
@@ -85,4 +94,4 @@ npm run generate
 npm run check:ogp
 ```
 
-GitHub Actionsでも、ベンチマークデータの更新時に同じ生成と検証が自動実行されます。
+フィルター選択肢の更新はローカルの `npm run generate` で行います。GitHub Actionsはベンチマーク一覧、OGP画像、結果HTMLの生成と検証のみを行います。
