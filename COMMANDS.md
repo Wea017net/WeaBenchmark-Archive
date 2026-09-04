@@ -27,6 +27,7 @@ npm run generate
 - `data/benchmarks.json`
 - `assets/ogp/home.png`
 - `assets/ogp/<ベンチマークID>.png`
+- `assets/ogp/generation-manifest.json`（環境差による不要な画像の再生成を防ぐハッシュ）
 - `benchmarks/<ベンチマークID>.html`
 
 ## OGP関連を一括生成

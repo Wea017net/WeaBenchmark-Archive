@@ -1,0 +1,76 @@
+{
+  "id": "260905_gakumas_rtx4070s_r7-5800x3d",
+  "game": {
+    "ja": "学園アイドルマスター",
+    "en": "Gakuen Idolmaster"
+  },
+  "testedAt": "2026-09-05",
+  "summary": {
+    "ja": "最高品質",
+    "en": "Highest Quality"
+  },
+  "version": {
+    "ja": "Ver.3.3.0",
+    "en": "Ver.3.3.0"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "AMD Ryzen 7 5800X3D",
+    "cpuShortName": "Ryzen 7 5800X3D",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphicsCardName": "ZOTAC GAMING GeForce RTX 4070 SUPER Twin Edge OC 12GB GDDR6X",
+    "gpuShortName": "RTX 4070 SUPER",
+    "gpuDriver": "610.88",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "プロデュースをプレイおよびライブ視聴",
+    "en": "Played Produce and watched Live"
+  },
+  "videoUrl": "https://youtu.be/x4EkvIBWf8I",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 2160,
+      "resolutionY": 3840,
+      "preset": {
+        "ja": "最高",
+        "en": "Highest"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 153,
+      "onePercentLowFps": 29
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "最高",
+        "en": "Highest"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 108,
+      "onePercentLowFps": 72
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

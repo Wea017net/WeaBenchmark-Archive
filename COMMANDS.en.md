@@ -25,6 +25,7 @@ Generated files:
 - `data/benchmarks.json`
 - `assets/ogp/home.png`
 - `assets/ogp/<benchmark-id>.png`
+- `assets/ogp/generation-manifest.json` (hashes that prevent environment-only image regeneration)
 - `benchmarks/<benchmark-id>.html`
 
 ## Generate all OGP assets

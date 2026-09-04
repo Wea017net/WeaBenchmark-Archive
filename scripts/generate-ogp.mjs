@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, join, relative, sep } from 'node:path';
 import sharp from 'sharp';
@@ -12,6 +13,13 @@ const LOGO_FILE = 'assets/WeaBenchmark_600px.webp';
 const WIDTH = 1200;
 const HEIGHT = 630;
 const HOME_IMAGE_FILE = `${IMAGE_DIRECTORY}/home.png`;
+const IMAGE_MANIFEST_FILE = `${IMAGE_DIRECTORY}/generation-manifest.json`;
+const IMAGE_MANIFEST_VERSION = 1;
+const RENDER_SETTINGS = {
+  canvas: { width: WIDTH, height: HEIGHT },
+  logo: { width: 216, height: 216, left: 912, top: 68 },
+  png: { compressionLevel: 9, adaptiveFiltering: true }
+};
 const HOME_TITLE = 'うぇあのゲームベンチまとめ';
 const HOME_DESCRIPTION_LINES = [
   '動画で検証したPCゲームのベンチマーク結果を、',
@@ -72,6 +80,43 @@ function benchmarkWebPath(id) {
 
 function imageWebPath(id) {
   return `/assets/ogp/${String(id).split('/').map(encodeURIComponent).join('/')}.png`;
+}
+
+function sha256(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function imageInputHash(svg, logo) {
+  const hash = createHash('sha256');
+  hash.update(svg);
+  hash.update('\0');
+  hash.update(logo);
+  hash.update('\0');
+  hash.update(JSON.stringify(RENDER_SETTINGS));
+  return hash.digest('hex');
+}
+
+async function readImageManifest() {
+  try {
+    const manifest = JSON.parse(await readFile(IMAGE_MANIFEST_FILE, 'utf8'));
+    if (manifest.version !== IMAGE_MANIFEST_VERSION || !manifest.images || typeof manifest.images !== 'object') {
+      return { version: IMAGE_MANIFEST_VERSION, images: {} };
+    }
+    return manifest;
+  } catch (error) {
+    if (error.code === 'ENOENT') return { version: IMAGE_MANIFEST_VERSION, images: {} };
+    throw error;
+  }
+}
+
+async function existingImageMatches(file, entry, inputHash) {
+  if (!entry || entry.input !== inputHash || !entry.output) return false;
+  try {
+    return sha256(await readFile(file)) === entry.output;
+  } catch (error) {
+    if (error.code === 'ENOENT') return false;
+    throw error;
+  }
 }
 
 async function findBenchmarkFiles(directory) {
@@ -222,15 +267,44 @@ if (target.id && !selectedRecords.length) throw new Error(`Unknown benchmark ID:
 
 const template = await readFile(PAGE_TEMPLATE, 'utf8');
 const logo = await readFile(LOGO_FILE);
-const logoPng = await sharp(logo).resize(216, 216).png().toBuffer();
+const imageManifest = await readImageManifest();
+let logoPngPromise;
+
+function getLogoPng() {
+  logoPngPromise ??= sharp(logo)
+    .resize(RENDER_SETTINGS.logo.width, RENDER_SETTINGS.logo.height)
+    .png()
+    .toBuffer();
+  return logoPngPromise;
+}
+
+async function generateImage(svg, imageFile, manifestKey) {
+  const inputHash = imageInputHash(svg, logo);
+  const previousEntry = imageManifest.images[manifestKey];
+  if (await existingImageMatches(imageFile, previousEntry, inputHash)) {
+    console.log(`Kept unchanged ${imageFile}.`);
+    return;
+  }
+
+  const logoPng = await getLogoPng();
+  await sharp(Buffer.from(svg))
+    .composite([{
+      input: logoPng,
+      left: RENDER_SETTINGS.logo.left,
+      top: RENDER_SETTINGS.logo.top
+    }])
+    .png(RENDER_SETTINGS.png)
+    .toFile(imageFile);
+  imageManifest.images[manifestKey] = {
+    input: inputHash,
+    output: sha256(await readFile(imageFile))
+  };
+  console.log(`Generated ${imageFile}.`);
+}
 
 if (target.generateHome) {
   await mkdir(IMAGE_DIRECTORY, { recursive: true });
-  await sharp(Buffer.from(createHomeSvg(publishedRecords)))
-    .composite([{ input: logoPng, left: 912, top: 68 }])
-    .png({ compressionLevel: 9, adaptiveFiltering: true })
-    .toFile(HOME_IMAGE_FILE);
-  console.log(`Generated ${HOME_IMAGE_FILE}.`);
+  await generateImage(createHomeSvg(publishedRecords), HOME_IMAGE_FILE, 'home.png');
 }
 
 for (const data of selectedRecords.sort((a, b) => a.id.localeCompare(b.id))) {
@@ -238,12 +312,16 @@ for (const data of selectedRecords.sort((a, b) => a.id.localeCompare(b.id))) {
   const pageFile = join(PAGE_DIRECTORY, ...data.id.split('/')) + '.html';
   await mkdir(dirname(imageFile), { recursive: true });
   await mkdir(dirname(pageFile), { recursive: true });
-  await sharp(Buffer.from(createSvg(data)))
-    .composite([{ input: logoPng, left: 912, top: 68 }])
-    .png({ compressionLevel: 9, adaptiveFiltering: true })
-    .toFile(imageFile);
+  await generateImage(createSvg(data), imageFile, `${data.id}.png`);
   await writeFile(pageFile, createPage(template, data), 'utf8');
-  console.log(`Generated ${imageFile} and ${pageFile}.`);
+  console.log(`Generated ${pageFile}.`);
 }
+
+const sortedImages = Object.fromEntries(Object.entries(imageManifest.images).sort(([a], [b]) => a.localeCompare(b)));
+await writeFile(
+  IMAGE_MANIFEST_FILE,
+  `${JSON.stringify({ version: IMAGE_MANIFEST_VERSION, images: sortedImages }, null, 2)}\n`,
+  'utf8'
+);
 
 console.log(`Generated OGP assets for ${selectedRecords.length} benchmark(s)${target.generateHome ? ' and the home page' : ''}.`);

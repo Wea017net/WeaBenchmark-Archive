@@ -1,5 +1,29 @@
 [
   {
+    "id": "260905_gakumas_rtx4070s_r7-5800x3d",
+    "game": {
+      "ja": "学園アイドルマスター",
+      "en": "Gakuen Idolmaster"
+    },
+    "testedAt": "2026-09-05",
+    "system": {
+      "cpu": "AMD Ryzen 7 5800X3D",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "最高品質",
+      "en": "Highest Quality"
+    },
+    "version": {
+      "ja": "Ver.3.3.0",
+      "en": "Ver.3.3.0"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
     "id": "260902_fortnite_arc-140v_u7-258v",
     "game": {
       "ja": "フォートナイト",

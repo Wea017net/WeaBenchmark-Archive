@@ -1,12 +1,30 @@
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import sharp from 'sharp';
 
 const records = JSON.parse(await readFile('data/benchmarks.json', 'utf8'));
+const imageManifest = JSON.parse(await readFile('assets/ogp/generation-manifest.json', 'utf8'));
+if (imageManifest.version !== 1) {
+  throw new Error('assets/ogp/generation-manifest.json: unsupported manifest version');
+}
+
+async function validateManifestEntry(imageFile, manifestKey) {
+  const entry = imageManifest.images?.[manifestKey];
+  if (!entry?.input || !entry?.output) {
+    throw new Error(`${imageFile}: missing generation manifest entry`);
+  }
+  const outputHash = createHash('sha256').update(await readFile(imageFile)).digest('hex');
+  if (outputHash !== entry.output) {
+    throw new Error(`${imageFile}: does not match its generation manifest entry`);
+  }
+}
+
 const homeMetadata = await sharp('assets/ogp/home.png').metadata();
 if (homeMetadata.width !== 1200 || homeMetadata.height !== 630 || homeMetadata.format !== 'png') {
   throw new Error('assets/ogp/home.png: expected a 1200x630 PNG');
 }
+await validateManifestEntry('assets/ogp/home.png', 'home.png');
 const indexPage = await readFile('index.html', 'utf8');
 for (const expectedValue of [
   '<meta name="theme-color" content="#bc3005">',
@@ -27,6 +45,7 @@ for (const record of records) {
   if (metadata.width !== 1200 || metadata.height !== 630 || metadata.format !== 'png') {
     throw new Error(`${imageFile}: expected a 1200x630 PNG`);
   }
+  await validateManifestEntry(imageFile, `${record.id}.png`);
 
   const page = await readFile(pageFile, 'utf8');
   const expectedValues = [

@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "images": {
+    "231208_fortnite_rx-6600_ryzen-5-5600.png": {
+      "input": "8d9b37887cc9eb2d2b966329132e6402c715bc1c96dd999ae066d33176b56c78",
+      "output": "714ed3b60618881a556c58c7bcf2e931fcd858143810e82e8da504f1eb67df5e"
+    },
+    "240120_minecraft-java_uhd620_i5-8350u.png": {
+      "input": "22a4731f6ff40ac31f61f92275b036245c38ee9db20a74f8caee5c345283e31b",
+      "output": "1c472e69291e2fbccbb3f6f2c59cac6b07c6248536d2db421cd4b97554eab95e"
+    },
+    "240330_valorant_rx6600_r5-5600.png": {
+      "input": "85357db9171bd358a1bde6d7df562ef5c2b0cf4cc154dd0d1a9c4657990b2e27",
+      "output": "2f01f9c05c72bc6cbf0531d57f6d61c2dcd5728d92507925bab65fd32f235ee3"
+    },
+    "240421_fortnite_gtx1060-6g_r5-5600.png": {
+      "input": "4048856a2539c241511953361fe1fa1a22cd9be482641ca512ce7fa8a4d7e559",
+      "output": "f8a72b0ee2a17dfbbbea81ce9a96cbfdc4f7971e5f28f5f79c90ffb3be5d6791"
+    },
+    "240601_valorant_gtx1060-6g_r5-5600.png": {
+      "input": "a64ebad1c8025679799eab83bdfbef70a7b169de1e9c8234f7c39445ab3bcc06",
+      "output": "0aa81dfdc73fdc185b3599e223b30e2acc730b3d7d061e7b47a5ade67a46feb3"
+    },
+    "240622_valorant_gtx960m_i5-6300hq.png": {
+      "input": "02967800f1496156384b7ea841543f76a6074d62e65eb4be979133afe4787d38",
+      "output": "4bd6c574afb06356553e872a9d56c2c751a29781807a33f36dda015a1b83a3ea"
+    },
+    "240625_fortnite_gtx960m_i5-6300hq.png": {
+      "input": "db32d4e1746e5dc494480a3ad409d366df9475eafad32faae8aba53c9627b0f4",
+      "output": "43894078c63c33ce7047f270c067b417d66fef63b2f39e84383a62b911b6a90d"
+    },
+    "241024_overwatch-2_rx6600_r5-5600.png": {
+      "input": "f3c3796056e3cd83192f714a59c1ee1c7c8a4c895b51537ecd36882daf2df986",
+      "output": "922b9902d58e0b9a5ed349d6a32b9b4768e1c3db9c78401b0752291f54a107ab"
+    },
+    "241222_fortnite_rx6600_r5-5600.png": {
+      "input": "9f4c4517465cddf5389ac0f76e8ecbe1575a5b386d532d9e35f9631194aa9998",
+      "output": "b9feff0293c27dd39039c68097e10de51452f65c31ffef9bb3994ecc87e0afb8"
+    },
+    "241225_zzz_rx6600_r5-5600.png": {
+      "input": "b2e7079cf88ed3f4836166690e4d7ba8ce17d485dab9df084e08f7421c6d101b",
+      "output": "5fee85d99ca5c6b1061082b8780fb39d66526540b29695da57dc46c46d84bfd4"
+    },
+    "241226_zzz_gtx960m_i5-6300hq.png": {
+      "input": "11db3f79e4e6c54d1dc912bba2eaf4825a94c47644c8218f752d3347fae9f4a1",
+      "output": "aef7f94470e64cb5e8079423224550a5a4615a6598a4021cbf89619b97bc6ded"
+    },
+    "250306_apexlegends_rx6600_r5-5600.png": {
+      "input": "f077f0c1039179542af98453ef5b854ad2ef9b8f12f97e44ca4a64f5ec7217c7",
+      "output": "1a622a9a7fd1024956d07a1c3ec99934283ba138425717b7856eceeb45505f82"
+    },
+    "250729_fortnite_gtx680_i7-3770.png": {
+      "input": "bbcbf1077eff34689d2c60497c410549b07bc84c282b97f9938f640a2a4ce671",
+      "output": "dd2f81ffa516299736b78a08d593defe26a4ac54880d6e3ef09e6253a8117871"
+    },
+    "250730_zzz_gtx680_i7-3770.png": {
+      "input": "408ec0e5e67d41caf77815a05798c68ff2ef667eb419a80ee5ee3858d640105c",
+      "output": "d1069df1cc15e26fb5ea7e89b140271de32f39923445d18ca1ff17104efbc587"
+    },
+    "250808_cs2_gtx680_i7-3770.png": {
+      "input": "38a61c6623d7948a4c2d7af4f76180f86ae20aa0892a0cf3e1f397ca4f64085a",
+      "output": "515258b49ab3ddfab099c263c79cf9471e2e7c9b9cd77b73842224e2aed202e8"
+    },
+    "250818_overwatch-2_gtx680_i7-3770.png": {
+      "input": "5c313965b63627e0b44bb7856c58be957549975f7ba79948c04812fcba10792d",
+      "output": "ae8ffe02a6ea54d57218c4c9d155b3c64ecff3e80568b58a25b27250b7fae85f"
+    },
+    "250818_valorant_gtx680_i7-3770.png": {
+      "input": "21314ab378ea2711d8b7e6afd07c9bcba9d028b84d260723cee210a7a6c8f34a",
+      "output": "6dc6e9c2dfef4d9001aed2e6335f2913f65c85f3640c27254905033d52ba8af1"
+    },
+    "250927_nfsmw2012_rx6600_r5-5600.png": {
+      "input": "1ca922b0355575c06ead3f9f6568135a453669830a1c9da6f1072b1da5216476",
+      "output": "31fac2e8f0b62c5bd375cb11bb74d23e202a53c497fb4318b43c12f03df011ee"
+    },
+    "251114_apexlegends_gtx1060-6g_i7-3770.png": {
+      "input": "dbf188afcb7711171dcfff2ef6a2fae133d0a4306a8e7f5378f02b85b7d0ea1c",
+      "output": "d8c5e6163d723a8981668504acb4fc73974a5e98c1743275c6fdc3c577222281"
+    },
+    "251201_fortnite_gt630_i7-3770.png": {
+      "input": "0db7a8c0d289e4a7d24f95cd53ba8d24f511064fcdc12714eb0f2c88918015b0",
+      "output": "6720f7160ec2d58e258cb94dca04d622103cafda2683ab1deabf0c1358efcdb2"
+    },
+    "251205_fortnite_gtx1060-6g_r5-5600.png": {
+      "input": "d4bbeeac6fa1506f65946f0a6b61608746e96b9a97c613424fa1db7098418362",
+      "output": "a331546b85af58ce7a9e786139a46a8522b2fd06e626d6a0d039f536f9209fef"
+    },
+    "251207_zzz_gtx1060-6g_r5-5600.png": {
+      "input": "4c998819a9e94234f4459b4ae4875f8bb3e0db8924794ffbf58315a123890957",
+      "output": "f17cb1ba0765324d8095dc73b04c3ebb9780a3487ca667d1b3effd415b7cbd9e"
+    },
+    "251214_apexlegends_gtx1060-6g_r5-5600.png": {
+      "input": "db52f4899d02f8563faf460a5cea1ff2803a1375c8c5002e0b5161d415160453",
+      "output": "68096d01acfd0a344a10961324f9bb942601c9169c7f7cfbb2a246041d4c3198"
+    },
+    "260604_fh6_arc-140v_u7-258v.png": {
+      "input": "45458459d3e44105443835794a9fe7f62d1456083e78146a3cb80741f5d3418c",
+      "output": "509cf9b5275e0b3f44c807d1f0bdfbb9bd0dda1d82e16725e515a268afb42b45"
+    },
+    "260726_asphalt-legends_rx6600_r5-5600.png": {
+      "input": "7f959420b63c8c5596556075949cca9817ec0641224194ab9725ee061afbf541",
+      "output": "ed214ec5df575b3790aa106ce5e07d5fea5fcd6c26bf24b94228a1bca6a6e4a1"
+    },
+    "260813_overwatch_rtx4070s_r5-5600.png": {
+      "input": "6b6a0fe0b2209474bd4ec6a7d9eaa898094cf0ec680a3ea6d4b537afd2118523",
+      "output": "f8e3e4e97b01c9f7823f0daa17c702ad0faf0b2d05e4175d7ca995e98ed9fb04"
+    },
+    "260822_overwatch_gtx980_i7-3770.png": {
+      "input": "6a9d8eda90e2074b141f6b35dd1c692482b50908d1f1c061b742e98688fd3145",
+      "output": "452e94f2e931049d1948815971068808e50b1a41095ab6451737d1a77dac18b3"
+    },
+    "260831_fortnite_rtx4070s_r5-5600.png": {
+      "input": "c7b07724178990e24b712a1b03052f5805564cfb3351f071c2238cd4f81b7aec",
+      "output": "ad8169b57ed27e965ab13cfb57f28d7620c7db9651529e8b3711de8b5698b79d"
+    },
+    "260902_fortnite_arc-140v_u7-258v.png": {
+      "input": "f680a634c08286a2939819d693d1b0e692989daefdc2e009fc79952ff1431401",
+      "output": "37bacfd9036feef80369f31a3087932acc0d93d6fb1427a30f18afa7a884ad6d"
+    },
+    "260905_gakumas_rtx4070s_r7-5800x3d.png": {
+      "input": "5ab728802d4a56be500337a91e84c0ad59165f118f99eefdad053516322bf6d3",
+      "output": "9f2696b8b96294bc3514e758a9de3512dcbb3baa21aa80f0942639df22dded8d"
+    },
+    "home.png": {
+      "input": "f21b8aa8dff5532eaf4497359bec1bb24efd3bd0aaf5197e59a274ab8a708e75",
+      "output": "0311ff800a7fa48aacceb7ae7d676b39d1b2370ae807430afff3755c1971341e"
+    }
+  }
+}
