@@ -97,11 +97,11 @@
     "Intel UHD Graphics 620"
   ],
   "cpus": [
+    "AMD Ryzen 7 5800X3D",
     "AMD Ryzen 5 5600",
     "Intel Core Ultra 7 258V",
     "Intel Core i5-8350U",
-    "Intel Core i7-3770",
-    "AMD Ryzen 7 5800X3D",
-    "Intel Core i5-6300HQ"
+    "Intel Core i5-6300HQ",
+    "Intel Core i7-3770"
   ]
 }
