@@ -121,9 +121,13 @@
       "input": "5ab728802d4a56be500337a91e84c0ad59165f118f99eefdad053516322bf6d3",
       "output": "9f2696b8b96294bc3514e758a9de3512dcbb3baa21aa80f0942639df22dded8d"
     },
+    "260907_fortnite_gtx980_i7-3770.png": {
+      "input": "e7f4553e59caf4906b906dc806189f1b09e192f055a4a11379dd706015ed9530",
+      "output": "3124e51ed4bea6bcf0c09c9f486a63c8691402da885323f6d2585ab92016a5e2"
+    },
     "home.png": {
-      "input": "f21b8aa8dff5532eaf4497359bec1bb24efd3bd0aaf5197e59a274ab8a708e75",
-      "output": "0311ff800a7fa48aacceb7ae7d676b39d1b2370ae807430afff3755c1971341e"
+      "input": "1e0c6d37e4e894f3629e7e9b2f965265abf07cf49d6d002543c10d7cb496723e",
+      "output": "64b769acbb12b5df3898ea7d845148ef138272bcc0e9f32ba2a2e91eb982f186"
     }
   }
 }

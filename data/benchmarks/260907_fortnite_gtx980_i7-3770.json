@@ -1,0 +1,102 @@
+{
+  "id": "260907_fortnite_gtx980_i7-3770",
+  "game": {
+    "ja": "フォートナイト",
+    "en": "Fortnite"
+  },
+  "testedAt": "2026-09-07",
+  "summary": {
+    "ja": "1080p  |  低 · 中 · 高",
+    "en": "1080p  |  Low · Medium · High"
+  },
+  "version": {
+    "ja": "v42.10",
+    "en": "v42.10"
+  },
+  "season": {
+    "ja": "チャプター7 シーズン4",
+    "en": "Chapter 7 Season 4"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "graphicsCardName": "Palit GeForce GTX 980 JetStream",
+    "gpuShortName": "GTX 980",
+    "gpuDriver": "582.66",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/jAKTkMZgPKY",
+  "display": {
+    "showUpscaling": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode"
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "Performance",
+      "averageFps": 123,
+      "onePercentLowFps": 48
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 94,
+      "onePercentLowFps": 43
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 67,
+      "onePercentLowFps": 36
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 52,
+      "onePercentLowFps": 27
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

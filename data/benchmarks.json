@@ -1,5 +1,29 @@
 [
   {
+    "id": "260907_fortnite_gtx980_i7-3770",
+    "game": {
+      "ja": "フォートナイト",
+      "en": "Fortnite"
+    },
+    "testedAt": "2026-09-07",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 中 · 高",
+      "en": "1080p  |  Low · Medium · High"
+    },
+    "version": {
+      "ja": "v42.10",
+      "en": "v42.10"
+    },
+    "season": {
+      "ja": "チャプター7 シーズン4",
+      "en": "Chapter 7 Season 4"
+    }
+  },
+  {
     "id": "260905_gakumas_rtx4070s_r7-5800x3d",
     "game": {
       "ja": "学園アイドルマスター",
