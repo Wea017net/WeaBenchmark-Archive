@@ -1,5 +1,29 @@
 [
   {
+    "id": "260913_zzz_gtx980_i7-3770",
+    "game": {
+      "ja": "ゼンレスゾーンゼロ",
+      "en": "Zenless Zone Zero"
+    },
+    "testedAt": "2026-09-13",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "Ver.3.2",
+      "en": "Ver.3.2"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
     "id": "260907_fortnite_gtx980_i7-3770",
     "game": {
       "ja": "フォートナイト",

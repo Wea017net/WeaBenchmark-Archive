@@ -1,0 +1,102 @@
+{
+  "id": "260913_zzz_gtx980_i7-3770",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2026-09-13",
+  "summary": {
+    "ja": "1080p  |  全設定",
+    "en": "1080p  |  All Settings"
+  },
+  "version": {
+    "ja": "Ver.3.2",
+    "en": "Ver.3.2"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "graphicsCardName": "Palit GeForce GTX 980 JetStream",
+    "gpuShortName": "GTX 980",
+    "gpuDriver": "582.66",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "元凶殲滅戦をプレイして計測",
+    "en": "Played Perpetrator Battle"
+  },
+  "videoUrl": "https://youtu.be/NRjItZHIuFc",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 66,
+      "onePercentLowFps": 19
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 64,
+      "onePercentLowFps": 9
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "中",
+        "en": "Medium"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 61,
+      "onePercentLowFps": 20
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 50,
+      "onePercentLowFps": 15
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}
