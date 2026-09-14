@@ -1,0 +1,76 @@
+{
+  "id": "260914_apexlegends_gtx980_i7-3770",
+  "game": {
+    "ja": "エーペックスレジェンズ",
+    "en": "Apex Legends"
+  },
+  "testedAt": "2026-09-14",
+  "summary": {
+    "ja": "1080p  |  低 · 高",
+    "en": "1080p  |  Low · High"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン30",
+    "en": "Season 30"
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "graphicsCardName": "Palit GeForce GTX 980 JetStream",
+    "gpuShortName": "GTX 980",
+    "gpuDriver": "582.66",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/hZLx4-7m1xA",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 103,
+      "onePercentLowFps": 47
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 74,
+      "onePercentLowFps": 47
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,5 +1,29 @@
 [
   {
+    "id": "260914_apexlegends_gtx980_i7-3770",
+    "game": {
+      "ja": "エーペックスレジェンズ",
+      "en": "Apex Legends"
+    },
+    "testedAt": "2026-09-14",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "1080p  |  低 · 高",
+      "en": "1080p  |  Low · High"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン30",
+      "en": "Season 30"
+    }
+  },
+  {
     "id": "260913_zzz_gtx980_i7-3770",
     "game": {
       "ja": "ゼンレスゾーンゼロ",
