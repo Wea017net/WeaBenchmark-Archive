@@ -1,0 +1,102 @@
+{
+  "id": "260919_apexlegends_rtx4070s_r7-5800x3d",
+  "game": {
+    "ja": "エーペックスレジェンズ",
+    "en": "Apex Legends"
+  },
+  "testedAt": "2026-09-19",
+  "summary": {
+    "ja": "1440p · 4K  |  低 · 最高",
+    "en": "1440p · 4K  |  Low · Ultra"
+  },
+  "version": {
+    "ja": "",
+    "en": ""
+  },
+  "season": {
+    "ja": "シーズン30",
+    "en": "Season 30"
+  },
+  "system": {
+    "cpu": "AMD Ryzen 7 5800X3D",
+    "cpuShortName": "Ryzen 7 5800X3D",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphicsCardName": "ZOTAC GAMING GeForce RTX 4070 SUPER Twin Edge OC 12GB GDDR6X",
+    "gpuShortName": "RTX 4070 SUPER",
+    "gpuDriver": "610.88",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "バトルロイヤルをプレイして計測",
+    "en": "Played Battle Royale"
+  },
+  "videoUrl": "https://youtu.be/H1b4qcjphLo",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 285,
+      "onePercentLowFps": 186
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 218,
+      "onePercentLowFps": 126
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 228,
+      "onePercentLowFps": 133
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 127,
+      "onePercentLowFps": 78
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "260918_gakumas_gtx980_i7-3770",
+  "game": {
+    "ja": "学園アイドルマスター",
+    "en": "Gakuen Idolmaster"
+  },
+  "testedAt": "2026-09-18",
+  "summary": {
+    "ja": "標準 · 高 · 最高",
+    "en": "Normal · High · Ultra"
+  },
+  "version": {
+    "ja": "Ver.3.4.0",
+    "en": "Ver.3.4.0"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "Intel Core i7-3770",
+    "cpuShortName": "Core i7-3770",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "graphicsCardName": "Palit GeForce GTX 980 JetStream",
+    "gpuShortName": "GTX 980",
+    "gpuDriver": "582.66",
+    "motherboard": "Pegatron IMPSB-H61",
+    "memory": {
+      "frequency": "DDR3L-1600",
+      "capacity": "16.0 GB"
+    },
+    "os": "Windows 10 Home 22H2"
+  },
+  "method": {
+    "ja": "プロデュースをプレイおよびライブ視聴",
+    "en": "Played Produce and watched Live"
+  },
+  "videoUrl": "https://youtu.be/9Lfn11Aow0w",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": false,
+    "graphicsApiLabel": ""
+  },
+  "results": [
+    {
+      "resolutionX": 540,
+      "resolutionY": 960,
+      "preset": {
+        "ja": "標準",
+        "en": "Normal"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 126,
+      "onePercentLowFps": 7
+    },
+    {
+      "resolutionX": 540,
+      "resolutionY": 960,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 87,
+      "onePercentLowFps": 11
+    },
+    {
+      "resolutionX": 540,
+      "resolutionY": 960,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 57,
+      "onePercentLowFps": 8
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "標準",
+        "en": "Normal"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 59,
+      "onePercentLowFps": 44
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 45,
+      "onePercentLowFps": 34
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1080,
+      "preset": {
+        "ja": "最高",
+        "en": "Ultra"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "",
+      "averageFps": 33,
+      "onePercentLowFps": 24
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}

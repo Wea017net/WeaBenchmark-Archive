@@ -133,9 +133,21 @@
       "input": "d796a63d1e5f914e1647f45155213217fb838268f5aeae1d6515587c0cb96c9a",
       "output": "ee2b10f75288642117e7f70595b9ac89bd5efc76cf095ed4542fd732c113b155"
     },
+    "260915_asphalt-legends_gtx980_i7-3770.png": {
+      "input": "7276e171abcf382163054ef7ea594fa0e5e70c56caf110f35b78795283ee065c",
+      "output": "e6efb10a77aaa3a58f1110f4d5bfb4d3006ef686b2437100f2c2249b95bdfcdc"
+    },
+    "260918_gakumas_gtx980_i7-3770.png": {
+      "input": "32f945dfe7bd6d1b0cd71a71609ee29b7170d8981804697e8613db01054ad9f0",
+      "output": "6e5574ad9ceb5aaa614890ffc20458bea3cf27cbb671c6e3c1041524d549d4b4"
+    },
+    "260919_apexlegends_rtx4070s_r7-5800x3d.png": {
+      "input": "b227f797962daebe781a9ebd21c7af3e920add54364b2fa7e18c3848c9b4331f",
+      "output": "5ed3f0bb313ba84233345c22a553bf3c139eb767a803a593b61963323a4df4ca"
+    },
     "home.png": {
-      "input": "79d378e003ad9a3301808c5c9ba696fc1895f69b382004cbb51e59450fb06bfc",
-      "output": "3d1b3a3d99209e041065fccbd5a84e2881435b3ec5d34560045218abc94b095a"
+      "input": "39bd8f42b347d68c6e76179c91117c051223337ff9f4aebcba4566af53427f1e",
+      "output": "bdbded207276edbd4cc7a398b228e31cb8319bfacd335c44bb7da5872d05c6be"
     }
   }
 }

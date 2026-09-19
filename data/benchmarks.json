@@ -1,5 +1,77 @@
 [
   {
+    "id": "260919_apexlegends_rtx4070s_r7-5800x3d",
+    "game": {
+      "ja": "エーペックスレジェンズ",
+      "en": "Apex Legends"
+    },
+    "testedAt": "2026-09-19",
+    "system": {
+      "cpu": "AMD Ryzen 7 5800X3D",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1440p · 4K  |  低 · 最高",
+      "en": "1440p · 4K  |  Low · Ultra"
+    },
+    "version": {
+      "ja": "",
+      "en": ""
+    },
+    "season": {
+      "ja": "シーズン30",
+      "en": "Season 30"
+    }
+  },
+  {
+    "id": "260918_gakumas_gtx980_i7-3770",
+    "game": {
+      "ja": "学園アイドルマスター",
+      "en": "Gakuen Idolmaster"
+    },
+    "testedAt": "2026-09-18",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "標準 · 高 · 最高",
+      "en": "Normal · High · Ultra"
+    },
+    "version": {
+      "ja": "Ver.3.4.0",
+      "en": "Ver.3.4.0"
+    },
+    "season": {
+      "ja": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "260915_asphalt-legends_gtx980_i7-3770",
+    "game": {
+      "ja": "アスファルト:Legends",
+      "en": "Asphalt:Legends"
+    },
+    "testedAt": "2026-09-15",
+    "system": {
+      "cpu": "Intel Core i7-3770",
+      "gpu": "NVIDIA GeForce GTX 980"
+    },
+    "summary": {
+      "ja": "1080p  |  全設定",
+      "en": "1080p  |  All Settings"
+    },
+    "version": {
+      "ja": "v52.1.2a",
+      "en": "v52.1.2a"
+    },
+    "season": {
+      "ja": "Pixel Pursuit Season",
+      "en": "Pixel Pursuit Season"
+    }
+  },
+  {
     "id": "260914_apexlegends_gtx980_i7-3770",
     "game": {
       "ja": "エーペックスレジェンズ",
