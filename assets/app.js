@@ -1,5 +1,6 @@
 const DATA_INDEX = 'data/benchmarks.json';
 const FILTER_OPTIONS = 'data/filter-options.json';
+const RESOLUTION_LABELS = 'data/resolutions.json';
 const SITE_ROOT = new URL('../', import.meta.url);
 
 const $ = (selector) => document.querySelector(selector);
@@ -56,6 +57,14 @@ const translations = {
     video: '動画',
     watchVideo: 'YouTubeで見る',
     resultsTable: '測定結果',
+    resultsDescription: '各条件の平均 FPS と 1% Low FPS を、この測定内の最高値を基準に比較しています。',
+    testPattern: '測定パターン',
+    peakAverage: '最高平均 FPS',
+    peakLow: '最高 1% Low',
+    conditions: '測定条件',
+    frameRate: 'フレームレート',
+    averageShort: '平均',
+    lowShort: '1% Low',
     sameConfiguration: (count) => `同じ構成のベンチマーク（最新 ${count} 件を表示）`,
     noSameConfiguration: '同じ構成のベンチマークはありません。',
     resolution: '解像度',
@@ -117,6 +126,14 @@ const translations = {
     video: 'Video',
     watchVideo: 'Watch on YouTube',
     resultsTable: 'Results',
+    resultsDescription: 'Average and 1% low FPS are compared against the highest result in this test.',
+    testPattern: 'Test cases',
+    peakAverage: 'Peak average',
+    peakLow: 'Peak 1% low',
+    conditions: 'Test conditions',
+    frameRate: 'Frame rate',
+    averageShort: 'Average',
+    lowShort: '1% low',
     sameConfiguration: (count) => `Benchmarks with the same configuration (showing the latest ${count})`,
     noSameConfiguration: 'No other benchmarks use the same configuration.',
     resolution: 'Resolution',
@@ -280,7 +297,38 @@ function vendorClass(component, type) {
 
 function card(item) {
   const gameDetail = localized(item.season) || localized(item.version);
-  return `<a class="benchmark-card" href="${benchmarkPagePath(item.id)}"><div class="card-top"><h3>${escapeHtml(localized(item.game))}${gameDetail ? ` <span class="card-game-detail">· ${escapeHtml(gameDetail)}</span>` : ''}</h3><span class="date">${escapeHtml(formatIndexDate(item.testedAt))}</span></div><div class="specs"><span class="tag ${vendorClass(item.system.gpu, 'gpu')}">${escapeHtml(item.system.gpu)}</span><span class="tag ${vendorClass(item.system.cpu, 'cpu')}">${escapeHtml(item.system.cpu)}</span></div><p class="meta">${escapeHtml(localized(item.summary))}</p></a>`;
+  return `<a class="benchmark-card" href="${benchmarkPagePath(item.id)}"><div class="card-top"><h3>${escapeHtml(localized(item.game))}${gameDetail ? ` <span class="card-game-detail"><span class="card-game-detail-separator" aria-hidden="true">· </span>${escapeHtml(gameDetail)}</span>` : ''}</h3><span class="date">${escapeHtml(formatIndexDate(item.testedAt))}</span></div><div class="specs"><span class="tag ${vendorClass(item.system.gpu, 'gpu')}">${escapeHtml(item.system.gpu)}</span><span class="tag ${vendorClass(item.system.cpu, 'cpu')}">${escapeHtml(item.system.cpu)}</span></div><p class="meta">${escapeHtml(localized(item.summary))}</p></a>`;
+}
+
+let relatedLayoutFrame;
+let relatedLayoutListenerBound = false;
+
+function updateRelatedCardLayout() {
+  document.querySelectorAll('.related-benchmark-grid .benchmark-card').forEach(relatedCard => {
+    relatedCard.classList.remove('detail-wrapped', 'heading-wrapped');
+    const heading = relatedCard.querySelector('h3');
+    const detail = relatedCard.querySelector('.card-game-detail');
+    if (!heading) return;
+    const headingRect = heading.getBoundingClientRect();
+    const lineHeight = Number.parseFloat(getComputedStyle(heading).lineHeight) || headingRect.height;
+    relatedCard.classList.toggle('heading-wrapped', headingRect.height > lineHeight * 1.5);
+    if (!detail) return;
+    const detailWrapped = detail.getBoundingClientRect().top - headingRect.top > lineHeight * .5;
+    relatedCard.classList.toggle('detail-wrapped', detailWrapped);
+  });
+}
+
+function scheduleRelatedCardLayout() {
+  cancelAnimationFrame(relatedLayoutFrame);
+  relatedLayoutFrame = requestAnimationFrame(updateRelatedCardLayout);
+}
+
+function setupRelatedCardLayout() {
+  scheduleRelatedCardLayout();
+  document.fonts?.ready.then(scheduleRelatedCardLayout);
+  if (relatedLayoutListenerBound) return;
+  window.addEventListener('resize', scheduleRelatedCardLayout);
+  relatedLayoutListenerBound = true;
 }
 
 let indexItems = [];
@@ -408,8 +456,63 @@ function upscalingClass(result) {
   return '';
 }
 
-function resultRows(results, display) {
-  return results.map(r => `<tr><td>${escapeHtml(r.resolutionX)} × ${escapeHtml(r.resolutionY)}</td>${display.showUpscaling ? `<td class="${upscalingClass(r)}">${escapeHtml(upscalingLabel(r))}</td>` : ''}${display.showGraphicsApi ? `<td>${escapeHtml(graphicsApiText(r.graphicsApi) || '—')}</td>` : ''}<td>${escapeHtml(localized(r.preset))}</td><td>${escapeHtml(r.averageFps)}</td><td>${escapeHtml(r.onePercentLowFps)}</td></tr>`).join('');
+function numericFps(value) {
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? Math.max(0, parsed) : 0;
+}
+
+function fpsBarWidth(value, maximum) {
+  if (!maximum) return 0;
+  return Math.min(100, (numericFps(value) / maximum) * 100).toFixed(2);
+}
+
+function fpsMetric(label, value, maximum, type) {
+  return `<div class="fps-metric fps-metric-${type}">
+    <span class="fps-metric-label">${escapeHtml(label)}</span>
+    <span class="fps-track" aria-hidden="true"><span class="fps-bar" style="width:${fpsBarWidth(value, maximum)}%"></span></span>
+    <span class="fps-value"><strong>${escapeHtml(value)}</strong><small>FPS</small></span>
+  </div>`;
+}
+
+function resolutionLabel(result, resolutionLabels) {
+  const dimensions = `${result.resolutionX}x${result.resolutionY}`;
+  const name = resolutionLabels[dimensions];
+  return name ? `${name} (${dimensions})` : dimensions;
+}
+
+function resultRows(results, display, maximumFps, resolutionLabels) {
+  return results.map(r => {
+    const upscaling = upscalingLabel(r);
+    const graphicsApi = graphicsApiText(r.graphicsApi) || '—';
+    return `<tr>
+      <td class="result-config-cell">
+        <strong class="result-preset">${escapeHtml(localized(r.preset))}</strong>
+        <div class="result-chips">
+          <span class="result-chip result-resolution">${escapeHtml(resolutionLabel(r, resolutionLabels))}</span>
+          ${display.showUpscaling ? `<span class="result-chip ${upscalingClass(r)}">${escapeHtml(upscaling)}</span>` : ''}
+          ${display.showGraphicsApi ? `<span class="result-chip">${escapeHtml(graphicsApi)}</span>` : ''}
+        </div>
+      </td>
+      <td class="result-performance-cell">
+        ${fpsMetric(t('averageShort'), r.averageFps, maximumFps, 'average')}
+        ${fpsMetric(t('lowShort'), r.onePercentLowFps, maximumFps, 'low')}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function resultOverview(results) {
+  const peakAverage = Math.max(0, ...results.map(result => numericFps(result.averageFps)));
+  const peakLow = Math.max(0, ...results.map(result => numericFps(result.onePercentLowFps)));
+  const maximumFps = Math.max(peakAverage, peakLow);
+  return {
+    maximumFps,
+    markup: `<div class="results-overview">
+      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small></strong></div>
+      <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small></strong></div>
+      <div class="result-stat"><span>${t('testPattern')}</span><strong>${escapeHtml(results.length)} <small>${language === 'ja' ? '件' : ''}</small></strong></div>
+    </div>`
+  };
 }
 
 async function copyCurrentUrl() {
@@ -502,8 +605,13 @@ async function renderDetail() {
     history.replaceState(null, '', benchmarkPagePath(id));
   }
   try {
-    const [d, benchmarkItems] = await Promise.all([getJson(benchmarkPath(id)), getBenchmarkIndex()]);
+    const [d, benchmarkItems, resolutionLabels] = await Promise.all([
+      getJson(benchmarkPath(id)),
+      getBenchmarkIndex(),
+      getJson(siteUrl(RESOLUTION_LABELS))
+    ]);
     const game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season), display = d.display;
+    const resultsOverview = resultOverview(d.results);
     const cpuShortName = d.system.cpuShortName || d.system.cpu;
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
     const graphicsCardName = d.system.graphicsCardName || d.system.gpu;
@@ -545,12 +653,22 @@ async function renderDetail() {
           </dl>
         </section>
       </div>
-      <section class="table-wrap">
-        <h2>${t('resultsTable')}</h2>
-        <table>
-          <thead><tr><th>${t('resolution')}</th>${display.showUpscaling ? `<th>${t('upscaling')}</th>` : ''}${display.showGraphicsApi ? `<th>${escapeHtml(graphicsApiText(display.graphicsApiLabel) || t('graphicsApi'))}</th>` : ''}<th>${t('graphics')}</th><th>${t('averageFps')}</th><th>${t('lowFps')}</th></tr></thead>
-          <tbody>${resultRows(d.results, display)}</tbody>
-        </table>
+      <section class="results-panel" aria-labelledby="results-title">
+        <div class="results-panel-heading">
+          <div>
+            <p class="results-kicker">PERFORMANCE</p>
+            <h2 id="results-title">${t('resultsTable')}</h2>
+            <p>${t('resultsDescription')}</p>
+          </div>
+          <div class="results-legend" aria-hidden="true"><span class="legend-average">${t('averageShort')}</span><span class="legend-low">${t('lowShort')}</span></div>
+        </div>
+        ${resultsOverview.markup}
+        <div class="results-table-scroll">
+          <table class="results-table">
+            <thead><tr><th>${t('conditions')}</th><th>${t('frameRate')}</th></tr></thead>
+            <tbody>${resultRows(d.results, display, resultsOverview.maximumFps, resolutionLabels)}</tbody>
+          </table>
+        </div>
       </section>
       <section class="info-box">
         <h2>${t('notes')}</h2>
@@ -565,6 +683,7 @@ async function renderDetail() {
       <div class="detail-actions detail-actions-bottom">
         <a class="back-button" href="${siteUrl('index.html')}" aria-label="${t('back')}"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="action-label">${t('back')}</span></a>
       </div>`;
+    setupRelatedCardLayout();
     setupCopyLink();
   } catch (e) {
     target.innerHTML = `<p class="error">${escapeHtml(e.message)}</p>`;
