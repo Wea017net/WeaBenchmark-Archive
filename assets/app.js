@@ -56,6 +56,8 @@ const translations = {
     video: '動画',
     watchVideo: 'YouTubeで見る',
     resultsTable: '測定結果',
+    sameConfiguration: (count) => `同じ構成のベンチマーク（最新 ${count} 件を表示）`,
+    noSameConfiguration: '同じ構成のベンチマークはありません。',
     resolution: '解像度',
     upscaling: 'アップスケーリング',
     graphicsApi: 'グラフィックスAPI',
@@ -115,6 +117,8 @@ const translations = {
     video: 'Video',
     watchVideo: 'Watch on YouTube',
     resultsTable: 'Results',
+    sameConfiguration: (count) => `Benchmarks with the same configuration (showing the latest ${count})`,
+    noSameConfiguration: 'No other benchmarks use the same configuration.',
     resolution: 'Resolution',
     upscaling: 'Upscaling',
     graphicsApi: 'Graphics API',
@@ -284,6 +288,11 @@ let filterOptions = null;
 let indexListenersBound = false;
 const INDEX_STATE_KEY = 'wea-benchmark-index-state';
 
+async function getBenchmarkIndex() {
+  if (!indexItems.length) indexItems = await getJson(siteUrl(DATA_INDEX));
+  return indexItems;
+}
+
 function saveIndexState() {
   try {
     sessionStorage.setItem(INDEX_STATE_KEY, JSON.stringify({
@@ -351,7 +360,7 @@ function renderFilteredIndex() {
 async function renderIndex() {
   const list = $('#benchmark-list');
   try {
-    if (!filterOptions) [indexItems, filterOptions] = await Promise.all([getJson(DATA_INDEX), getJson(FILTER_OPTIONS)]);
+    if (!filterOptions) [indexItems, filterOptions] = await Promise.all([getBenchmarkIndex(), getJson(FILTER_OPTIONS)]);
     const state = savedIndexState();
     populateFilter('game-filter', filterOptions.games);
     populateFilter('gpu-filter', filterOptions.gpus);
@@ -376,6 +385,15 @@ async function renderIndex() {
   } catch (e) {
     list.innerHTML = `<p class="error">${escapeHtml(e.message)}</p>`;
   }
+}
+
+function sameConfigurationBenchmarks(items, current) {
+  return items
+    .filter(item => item.id !== current.id
+      && item.system.cpu === current.system.cpu
+      && item.system.gpu === current.system.gpu)
+    .sort((a, b) => String(b.testedAt).localeCompare(String(a.testedAt)) || a.id.localeCompare(b.id))
+    .slice(0, 4);
 }
 
 function upscalingLabel(result) {
@@ -484,10 +502,12 @@ async function renderDetail() {
     history.replaceState(null, '', benchmarkPagePath(id));
   }
   try {
-    const d = await getJson(benchmarkPath(id)), game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season), display = d.display;
+    const [d, benchmarkItems] = await Promise.all([getJson(benchmarkPath(id)), getBenchmarkIndex()]);
+    const game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season), display = d.display;
     const cpuShortName = d.system.cpuShortName || d.system.cpu;
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
     const graphicsCardName = d.system.graphicsCardName || d.system.gpu;
+    const relatedBenchmarks = sameConfigurationBenchmarks(benchmarkItems, d);
     document.title = language === 'en'
       ? `${cpuShortName} + ${gpuShortName} — ${game} benchmark results | Wea's Benchmark Archives`
       : `${cpuShortName} + ${gpuShortName} で ${game} 検証結果 | うぇあのゲームベンチまとめ`;
@@ -535,6 +555,12 @@ async function renderDetail() {
       <section class="info-box">
         <h2>${t('notes')}</h2>
         <p class="note">${escapeHtml(localized(d.notes) || '—')}</p>
+      </section>
+      <section class="related-benchmarks" aria-labelledby="related-benchmarks-title">
+        <h2 id="related-benchmarks-title">${t('sameConfiguration')(relatedBenchmarks.length)}</h2>
+        ${relatedBenchmarks.length
+          ? `<div class="related-benchmark-grid">${relatedBenchmarks.map(card).join('')}</div>`
+          : `<p class="related-benchmarks-empty">${t('noSameConfiguration')}</p>`}
       </section>
       <div class="detail-actions detail-actions-bottom">
         <a class="back-button" href="${siteUrl('index.html')}" aria-label="${t('back')}"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="action-label">${t('back')}</span></a>
