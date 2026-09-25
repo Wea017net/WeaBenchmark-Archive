@@ -139,9 +139,13 @@ body {
 }
 
 .material-symbols-outlined {
+  display: inline-block;
+  width: 1.2rem;
+  overflow: hidden;
   font-family: "Material Symbols Outlined";
   font-size: 1.2rem;
-  line-height: 1
+  line-height: 1;
+  white-space: nowrap
 }
 
 .theme-toggle:hover,
@@ -467,7 +471,8 @@ footer a {
 }
 
 .info-box,
-.table-wrap {
+.table-wrap,
+.results-panel {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -517,6 +522,232 @@ footer a {
   overflow-x: auto
 }
 
+.results-panel {
+  margin: 14px 0 20px;
+  padding: 0;
+  overflow: hidden
+}
+
+.results-panel-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 24px 18px
+}
+
+.results-panel-heading h2 {
+  margin: 2px 0 4px;
+  font-size: 1.35rem;
+  line-height: 1.35
+}
+
+.results-panel-heading p:not(.results-kicker) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem
+}
+
+.results-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em
+}
+
+.results-legend {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 650
+}
+
+.results-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px
+}
+
+.results-legend span::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--accent);
+  content: ""
+}
+
+.results-legend .legend-low::before {
+  background: #9c8f8a
+}
+
+.results-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 24px 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--line)
+}
+
+.result-stat {
+  display: flex;
+  min-width: 0;
+  padding: 13px 16px;
+  background: var(--bg);
+  flex-direction: column
+}
+
+.result-stat > span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.result-stat strong {
+  margin-top: 1px;
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3
+}
+
+.result-stat small {
+  color: var(--muted);
+  font-size: .62em;
+  font-weight: 650
+}
+
+.results-table-scroll {
+  overflow-x: auto
+}
+
+.results-table {
+  table-layout: fixed
+}
+
+.results-table th:first-child {
+  width: 39%
+}
+
+.results-table th,
+.results-table td {
+  padding-right: 24px;
+  padding-left: 24px
+}
+
+.results-table th {
+  padding-top: .58rem;
+  padding-bottom: .58rem;
+  background: var(--accent-soft);
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .03em;
+  text-transform: uppercase
+}
+
+.results-table td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  vertical-align: middle
+}
+
+.result-preset {
+  display: block;
+  overflow: hidden;
+  font-size: .9rem;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.result-chips {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+  flex-wrap: wrap
+}
+
+.result-chip {
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 600;
+  line-height: 1.45
+}
+
+.result-resolution {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums
+}
+
+.fps-metric {
+  display: grid;
+  grid-template-columns: 56px minmax(80px, 1fr) 70px;
+  gap: 10px;
+  align-items: center
+}
+
+.fps-metric + .fps-metric {
+  margin-top: 7px
+}
+
+.fps-metric-label {
+  color: var(--muted);
+  font-size: .7rem;
+  font-weight: 650
+}
+
+.fps-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--line)
+}
+
+.fps-bar {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: var(--accent)
+}
+
+.fps-metric-low .fps-bar {
+  background: #9c8f8a
+}
+
+.fps-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  font-variant-numeric: tabular-nums
+}
+
+.fps-value strong {
+  font-size: 1.03rem;
+  line-height: 1
+}
+
+.fps-metric-average .fps-value strong {
+  color: var(--accent)
+}
+
+.fps-value small {
+  color: var(--muted);
+  font-size: .62rem;
+  font-weight: 650
+}
+
 .related-benchmarks {
   margin: 28px 0
 }
@@ -533,8 +764,11 @@ footer a {
 }
 
 .related-benchmark-grid .benchmark-card {
+  display: flex;
   min-width: 0;
-  padding: 14px
+  min-height: 184px;
+  padding: 14px;
+  flex-direction: column
 }
 
 .related-benchmark-grid .card-top {
@@ -545,6 +779,30 @@ footer a {
 
 .related-benchmark-grid .benchmark-card h3 {
   font-size: 1rem
+}
+
+.related-benchmark-grid .card-game-detail {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  white-space: nowrap
+}
+
+.related-benchmark-grid .detail-wrapped .card-game-detail-separator {
+  display: none
+}
+
+.related-benchmark-grid .benchmark-card:not(.heading-wrapped) .card-top::after {
+  display: block;
+  height: 1.6em;
+  content: ""
+}
+
+.related-benchmark-grid .benchmark-card .meta {
+  margin: auto 0 0;
+  padding-top: 14px
 }
 
 .related-benchmarks-empty {
@@ -728,6 +986,91 @@ tbody tr:last-child td {
   .table-wrap td {
     padding: .62rem
   }
+
+  .results-panel-heading {
+    align-items: flex-start;
+    padding: 19px 17px 15px;
+    flex-direction: column;
+    gap: 10px
+  }
+
+  .results-panel-heading h2 {
+    font-size: 1.18rem
+  }
+
+  .results-legend {
+    gap: 12px
+  }
+
+  .results-overview {
+    margin: 0 17px 18px
+  }
+
+  .result-stat {
+    padding: 10px
+  }
+
+  .result-stat > span {
+    font-size: .65rem
+  }
+
+  .result-stat strong {
+    font-size: 1.05rem
+  }
+
+  .results-table,
+  .results-table tbody,
+  .results-table tr,
+  .results-table td {
+    display: block;
+    width: 100%
+  }
+
+  .results-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap
+  }
+
+  .results-table tbody {
+    padding: 0 12px 12px
+  }
+
+  .results-table tr {
+    margin-bottom: 9px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface)
+  }
+
+  .results-table tr:last-child {
+    margin-bottom: 0
+  }
+
+  .results-table td {
+    padding: 12px 13px;
+    border: 0
+  }
+
+  .results-table .result-performance-cell {
+    padding-top: 11px;
+    border-top: 1px solid var(--line);
+    background: var(--bg)
+  }
+
+  .result-preset {
+    white-space: normal
+  }
+
+  .fps-metric {
+    grid-template-columns: 48px minmax(52px, 1fr) 64px;
+    gap: 8px
+  }
 }
 
 html[data-theme="dark"] {
@@ -808,4 +1151,9 @@ html[data-theme="dark"] .upscaling-xess {
 
 html[data-theme="dark"] .post-to-x {
   border-color: #77828d
+}
+
+html[data-theme="dark"] .results-legend .legend-low::before,
+html[data-theme="dark"] .fps-metric-low .fps-bar {
+  background: #aaa19d
 }
