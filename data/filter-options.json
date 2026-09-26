@@ -83,13 +83,6 @@
         "ja": "学園アイドルマスター",
         "en": "Gakuen Idolmaster"
       }
-    },
-    {
-      "value": "asphalt:legends",
-      "label": {
-        "ja": "アスファルト:Legends",
-        "en": "Asphalt:Legends"
-      }
     }
   ],
   "gpus": [

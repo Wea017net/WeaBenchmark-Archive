@@ -1,5 +1,29 @@
 [
   {
+    "id": "260926_valorant_rtx4070s_r7-5800x3d",
+    "game": {
+      "ja": "VALORANT",
+      "en": "VALORANT"
+    },
+    "testedAt": "2026-09-26",
+    "system": {
+      "cpu": "AMD Ryzen 7 5800X3D",
+      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
+    },
+    "summary": {
+      "ja": "1440p  |  低 · 高",
+      "en": "1440p  |  Low · High"
+    },
+    "version": {
+      "ja": "Patch 13.06",
+      "en": "Patch 13.06"
+    },
+    "season": {
+      "ja": "Season 2026 Act 5",
+      "en": "Season 2026 Act 5"
+    }
+  },
+  {
     "id": "260919_apexlegends_rtx4070s_r7-5800x3d",
     "game": {
       "ja": "エーペックスレジェンズ",
