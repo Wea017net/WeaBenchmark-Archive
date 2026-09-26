@@ -145,9 +145,13 @@
       "input": "b227f797962daebe781a9ebd21c7af3e920add54364b2fa7e18c3848c9b4331f",
       "output": "5ed3f0bb313ba84233345c22a553bf3c139eb767a803a593b61963323a4df4ca"
     },
+    "260926_valorant_rtx4070s_r7-5800x3d.png": {
+      "input": "231afab4fdc18eb269a79c7a2cde49d8e141ba74f4cca1dd4f02707e9d2e032d",
+      "output": "1244c02f7f4078a5adc9861bb92ff5f31084e8c09dd1205e40ed27ea27e70129"
+    },
     "home.png": {
-      "input": "9c505f82a912d2f6f256adec01535d650780fd6cd4a281162012b23a22c717ba",
-      "output": "c2fa5ceaf33c0183d1949ce0ba51744e61d530c69dfcedc2e04328923601e943"
+      "input": "2c8b31a8345d9f0f5d228905f5f4f444afc7e9f5db26791860fae8a2db92892b",
+      "output": "ba63b7e19d8f64b942e0237e79e768caf59a0eafc340fff8c4aa342b3810b15e"
     }
   }
 }
