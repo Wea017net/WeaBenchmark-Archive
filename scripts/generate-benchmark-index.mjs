@@ -3,6 +3,7 @@ import { join, relative, sep } from 'node:path';
 
 const benchmarksDirectory = 'data/benchmarks';
 const outputFile = 'data/benchmarks.json';
+const resultGroupFields = new Set(['gameMode', 'resolution', 'preset', 'upscaling', 'frameGeneration', 'graphicsApi']);
 
 async function findJsonFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -12,6 +13,14 @@ async function findJsonFiles(directory) {
     return entry.isFile() && entry.name.endsWith('.json') ? [path] : [];
   }));
   return files.flat();
+}
+
+function isLocalizedText(value) {
+  return typeof value === 'string'
+    || (value !== null
+      && typeof value === 'object'
+      && !Array.isArray(value)
+      && Object.values(value).every(item => typeof item === 'string'));
 }
 
 function indexEntry(data, file) {
@@ -24,18 +33,32 @@ function indexEntry(data, file) {
   if (missing.length) throw new Error(`${file}: required field missing: ${missing.join(', ')}`);
   if (data.id !== expectedId) throw new Error(`${file}: "id" must be "${expectedId}"`);
   if (!data.system.cpu || !data.system.gpu) throw new Error(`${file}: system.cpu and system.gpu are required`);
+  if (data.display !== undefined) {
+    if (data.display === null || typeof data.display !== 'object' || Array.isArray(data.display)) {
+      throw new Error(`${file}: display must be an object when provided`);
+    }
+    if (data.display.groupResults !== undefined && typeof data.display.groupResults !== 'boolean') {
+      throw new Error(`${file}: display.groupResults must be true or false when provided`);
+    }
+    if (data.display.groupBy !== undefined) {
+      const groupBy = Array.isArray(data.display.groupBy) ? data.display.groupBy : [data.display.groupBy];
+      if (!groupBy.length || groupBy.some(field => !resultGroupFields.has(field)) || new Set(groupBy).size !== groupBy.length) {
+        throw new Error(`${file}: display.groupBy contains an unsupported or duplicate field`);
+      }
+    }
+    if (data.display.groupResults === true && data.display.groupBy === undefined) {
+      throw new Error(`${file}: display.groupBy is required when display.groupResults is true`);
+    }
+  }
   if (!Array.isArray(data.results)) throw new Error(`${file}: results must be an array`);
   data.results.forEach((result, index) => {
     if (!Number.isFinite(result.resolutionX) || !Number.isFinite(result.resolutionY)) {
       throw new Error(`${file}: results[${index}] requires numeric resolutionX and resolutionY`);
     }
-    if (result.gameMode !== undefined) {
-      const validGameMode = typeof result.gameMode === 'string'
-        || (result.gameMode !== null
-          && typeof result.gameMode === 'object'
-          && !Array.isArray(result.gameMode)
-          && Object.values(result.gameMode).every(value => typeof value === 'string'));
-      if (!validGameMode) throw new Error(`${file}: results[${index}].gameMode must be a string or localized text object`);
+    for (const field of ['gameMode', 'gameModeKey']) {
+      if (result[field] !== undefined && !isLocalizedText(result[field])) {
+        throw new Error(`${file}: results[${index}].${field} must be a string or localized text object`);
+      }
     }
     if (result.graphicsApi !== undefined && typeof result.graphicsApi !== 'string') {
       throw new Error(`${file}: results[${index}].graphicsApi must be an English string`);

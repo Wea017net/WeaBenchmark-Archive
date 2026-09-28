@@ -41,6 +41,7 @@ For example:
 {
   "results": [
     {
+      "gameModeKey": "MODE",
       "gameMode": {
         "ja": "品質モード",
         "en": "Quality mode"
@@ -54,10 +55,33 @@ For example:
 }
 ```
 
+`gameModeKey` overrides the `MODE` text for that result only. It accepts either
+a string or a localized `{ "ja": "...", "en": "..." }` object. When it is
+empty or absent, the website uses `MODE`.
+
 Empty or absent values do not produce a placeholder tag. The legacy `display`
-object and its `showUpscaling`, `showFrameGeneration`, `showGraphicsApi`, and
-`graphicsApiLabel` fields are accepted for compatibility but ignored by the
-website and data generator.
+fields `showUpscaling`, `showFrameGeneration`, `showGraphicsApi`, and
+`graphicsApiLabel` are accepted for compatibility but ignored by the website
+and data generator.
+
+### Result grouping
+
+Use `display.groupResults` and `display.groupBy` to group related result rows:
+
+```json
+{
+  "display": {
+    "groupResults": true,
+    "groupBy": ["gameMode", "resolution"]
+  }
+}
+```
+
+`groupBy` accepts one value or an array containing `gameMode`, `resolution`,
+`preset`, `upscaling`, `frameGeneration`, or `graphicsApi`. Grouped values are
+shown once in a group heading and omitted from the individual result rows.
+When `groupResults` is absent or `false`, results use the standard ungrouped
+layout.
 
 Benchmark conditions vary by game, game version, driver, scene, route, and
 measurement method. Compare only records with compatible conditions.
