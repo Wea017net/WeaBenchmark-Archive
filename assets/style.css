@@ -628,6 +628,10 @@ footer a {
   font-weight: 650
 }
 
+.result-stat-resolution {
+  white-space: nowrap
+}
+
 .frame-generation-note {
   white-space: normal
 }
