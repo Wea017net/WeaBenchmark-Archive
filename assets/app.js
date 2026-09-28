@@ -509,6 +509,13 @@ function resolutionLabel(result, resolutionLabels) {
   return name ? `${name} (${dimensions})` : dimensions;
 }
 
+function overviewResolutionLabel(result) {
+  const width = Number.parseInt(result?.resolutionX, 10);
+  const height = Number.parseInt(result?.resolutionY, 10);
+  if (!Number.isFinite(width) || !Number.isFinite(height)) return '';
+  return width >= height ? `${height}p` : `${width}x${height}`;
+}
+
 function resultChip(key, label, value, className = '') {
   if (!value) return '';
   const fullLabel = `${label}: ${value}`;
@@ -603,16 +610,24 @@ function resultRows(results, maximumFps, resolutionLabels, display) {
 }
 
 function resultOverview(results) {
-  const peakAverage = Math.max(0, ...results.map(result => numericFps(result.averageFps)));
-  const peakLow = Math.max(0, ...results.map(result => numericFps(result.onePercentLowFps)));
-  const maximumFps = Math.max(peakAverage, peakLow);
-  const peakAverageUsesFrameGeneration = results.some(result =>
-    numericFps(result.averageFps) === peakAverage && Boolean(frameGenerationClass(result)));
+  const peakResult = results.reduce((best, result) => {
+    if (!best) return result;
+    const averageDifference = numericFps(result.averageFps) - numericFps(best.averageFps);
+    if (averageDifference !== 0) return averageDifference > 0 ? result : best;
+    return numericFps(result.onePercentLowFps) > numericFps(best.onePercentLowFps) ? result : best;
+  }, null);
+  const peakAverage = numericFps(peakResult?.averageFps);
+  const peakLow = numericFps(peakResult?.onePercentLowFps);
+  const maximumFps = Math.max(0, ...results.flatMap(result => [numericFps(result.averageFps), numericFps(result.onePercentLowFps)]));
+  const peakResolution = overviewResolutionLabel(peakResult);
+  const peakUsesFrameGeneration = Boolean(peakResult && frameGenerationClass(peakResult));
+  const resolutionMarkup = peakResolution ? ` <small class="result-stat-resolution">@ ${escapeHtml(peakResolution)}</small>` : '';
+  const frameGenerationMarkup = peakUsesFrameGeneration ? ` <small class="frame-generation-note">${escapeHtml(t('frameGenerationNote'))}</small>` : '';
   return {
     maximumFps,
     markup: `<div class="results-overview">
-      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small>${peakAverageUsesFrameGeneration ? ` <small class="frame-generation-note">${t('frameGenerationNote')}</small>` : ''}</strong></div>
-      <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small></strong></div>
+      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small>${resolutionMarkup}${frameGenerationMarkup}</strong></div>
+      <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small>${resolutionMarkup}${frameGenerationMarkup}</strong></div>
       <div class="result-stat"><span>${t('testPattern')}</span><strong>${escapeHtml(results.length)} <small>${language === 'ja' ? '件' : ''}</small></strong></div>
     </div>`
   };
