@@ -149,9 +149,13 @@
       "input": "231afab4fdc18eb269a79c7a2cde49d8e141ba74f4cca1dd4f02707e9d2e032d",
       "output": "1244c02f7f4078a5adc9861bb92ff5f31084e8c09dd1205e40ed27ea27e70129"
     },
+    "260928_zzz_rtx4070s_r7-5800x3d.png": {
+      "input": "ff8c11f5d675570a09f6f2093dd40cfe161cb52b419232979d3f22fcd132a731",
+      "output": "8079018ba6918b5a36d8ae54e187235d210078bb3c0fcdc1c008131f06ccfe21"
+    },
     "home.png": {
       "input": "2c8b31a8345d9f0f5d228905f5f4f444afc7e9f5db26791860fae8a2db92892b",
-      "output": "ba63b7e19d8f64b942e0237e79e768caf59a0eafc340fff8c4aa342b3810b15e"
+      "output": "11f2ff5497af9232365950fd90e00ef36a2d69c13a50a4295bfd5756de70ed9e"
     }
   }
 }

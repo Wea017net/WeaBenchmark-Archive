@@ -26,9 +26,33 @@ with one video. Measurements include the test date, game version and season
 when available, PC configuration, graphics settings, resolution, average FPS,
 and 1% low FPS.
 
-The `display` object contains only website presentation settings, such as
-whether optional result-table columns are visible and custom column labels.
-Benchmark facts belong in `system` and `results`.
+Optional result tags are controlled directly by the values in each result.
+The website displays a tag only when at least one corresponding field contains
+text:
+
+- `upscalingType` / `upscalingQuality`
+- `frameGenerationType` / `frameGenerationMultiplier`
+- `graphicsApi`
+
+For example:
+
+```json
+{
+  "results": [
+    {
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "DLSS FG",
+      "frameGenerationMultiplier": "2x"
+    }
+  ]
+}
+```
+
+Empty or absent values do not produce a placeholder tag. The legacy `display`
+object and its `showUpscaling`, `showFrameGeneration`, `showGraphicsApi`, and
+`graphicsApiLabel` fields are accepted for compatibility but ignored by the
+website and data generator.
 
 Benchmark conditions vary by game, game version, driver, scene, route, and
 measurement method. Compare only records with compatible conditions.
