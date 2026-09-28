@@ -445,13 +445,31 @@ function sameConfigurationBenchmarks(items, current) {
 }
 
 function upscalingLabel(result) {
-  return [result.upscalingType, result.upscalingQuality].filter(Boolean).join(' ') || '—';
+  return [result.upscalingType, result.upscalingQuality]
+    .map(value => String(value ?? '').trim())
+    .filter(Boolean)
+    .join(' ');
 }
 
 function upscalingClass(result) {
   const type = String(result.upscalingType || '').toLowerCase();
   if (type.includes('dlss')) return 'upscaling-dlss';
   if (type.includes('fsr')) return 'upscaling-fsr';
+  if (type.includes('xess')) return 'upscaling-xess';
+  return '';
+}
+
+function frameGenerationLabel(result) {
+  return [result.frameGenerationType, result.frameGenerationMultiplier]
+    .map(value => String(value ?? '').trim())
+    .filter(Boolean)
+    .join(' ');
+}
+
+function frameGenerationClass(result) {
+  const type = String(result.frameGenerationType || '').toLowerCase();
+  if (type.includes('dlss')) return 'upscaling-dlss';
+  if (type.includes('fsr') || type.includes('afmf')) return 'upscaling-fsr';
   if (type.includes('xess')) return 'upscaling-xess';
   return '';
 }
@@ -480,17 +498,19 @@ function resolutionLabel(result, resolutionLabels) {
   return name ? `${name} (${dimensions})` : dimensions;
 }
 
-function resultRows(results, display, maximumFps, resolutionLabels) {
+function resultRows(results, maximumFps, resolutionLabels) {
   return results.map(r => {
     const upscaling = upscalingLabel(r);
-    const graphicsApi = graphicsApiText(r.graphicsApi) || '—';
+    const frameGeneration = frameGenerationLabel(r);
+    const graphicsApi = String(graphicsApiText(r.graphicsApi) || '').trim();
     return `<tr>
       <td class="result-config-cell">
         <strong class="result-preset">${escapeHtml(localized(r.preset))}</strong>
         <div class="result-chips">
           <span class="result-chip result-resolution">${escapeHtml(resolutionLabel(r, resolutionLabels))}</span>
-          ${display.showUpscaling ? `<span class="result-chip ${upscalingClass(r)}">${escapeHtml(upscaling)}</span>` : ''}
-          ${display.showGraphicsApi ? `<span class="result-chip">${escapeHtml(graphicsApi)}</span>` : ''}
+          ${upscaling ? `<span class="result-chip ${upscalingClass(r)}">${escapeHtml(upscaling)}</span>` : ''}
+          ${frameGeneration ? `<span class="result-chip ${frameGenerationClass(r)}">${escapeHtml(frameGeneration)}</span>` : ''}
+          ${graphicsApi ? `<span class="result-chip">${escapeHtml(graphicsApi)}</span>` : ''}
         </div>
       </td>
       <td class="result-performance-cell">
@@ -610,7 +630,7 @@ async function renderDetail() {
       getBenchmarkIndex(),
       getJson(siteUrl(RESOLUTION_LABELS))
     ]);
-    const game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season), display = d.display;
+    const game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season);
     const resultsOverview = resultOverview(d.results);
     const cpuShortName = d.system.cpuShortName || d.system.cpu;
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
@@ -666,7 +686,7 @@ async function renderDetail() {
         <div class="results-table-scroll">
           <table class="results-table">
             <thead><tr><th>${t('conditions')}</th><th>${t('frameRate')}</th></tr></thead>
-            <tbody>${resultRows(d.results, display, resultsOverview.maximumFps, resolutionLabels)}</tbody>
+            <tbody>${resultRows(d.results, resultsOverview.maximumFps, resolutionLabels)}</tbody>
           </table>
         </div>
       </section>

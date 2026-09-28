@@ -4,7 +4,7 @@
   "title": "Wea's Benchmark Archive record",
   "description": "One PC game benchmark session. Fields not defined here may be added in future versions.",
   "type": "object",
-  "required": ["id", "game", "testedAt", "system", "display", "results"],
+  "required": ["id", "game", "testedAt", "system", "results"],
   "properties": {
     "id": { "type": "string", "description": "Filename without the .json extension." },
     "game": { "$ref": "#/$defs/localizedText" },
@@ -38,12 +38,12 @@
     "videoUrl": { "type": "string", "format": "uri" },
     "display": {
       "type": "object",
-      "description": "Site presentation settings. Benchmark facts remain in system and results.",
-      "required": ["showUpscaling", "showGraphicsApi"],
+      "description": "Deprecated presentation settings retained for compatibility. The website ignores these values.",
       "properties": {
-        "showUpscaling": { "type": "boolean" },
-        "showGraphicsApi": { "type": "boolean" },
-        "graphicsApiLabel": { "type": "string" }
+        "showUpscaling": { "deprecated": true },
+        "showFrameGeneration": { "deprecated": true },
+        "showGraphicsApi": { "deprecated": true },
+        "graphicsApiLabel": { "deprecated": true }
       },
       "additionalProperties": true
     },
@@ -58,6 +58,8 @@
           "preset": { "$ref": "#/$defs/localizedText" },
           "upscalingType": { "type": "string" },
           "upscalingQuality": { "type": "string" },
+          "frameGenerationType": { "type": "string", "description": "Frame-generation technology, for example DLSS FG." },
+          "frameGenerationMultiplier": { "type": "string", "description": "Frame-generation multiplier, for example 2x." },
           "graphicsApi": { "type": "string" },
           "averageFps": { "type": "number" },
           "onePercentLowFps": { "type": "number" }

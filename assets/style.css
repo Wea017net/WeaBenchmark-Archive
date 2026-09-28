@@ -1003,7 +1003,7 @@ tbody tr:last-child td {
   }
 
   .results-overview {
-    margin: 0 17px 18px
+    margin: 0 12px 18px
   }
 
   .result-stat {
@@ -1055,6 +1055,10 @@ tbody tr:last-child td {
   .results-table td {
     padding: 12px 13px;
     border: 0
+  }
+
+  .results-table .result-config-cell {
+    background: var(--surface)
   }
 
   .results-table .result-performance-cell {

@@ -24,10 +24,6 @@ function indexEntry(data, file) {
   if (missing.length) throw new Error(`${file}: required field missing: ${missing.join(', ')}`);
   if (data.id !== expectedId) throw new Error(`${file}: "id" must be "${expectedId}"`);
   if (!data.system.cpu || !data.system.gpu) throw new Error(`${file}: system.cpu and system.gpu are required`);
-  if (!data.display || typeof data.display !== 'object') throw new Error(`${file}: display is required`);
-  if (typeof data.display.showUpscaling !== 'boolean') throw new Error(`${file}: display.showUpscaling must be true or false`);
-  if (typeof data.display.showGraphicsApi !== 'boolean') throw new Error(`${file}: display.showGraphicsApi must be true or false`);
-  if (data.display.graphicsApiLabel !== undefined && typeof data.display.graphicsApiLabel !== 'string') throw new Error(`${file}: display.graphicsApiLabel must be an English string`);
   if (!Array.isArray(data.results)) throw new Error(`${file}: results must be an array`);
   data.results.forEach((result, index) => {
     if (!Number.isFinite(result.resolutionX) || !Number.isFinite(result.resolutionY)) {
@@ -35,6 +31,12 @@ function indexEntry(data, file) {
     }
     if (result.graphicsApi !== undefined && typeof result.graphicsApi !== 'string') {
       throw new Error(`${file}: results[${index}].graphicsApi must be an English string`);
+    }
+    if (result.frameGenerationType !== undefined && typeof result.frameGenerationType !== 'string') {
+      throw new Error(`${file}: results[${index}].frameGenerationType must be a string`);
+    }
+    if (result.frameGenerationMultiplier !== undefined && typeof result.frameGenerationMultiplier !== 'string') {
+      throw new Error(`${file}: results[${index}].frameGenerationMultiplier must be a string`);
     }
   });
 
