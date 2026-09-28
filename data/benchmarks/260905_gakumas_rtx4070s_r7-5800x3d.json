@@ -49,6 +49,10 @@
         "ja": "最高",
         "en": "Highest"
       },
+      "gameMode": {
+        "ja": "プロデュース",
+        "en": "Produce"
+      },
       "upscalingType": "",
       "upscalingQuality": "",
       "graphicsApi": "",
@@ -61,6 +65,10 @@
       "preset": {
         "ja": "最高",
         "en": "Highest"
+      },
+      "gameMode": {
+        "ja": "ライブ",
+        "en": "Live"
       },
       "upscalingType": "",
       "upscalingQuality": "",

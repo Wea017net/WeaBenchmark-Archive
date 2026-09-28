@@ -61,15 +61,20 @@ const translations = {
     testPattern: '測定パターン',
     peakAverage: '最高平均 FPS',
     peakLow: '最高 1% Low',
+    frameGenerationNote: '※フレーム生成時',
     conditions: '測定条件',
     frameRate: 'フレームレート',
     averageShort: '平均',
     lowShort: '1% Low',
     sameConfiguration: (count) => `同じ構成のベンチマーク（最新 ${count} 件を表示）`,
     noSameConfiguration: '同じ構成のベンチマークはありません。',
+    gameMode: 'ゲームモード',
     resolution: '解像度',
     upscaling: 'アップスケーリング',
+    frameGeneration: 'フレーム生成',
     graphicsApi: 'グラフィックスAPI',
+    notSpecified: '指定なし',
+    resultGroup: (index, count) => `グループ ${index} · ${count}件`,
     graphicsApiValues: {
       'Rendering mode': 'レンダリングモード',
       Performance: 'パフォーマンス'
@@ -130,15 +135,20 @@ const translations = {
     testPattern: 'Test cases',
     peakAverage: 'Peak average',
     peakLow: 'Peak 1% low',
+    frameGenerationNote: '*With frame gen',
     conditions: 'Test conditions',
     frameRate: 'Frame rate',
     averageShort: 'Average',
     lowShort: '1% low',
     sameConfiguration: (count) => `Benchmarks with the same configuration (showing the latest ${count})`,
     noSameConfiguration: 'No other benchmarks use the same configuration.',
+    gameMode: 'Game mode',
     resolution: 'Resolution',
     upscaling: 'Upscaling',
+    frameGeneration: 'Frame generation',
     graphicsApi: 'Graphics API',
+    notSpecified: 'Not specified',
+    resultGroup: (index, count) => `Group ${index} · ${count} results`,
     graphicsApiValues: {},
     graphics: 'Graphics preset',
     averageFps: 'Average FPS',
@@ -453,7 +463,8 @@ function upscalingLabel(result) {
 
 function upscalingClass(result) {
   const type = String(result.upscalingType || '').toLowerCase();
-  if (type.includes('dlss')) return 'upscaling-dlss';
+  const quality = String(result.upscalingQuality || '').toLowerCase();
+  if (type.includes('dlss') || (type.includes('nvidia') && quality.includes('dlaa'))) return 'upscaling-dlss';
   if (type.includes('fsr')) return 'upscaling-fsr';
   if (type.includes('xess')) return 'upscaling-xess';
   return '';
@@ -498,26 +509,96 @@ function resolutionLabel(result, resolutionLabels) {
   return name ? `${name} (${dimensions})` : dimensions;
 }
 
-function resultRows(results, maximumFps, resolutionLabels) {
-  return results.map(r => {
-    const upscaling = upscalingLabel(r);
-    const frameGeneration = frameGenerationLabel(r);
-    const graphicsApi = String(graphicsApiText(r.graphicsApi) || '').trim();
-    return `<tr>
-      <td class="result-config-cell">
-        <strong class="result-preset">${escapeHtml(localized(r.preset))}</strong>
-        <div class="result-chips">
-          <span class="result-chip result-resolution">${escapeHtml(resolutionLabel(r, resolutionLabels))}</span>
-          ${upscaling ? `<span class="result-chip ${upscalingClass(r)}">${escapeHtml(upscaling)}</span>` : ''}
-          ${frameGeneration ? `<span class="result-chip ${frameGenerationClass(r)}">${escapeHtml(frameGeneration)}</span>` : ''}
-          ${graphicsApi ? `<span class="result-chip">${escapeHtml(graphicsApi)}</span>` : ''}
-        </div>
-      </td>
-      <td class="result-performance-cell">
-        ${fpsMetric(t('averageShort'), r.averageFps, maximumFps, 'average')}
-        ${fpsMetric(t('lowShort'), r.onePercentLowFps, maximumFps, 'low')}
-      </td>
-    </tr>`;
+function resultChip(key, label, value, className = '') {
+  if (!value) return '';
+  const fullLabel = `${label}: ${value}`;
+  return `<span class="result-chip ${className}" title="${escapeHtml(fullLabel)}"><span class="sr-only">${escapeHtml(fullLabel)}</span><span class="result-chip-key" aria-hidden="true">${escapeHtml(key)}</span><span class="result-chip-value" aria-hidden="true">${escapeHtml(value)}</span></span>`;
+}
+
+const RESULT_GROUP_FIELDS = new Set(['gameMode', 'resolution', 'preset', 'upscaling', 'frameGeneration', 'graphicsApi']);
+
+function stableLocalizedValue(value) {
+  if (value === null || typeof value !== 'object') return String(value ?? '').trim();
+  return JSON.stringify(Object.keys(value).sort().map(key => [key, String(value[key] ?? '').trim()]));
+}
+
+function resultField(result, field, resolutionLabels) {
+  if (field === 'gameMode') {
+    const key = String(localized(result.gameModeKey) ?? '').trim() || 'MODE';
+    return { identity: `${key}\u0000${stableLocalizedValue(result.gameMode)}`, key, label: t('gameMode'), value: String(localized(result.gameMode) ?? '').trim(), className: '' };
+  }
+  if (field === 'resolution') {
+    return { identity: `${result.resolutionX}x${result.resolutionY}`, key: 'RES', label: t('resolution'), value: resolutionLabel(result, resolutionLabels), className: 'result-resolution' };
+  }
+  if (field === 'preset') {
+    return { identity: stableLocalizedValue(result.preset), key: 'PRESET', label: t('graphics'), value: String(localized(result.preset) ?? '').trim(), className: 'result-resolution' };
+  }
+  if (field === 'upscaling') {
+    return { identity: `${String(result.upscalingType ?? '').trim()}\u0000${String(result.upscalingQuality ?? '').trim()}`, key: 'SR', label: t('upscaling'), value: upscalingLabel(result), className: upscalingClass(result) };
+  }
+  if (field === 'frameGeneration') {
+    return { identity: `${String(result.frameGenerationType ?? '').trim()}\u0000${String(result.frameGenerationMultiplier ?? '').trim()}`, key: 'FG', label: t('frameGeneration'), value: frameGenerationLabel(result), className: frameGenerationClass(result) };
+  }
+  return { identity: String(result.graphicsApi ?? '').trim(), key: 'API', label: t('graphicsApi'), value: String(graphicsApiText(result.graphicsApi) || '').trim(), className: '' };
+}
+
+function activeResultGroupFields(display) {
+  if (display?.groupResults !== true) return [];
+  const requested = Array.isArray(display.groupBy) ? display.groupBy : [display.groupBy];
+  return [...new Set(requested.filter(field => RESULT_GROUP_FIELDS.has(field)))];
+}
+
+function resultRow(result, maximumFps, resolutionLabels, groupedFields = new Set(), groupClass = '') {
+  const fields = Object.fromEntries([...RESULT_GROUP_FIELDS].map(field => [field, resultField(result, field, resolutionLabels)]));
+  const primaryChips = [
+    !groupedFields.has('gameMode') ? resultChip(fields.gameMode.key, fields.gameMode.label, fields.gameMode.value) : '',
+    !groupedFields.has('resolution') ? resultChip(fields.resolution.key, fields.resolution.label, fields.resolution.value, fields.resolution.className) : ''
+  ].join('');
+  const technologyChips = [
+    !groupedFields.has('upscaling') ? resultChip(fields.upscaling.key, fields.upscaling.label, fields.upscaling.value, fields.upscaling.className) : '',
+    !groupedFields.has('frameGeneration') ? resultChip(fields.frameGeneration.key, fields.frameGeneration.label, fields.frameGeneration.value, fields.frameGeneration.className) : '',
+    !groupedFields.has('graphicsApi') ? resultChip(fields.graphicsApi.key, fields.graphicsApi.label, fields.graphicsApi.value) : ''
+  ].join('');
+  const chipGroups = `${primaryChips ? `<div class="result-chips result-chips-primary">${primaryChips}</div>` : ''}${technologyChips ? `<div class="result-chips result-chips-technology">${technologyChips}</div>` : ''}`;
+  return `<tr class="result-data-row${groupClass ? ` ${groupClass}` : ''}">
+    <td class="result-config-cell">
+      <strong class="result-preset">${escapeHtml(localized(result.preset))}</strong>
+      ${chipGroups ? `<div class="result-chip-groups">${chipGroups}</div>` : ''}
+    </td>
+    <td class="result-performance-cell">
+      ${fpsMetric(t('averageShort'), result.averageFps, maximumFps, 'average')}
+      ${fpsMetric(t('lowShort'), result.onePercentLowFps, maximumFps, 'low')}
+    </td>
+  </tr>`;
+}
+
+function resultGroupHeading(fields, index, count) {
+  const chips = fields.map(field => resultChip(field.key, field.label, field.value || t('notSpecified'), field.className)).join('');
+  return `<tr class="result-group-heading"><td colspan="2"><div class="result-group-heading-content"><span class="result-group-label">${escapeHtml(t('resultGroup')(index, count))}</span><div class="result-chips">${chips}</div></div></td></tr>`;
+}
+
+function resultRows(results, maximumFps, resolutionLabels, display) {
+  const groupFields = activeResultGroupFields(display);
+  if (!groupFields.length) return results.map(result => resultRow(result, maximumFps, resolutionLabels)).join('');
+
+  const groups = new Map();
+  for (const result of results) {
+    const fields = groupFields.map(field => resultField(result, field, resolutionLabels));
+    const identity = JSON.stringify(fields.map(field => field.identity));
+    if (!groups.has(identity)) groups.set(identity, { fields, results: [] });
+    groups.get(identity).results.push(result);
+  }
+  const groupedFields = new Set(groupFields);
+  return [...groups.values()].map((group, groupIndex) => {
+    const rows = group.results.map((result, resultIndex) => resultRow(
+      result,
+      maximumFps,
+      resolutionLabels,
+      groupedFields,
+      `result-group-member${resultIndex === group.results.length - 1 ? ' result-group-end' : ''}`
+    )).join('');
+    const gap = groupIndex ? '<tr class="result-group-gap" aria-hidden="true"><td colspan="2"></td></tr>' : '';
+    return `${gap}${resultGroupHeading(group.fields, groupIndex + 1, group.results.length)}${rows}`;
   }).join('');
 }
 
@@ -525,10 +606,12 @@ function resultOverview(results) {
   const peakAverage = Math.max(0, ...results.map(result => numericFps(result.averageFps)));
   const peakLow = Math.max(0, ...results.map(result => numericFps(result.onePercentLowFps)));
   const maximumFps = Math.max(peakAverage, peakLow);
+  const peakAverageUsesFrameGeneration = results.some(result =>
+    numericFps(result.averageFps) === peakAverage && Boolean(frameGenerationClass(result)));
   return {
     maximumFps,
     markup: `<div class="results-overview">
-      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small></strong></div>
+      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small>${peakAverageUsesFrameGeneration ? ` <small class="frame-generation-note">${t('frameGenerationNote')}</small>` : ''}</strong></div>
       <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small></strong></div>
       <div class="result-stat"><span>${t('testPattern')}</span><strong>${escapeHtml(results.length)} <small>${language === 'ja' ? '件' : ''}</small></strong></div>
     </div>`
@@ -632,6 +715,7 @@ async function renderDetail() {
     ]);
     const game = localized(d.game), driver = String(d.system.gpuDriver || '').match(/[0-9]+(?:\.[0-9]+)+/)?.[0] || '', versionSeason = versionSeasonLabel(d.version, d.season);
     const resultsOverview = resultOverview(d.results);
+    const resultsAreGrouped = activeResultGroupFields(d.display).length > 0;
     const cpuShortName = d.system.cpuShortName || d.system.cpu;
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
     const graphicsCardName = d.system.graphicsCardName || d.system.gpu;
@@ -684,9 +768,12 @@ async function renderDetail() {
         </div>
         ${resultsOverview.markup}
         <div class="results-table-scroll">
-          <table class="results-table">
-            <thead><tr><th>${t('conditions')}</th><th>${t('frameRate')}</th></tr></thead>
-            <tbody>${resultRows(d.results, resultsOverview.maximumFps, resolutionLabels)}</tbody>
+          <table class="results-table${resultsAreGrouped ? ' results-table-grouped' : ''}">
+            <thead>
+              <tr><th>${t('conditions')}</th><th>${t('frameRate')}</th></tr>
+              ${resultsAreGrouped ? '<tr class="results-table-heading-gap" aria-hidden="true"><td colspan="2"></td></tr>' : ''}
+            </thead>
+            <tbody>${resultRows(d.results, resultsOverview.maximumFps, resolutionLabels, d.display)}</tbody>
           </table>
         </div>
       </section>

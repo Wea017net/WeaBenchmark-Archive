@@ -1,0 +1,281 @@
+{
+  "id": "260928_zzz_rtx4070s_r7-5800x3d",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2026-09-28",
+  "summary": {
+    "ja": "1440p · 4K  |  高",
+    "en": "1440p · 4K  |  High"
+  },
+  "version": {
+    "ja": "Ver.3.2",
+    "en": "Ver.3.2"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "cpu": "AMD Ryzen 7 5800X3D",
+    "cpuShortName": "Ryzen 7 5800X3D",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphicsCardName": "ZOTAC GAMING GeForce RTX 4070 SUPER Twin Edge OC 12GB GDDR6X",
+    "gpuShortName": "RTX 4070 SUPER",
+    "gpuDriver": "610.88",
+    "motherboard": "MSI B550M PRO-VDH WIFI",
+    "memory": {
+      "frequency": "DDR4-3200",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Pro 25H2"
+  },
+  "method": {
+    "ja": "元凶殲滅戦をプレイ & ロスカリファで計測",
+    "en": "Played Perpetrator Battle and measured in Roscaelifer"
+  },
+  "videoUrl": "https://youtu.be/FLNOBjUNyME",
+  "display": {
+    "showUpscaling": true,
+    "showFrameGeneration": true,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "",
+    "groupResults": true,
+    "groupBy": ["gameMode", "resolution"]
+  },
+  "results": [
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 134,
+      "onePercentLowFps": 43
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA",
+      "upscalingQuality": "DLAA",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 108,
+      "onePercentLowFps": 34
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 125,
+      "onePercentLowFps": 42
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "DLSS FG",
+      "frameGenerationMultiplier": "2x",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 214,
+      "onePercentLowFps": 33
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 78,
+      "onePercentLowFps": 25
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA",
+      "upscalingQuality": "DLAA",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 65,
+      "onePercentLowFps": 29
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 93,
+      "onePercentLowFps": 33
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "元凶殲滅戦",
+        "en": "Perpetrator Battle"
+      },
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "DLSS FG",
+      "frameGenerationMultiplier": "2x",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 118,
+      "onePercentLowFps": 52
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "ロスカリファ",
+        "en": "Roscaelifer"
+      },
+      "gameModeKey": "MAP",
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 96,
+      "onePercentLowFps": 53
+    },
+    {
+      "resolutionX": 2560,
+      "resolutionY": 1440,
+      "preset": {
+        "ja": "高 + レイトレーシング 高",
+        "en": "High + RT High"
+      },
+      "gameMode": {
+        "ja": "ロスカリファ",
+        "en": "Roscaelifer"
+      },
+      "gameModeKey": "MAP",
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 60,
+      "onePercentLowFps": 35
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高",
+        "en": "High"
+      },
+      "gameMode": {
+        "ja": "ロスカリファ",
+        "en": "Roscaelifer"
+      },
+      "gameModeKey": "MAP",
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 88,
+      "onePercentLowFps": 29
+    },
+    {
+      "resolutionX": 3840,
+      "resolutionY": 2160,
+      "preset": {
+        "ja": "高 + レイトレーシング 高",
+        "en": "High + RT High"
+      },
+      "gameMode": {
+        "ja": "ロスカリファ",
+        "en": "Roscaelifer"
+      },
+      "gameModeKey": "MAP",
+      "upscalingType": "NVIDIA DLSS",
+      "upscalingQuality": "Quality",
+      "frameGenerationType": "",
+      "frameGenerationMultiplier": "Disable",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 45,
+      "onePercentLowFps": 29
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}
