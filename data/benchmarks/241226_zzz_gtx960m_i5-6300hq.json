@@ -40,7 +40,9 @@
   "display": {
     "showUpscaling": false,
     "showGraphicsApi": false,
-    "graphicsApiLabel": ""
+    "graphicsApiLabel": "",
+    "groupResults": true,
+    "groupBy": ["resolution", "graphicsApi"]
   },
   "results": [
     {
