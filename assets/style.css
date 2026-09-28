@@ -624,6 +624,10 @@ footer a {
   font-weight: 650
 }
 
+.frame-generation-note {
+  white-space: normal
+}
+
 .results-table-scroll {
   overflow-x: auto
 }
@@ -667,21 +671,60 @@ footer a {
   white-space: nowrap
 }
 
+.result-chip-groups {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px
+}
+
 .result-chips {
   display: flex;
-  gap: 6px;
-  margin-top: 7px;
+  gap: 5px;
   flex-wrap: wrap
 }
 
 .result-chip {
-  padding: 2px 7px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
   font-size: .68rem;
   font-weight: 600;
-  line-height: 1.45
+  line-height: 1
+}
+
+.result-chip-key,
+.result-chip-value {
+  display: inline-flex;
+  align-self: stretch;
+  align-items: center;
+  line-height: 1.2
+}
+
+.result-chip-key {
+  justify-content: center;
+  padding: 2px 4px 2px 6px;
+  border-right: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: .82em;
+  font-weight: 750;
+  letter-spacing: .04em
+}
+
+.result-chip-value {
+  min-width: 0;
+  overflow: hidden;
+  justify-content: center;
+  padding: 1px 8px 3px 6px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap
 }
 
 .result-resolution {

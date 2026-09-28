@@ -29,6 +29,14 @@ function indexEntry(data, file) {
     if (!Number.isFinite(result.resolutionX) || !Number.isFinite(result.resolutionY)) {
       throw new Error(`${file}: results[${index}] requires numeric resolutionX and resolutionY`);
     }
+    if (result.gameMode !== undefined) {
+      const validGameMode = typeof result.gameMode === 'string'
+        || (result.gameMode !== null
+          && typeof result.gameMode === 'object'
+          && !Array.isArray(result.gameMode)
+          && Object.values(result.gameMode).every(value => typeof value === 'string'));
+      if (!validGameMode) throw new Error(`${file}: results[${index}].gameMode must be a string or localized text object`);
+    }
     if (result.graphicsApi !== undefined && typeof result.graphicsApi !== 'string') {
       throw new Error(`${file}: results[${index}].graphicsApi must be an English string`);
     }

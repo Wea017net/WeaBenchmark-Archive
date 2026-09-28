@@ -61,14 +61,17 @@ const translations = {
     testPattern: '測定パターン',
     peakAverage: '最高平均 FPS',
     peakLow: '最高 1% Low',
+    frameGenerationNote: '※フレーム生成時',
     conditions: '測定条件',
     frameRate: 'フレームレート',
     averageShort: '平均',
     lowShort: '1% Low',
     sameConfiguration: (count) => `同じ構成のベンチマーク（最新 ${count} 件を表示）`,
     noSameConfiguration: '同じ構成のベンチマークはありません。',
+    gameMode: 'ゲームモード',
     resolution: '解像度',
     upscaling: 'アップスケーリング',
+    frameGeneration: 'フレーム生成',
     graphicsApi: 'グラフィックスAPI',
     graphicsApiValues: {
       'Rendering mode': 'レンダリングモード',
@@ -130,14 +133,17 @@ const translations = {
     testPattern: 'Test cases',
     peakAverage: 'Peak average',
     peakLow: 'Peak 1% low',
+    frameGenerationNote: '*With frame gen',
     conditions: 'Test conditions',
     frameRate: 'Frame rate',
     averageShort: 'Average',
     lowShort: '1% low',
     sameConfiguration: (count) => `Benchmarks with the same configuration (showing the latest ${count})`,
     noSameConfiguration: 'No other benchmarks use the same configuration.',
+    gameMode: 'Game mode',
     resolution: 'Resolution',
     upscaling: 'Upscaling',
+    frameGeneration: 'Frame generation',
     graphicsApi: 'Graphics API',
     graphicsApiValues: {},
     graphics: 'Graphics preset',
@@ -453,7 +459,8 @@ function upscalingLabel(result) {
 
 function upscalingClass(result) {
   const type = String(result.upscalingType || '').toLowerCase();
-  if (type.includes('dlss')) return 'upscaling-dlss';
+  const quality = String(result.upscalingQuality || '').toLowerCase();
+  if (type.includes('dlss') || (type.includes('nvidia') && quality.includes('dlaa'))) return 'upscaling-dlss';
   if (type.includes('fsr')) return 'upscaling-fsr';
   if (type.includes('xess')) return 'upscaling-xess';
   return '';
@@ -498,19 +505,34 @@ function resolutionLabel(result, resolutionLabels) {
   return name ? `${name} (${dimensions})` : dimensions;
 }
 
+function resultChip(key, label, value, className = '') {
+  if (!value) return '';
+  const fullLabel = `${label}: ${value}`;
+  return `<span class="result-chip ${className}" title="${escapeHtml(fullLabel)}"><span class="sr-only">${escapeHtml(fullLabel)}</span><span class="result-chip-key" aria-hidden="true">${escapeHtml(key)}</span><span class="result-chip-value" aria-hidden="true">${escapeHtml(value)}</span></span>`;
+}
+
 function resultRows(results, maximumFps, resolutionLabels) {
   return results.map(r => {
+    const gameMode = String(localized(r.gameMode) ?? '').trim();
+    const resolution = resolutionLabel(r, resolutionLabels);
     const upscaling = upscalingLabel(r);
     const frameGeneration = frameGenerationLabel(r);
     const graphicsApi = String(graphicsApiText(r.graphicsApi) || '').trim();
+    const primaryChips = [
+      resultChip('MODE', t('gameMode'), gameMode),
+      resultChip('RES', t('resolution'), resolution, 'result-resolution')
+    ].join('');
+    const technologyChips = [
+      resultChip('SR', t('upscaling'), upscaling, upscalingClass(r)),
+      resultChip('FG', t('frameGeneration'), frameGeneration, frameGenerationClass(r)),
+      resultChip('API', t('graphicsApi'), graphicsApi)
+    ].join('');
     return `<tr>
       <td class="result-config-cell">
         <strong class="result-preset">${escapeHtml(localized(r.preset))}</strong>
-        <div class="result-chips">
-          <span class="result-chip result-resolution">${escapeHtml(resolutionLabel(r, resolutionLabels))}</span>
-          ${upscaling ? `<span class="result-chip ${upscalingClass(r)}">${escapeHtml(upscaling)}</span>` : ''}
-          ${frameGeneration ? `<span class="result-chip ${frameGenerationClass(r)}">${escapeHtml(frameGeneration)}</span>` : ''}
-          ${graphicsApi ? `<span class="result-chip">${escapeHtml(graphicsApi)}</span>` : ''}
+        <div class="result-chip-groups">
+          <div class="result-chips result-chips-primary">${primaryChips}</div>
+          ${technologyChips ? `<div class="result-chips result-chips-technology">${technologyChips}</div>` : ''}
         </div>
       </td>
       <td class="result-performance-cell">
@@ -525,10 +547,12 @@ function resultOverview(results) {
   const peakAverage = Math.max(0, ...results.map(result => numericFps(result.averageFps)));
   const peakLow = Math.max(0, ...results.map(result => numericFps(result.onePercentLowFps)));
   const maximumFps = Math.max(peakAverage, peakLow);
+  const peakAverageUsesFrameGeneration = results.some(result =>
+    numericFps(result.averageFps) === peakAverage && Boolean(frameGenerationClass(result)));
   return {
     maximumFps,
     markup: `<div class="results-overview">
-      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small></strong></div>
+      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small>${peakAverageUsesFrameGeneration ? ` <small class="frame-generation-note">${t('frameGenerationNote')}</small>` : ''}</strong></div>
       <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small></strong></div>
       <div class="result-stat"><span>${t('testPattern')}</span><strong>${escapeHtml(results.length)} <small>${language === 'ja' ? '件' : ''}</small></strong></div>
     </div>`

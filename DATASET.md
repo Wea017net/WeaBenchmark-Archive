@@ -30,6 +30,7 @@ Optional result tags are controlled directly by the values in each result.
 The website displays a tag only when at least one corresponding field contains
 text:
 
+- `gameMode`
 - `upscalingType` / `upscalingQuality`
 - `frameGenerationType` / `frameGenerationMultiplier`
 - `graphicsApi`
@@ -40,6 +41,10 @@ For example:
 {
   "results": [
     {
+      "gameMode": {
+        "ja": "品質モード",
+        "en": "Quality mode"
+      },
       "upscalingType": "NVIDIA DLSS",
       "upscalingQuality": "Quality",
       "frameGenerationType": "DLSS FG",

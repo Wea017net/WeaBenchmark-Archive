@@ -56,6 +56,7 @@
           "resolutionX": { "type": "number" },
           "resolutionY": { "type": "number" },
           "preset": { "$ref": "#/$defs/localizedText" },
+          "gameMode": { "$ref": "#/$defs/localizedText", "description": "Optional localized in-game mode shown before the resolution tag." },
           "upscalingType": { "type": "string" },
           "upscalingQuality": { "type": "string" },
           "frameGenerationType": { "type": "string", "description": "Frame-generation technology, for example DLSS FG." },
