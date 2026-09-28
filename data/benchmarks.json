@@ -1,29 +1,5 @@
 [
   {
-    "id": "260928_zzz_rtx4070s_r7-5800x3d",
-    "game": {
-      "ja": "ゼンレスゾーンゼロ",
-      "en": "Zenless Zone Zero"
-    },
-    "testedAt": "2026-09-28",
-    "system": {
-      "cpu": "AMD Ryzen 7 5800X3D",
-      "gpu": "NVIDIA GeForce RTX 4070 SUPER"
-    },
-    "summary": {
-      "ja": "1440p · 4K  |  高",
-      "en": "1440p · 4K  |  High"
-    },
-    "version": {
-      "ja": "Ver.3.2",
-      "en": "Ver.3.2"
-    },
-    "season": {
-      "ja": "",
-      "en": ""
-    }
-  },
-  {
     "id": "260926_valorant_rtx4070s_r7-5800x3d",
     "game": {
       "ja": "VALORANT",
