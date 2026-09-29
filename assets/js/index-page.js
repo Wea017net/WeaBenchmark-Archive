@@ -124,9 +124,25 @@ function sameConfigurationBenchmarks(items, current) {
     .slice(0, 4);
 }
 
+function gameNames(value) {
+  const names = typeof value === 'object' && value !== null ? Object.values(value) : [value];
+  return new Set(names.map(name => String(name ?? '').trim().toLowerCase()).filter(Boolean));
+}
+
+function sameGameBenchmarks(items, current, excludedIds = []) {
+  const currentGameNames = gameNames(current.game);
+  const excluded = new Set([current.id, ...excludedIds]);
+  return items
+    .filter(item => !excluded.has(item.id)
+      && [...gameNames(item.game)].some(name => currentGameNames.has(name)))
+    .sort((a, b) => String(b.testedAt).localeCompare(String(a.testedAt)) || a.id.localeCompare(b.id))
+    .slice(0, 4);
+}
+
 export {
   getBenchmarkIndex,
   renderIndex,
-  sameConfigurationBenchmarks
+  sameConfigurationBenchmarks,
+  sameGameBenchmarks
 };
 
