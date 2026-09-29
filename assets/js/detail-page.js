@@ -18,7 +18,7 @@ import {
   versionSeasonLabel,
   youtubePlayer
 } from './shared.js';
-import { getBenchmarkIndex, sameConfigurationBenchmarks } from './index-page.js';
+import { getBenchmarkIndex, sameConfigurationBenchmarks, sameGameBenchmarks } from './index-page.js';
 import { activeResultGroupFields, resultOverview, resultRows } from './results.js';
 
 async function copyCurrentUrl() {
@@ -123,6 +123,7 @@ async function renderDetail() {
     const gpuShortName = d.system.gpuShortName || d.system.gpu;
     const graphicsCardName = d.system.graphicsCardName || d.system.gpu;
     const relatedBenchmarks = sameConfigurationBenchmarks(benchmarkItems, d);
+    const otherGameBenchmarks = sameGameBenchmarks(benchmarkItems, d, relatedBenchmarks.map(item => item.id));
     document.title = language === 'en'
       ? `${cpuShortName} + ${gpuShortName} — ${game} benchmark results | Wea's Benchmark Archives`
       : `${cpuShortName} + ${gpuShortName} で ${game} 検証結果 | うぇあのゲームベンチまとめ`;
@@ -189,6 +190,12 @@ async function renderDetail() {
         ${relatedBenchmarks.length
           ? `<div class="related-benchmark-grid">${relatedBenchmarks.map(card).join('')}</div>`
           : `<p class="related-benchmarks-empty">${t('noSameConfiguration')}</p>`}
+      </section>
+      <section class="related-benchmarks" aria-labelledby="same-game-benchmarks-title">
+        <h2 id="same-game-benchmarks-title">${escapeHtml(t('otherGameBenchmarks')(game, otherGameBenchmarks.length))}</h2>
+        ${otherGameBenchmarks.length
+          ? `<div class="related-benchmark-grid">${otherGameBenchmarks.map(card).join('')}</div>`
+          : `<p class="related-benchmarks-empty">${escapeHtml(t('noOtherGameBenchmarks')(game))}</p>`}
       </section>
       <div class="detail-actions detail-actions-bottom">
         <a class="back-button" href="${siteUrl('index.html')}" aria-label="${t('back')}"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="action-label">${t('back')}</span></a>
