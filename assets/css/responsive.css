@@ -88,20 +88,52 @@
   }
 
   .hero {
-    padding-top: 40px
+    padding: 40px 0 30px
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 20px
   }
 
   .hero h1 {
-    font-size: clamp(1rem, 7vw, 2rem)
-  }
-
-  .hero h1 > span {
-    min-width: 0;
-    white-space: nowrap
+    font-size: clamp(1.45rem, 6.6vw, 2rem)
   }
 
   html[lang="en"] .hero h1 {
-    font-size: clamp(1rem, 5vw, 2rem)
+    font-size: clamp(1.35rem, 6vw, 1.85rem)
+  }
+
+  .youtube-channel-card {
+    grid-template-columns: 52px minmax(0, 1fr) 20px;
+    min-height: 82px;
+    padding: 12px
+  }
+
+  .youtube-channel-avatar {
+    width: 52px;
+    height: 52px
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 20px
+  }
+
+  .hero-stat {
+    padding: 12px 16px 14px
+  }
+
+  .hero-stat:nth-child(3) {
+    border-left: 0
+  }
+
+  .hero-stat:nth-child(n+3) {
+    border-top: 1px solid var(--line)
+  }
+
+  .hero-stat dd {
+    font-size: 1.65rem
   }
 
   .detail-actions:not(.detail-actions-bottom) .back-button,
