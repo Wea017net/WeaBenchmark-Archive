@@ -7,6 +7,7 @@ import {
   getJson,
   language,
   localized,
+  setupRelatedCardLayout,
   siteUrl,
   t
 } from './shared.js';
@@ -14,7 +15,13 @@ import {
 let indexItems = [];
 let filterOptions = null;
 let indexListenersBound = false;
+let currentPage = 1;
+let preferredViewMode = 'list';
+let desktopViewMedia = null;
+let viewPreferenceLoaded = false;
 const INDEX_STATE_KEY = 'wea-benchmark-index-state';
+const VIEW_MODE_KEY = 'wea-benchmark-view-mode';
+const PAGE_SIZE = 20;
 
 async function getBenchmarkIndex() {
   if (!indexItems.length) indexItems = await getJson(siteUrl(DATA_INDEX));
@@ -25,6 +32,8 @@ function saveIndexState() {
   try {
     sessionStorage.setItem(INDEX_STATE_KEY, JSON.stringify({
       filters: Object.fromEntries(['game-filter', 'gpu-filter', 'cpu-filter'].map(id => [id, $('#' + id).value])),
+      page: currentPage,
+      viewMode: preferredViewMode,
       scrollY: window.scrollY
     }));
   } catch {
@@ -72,7 +81,55 @@ function populateFilter(id, options = []) {
   select.value = displayedOptions.some(option => (typeof option === 'string' ? option : option.value) === selected) ? selected : '';
 }
 
-function renderFilteredIndex() {
+function loadViewPreference() {
+  if (viewPreferenceLoaded) return;
+  try {
+    const savedViewMode = localStorage.getItem(VIEW_MODE_KEY);
+    if (savedViewMode === 'list' || savedViewMode === 'grid') preferredViewMode = savedViewMode;
+  } catch {
+    // The list remains usable when browser storage is unavailable.
+  }
+  viewPreferenceLoaded = true;
+}
+
+function saveViewPreference() {
+  try {
+    localStorage.setItem(VIEW_MODE_KEY, preferredViewMode);
+  } catch {
+    // Remembering the view mode is optional when browser storage is unavailable.
+  }
+}
+
+function activeViewMode() {
+  return desktopViewMedia?.matches && preferredViewMode === 'grid' ? 'grid' : 'list';
+}
+
+function paginationMarkup(pageCount) {
+  const pages = Array.from({ length: pageCount }, (_, index) => index + 1)
+    .map(page => `<button class="pagination-button${page === currentPage ? ' is-current' : ''}" type="button" data-page="${page}" aria-label="${escapeHtml(t('pageNumber')(page))}"${page === currentPage ? ' aria-current="page"' : ''}>${page}</button>`)
+    .join('');
+  return `<button class="pagination-button pagination-direction" type="button" data-page="${currentPage - 1}" aria-label="${escapeHtml(t('previousPage'))}"${currentPage === 1 ? ' disabled' : ''}><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button>${pages}<button class="pagination-button pagination-direction" type="button" data-page="${currentPage + 1}" aria-label="${escapeHtml(t('nextPage'))}"${currentPage === pageCount ? ' disabled' : ''}><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>`;
+}
+
+function renderPagination(pageCount) {
+  const hidden = pageCount <= 1;
+  const markup = hidden ? '' : paginationMarkup(pageCount);
+  ['pagination-top', 'pagination-bottom'].forEach(id => {
+    const pagination = $('#' + id);
+    pagination.hidden = hidden;
+    pagination.innerHTML = markup;
+  });
+}
+
+function updateViewButtons() {
+  document.querySelectorAll('[data-view-mode]').forEach(button => {
+    const active = button.dataset.viewMode === preferredViewMode;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+}
+
+function renderFilteredIndex({ scrollToTop = false } = {}) {
   const list = $('#benchmark-list');
   const terms = Object.fromEntries([['game-filter', 'game'], ['gpu-filter', 'gpu'], ['cpu-filter', 'cpu']].map(([id, key]) => [key, $('#' + id).value.trim().toLowerCase()]));
   const filtered = indexItems
@@ -80,32 +137,73 @@ function renderFilteredIndex() {
     .filter(item => !terms.gpu || item.system.gpu.toLowerCase().includes(terms.gpu))
     .filter(item => !terms.cpu || item.system.cpu.toLowerCase().includes(terms.cpu));
   const hasActiveFilters = Object.values(terms).some(Boolean);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  currentPage = Math.min(Math.max(1, currentPage), pageCount);
+  const pageItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const gridView = activeViewMode() === 'grid' && pageItems.length > 0;
   document.querySelector('.results-heading h2').textContent = t(hasActiveFilters ? 'searchResults' : 'latestBenchmarks');
-  list.innerHTML = filtered.length ? filtered.map(card).join('') : `<p>${t('noResults')}</p>`;
-  $('#result-count').textContent = `${filtered.length} ${t('results')}`;
+  list.classList.toggle('related-benchmark-grid', gridView);
+  list.innerHTML = pageItems.length ? pageItems.map(card).join('') : `<p>${t('noResults')}</p>`;
+  $('#result-count').textContent = pageCount > 1
+    ? t('paginatedResults')(filtered.length, pageItems.length)
+    : `${filtered.length} ${t('results')}`;
+  renderPagination(pageCount);
+  updateViewButtons();
+  if (gridView) setupRelatedCardLayout();
+  if (scrollToTop) requestAnimationFrame(() => document.querySelector('.results-heading').scrollIntoView({ block: 'start' }));
+}
+
+function handlePaginationClick(event) {
+  const button = event.target.closest('[data-page]');
+  if (!button || button.disabled) return;
+  const requestedPage = Number.parseInt(button.dataset.page, 10);
+  if (!Number.isInteger(requestedPage) || requestedPage === currentPage) return;
+  currentPage = requestedPage;
+  renderFilteredIndex({ scrollToTop: true });
+}
+
+function handleViewModeClick(event) {
+  const button = event.target.closest('[data-view-mode]');
+  if (!button || !desktopViewMedia?.matches) return;
+  preferredViewMode = button.dataset.viewMode;
+  saveViewPreference();
+  renderFilteredIndex();
+}
+
+function resetPageAndRender() {
+  currentPage = 1;
+  renderFilteredIndex();
 }
 
 async function renderIndex() {
   const list = $('#benchmark-list');
   try {
     if (!filterOptions) [indexItems, filterOptions] = await Promise.all([getBenchmarkIndex(), getJson(FILTER_OPTIONS)]);
+    loadViewPreference();
+    if (!desktopViewMedia) desktopViewMedia = window.matchMedia('(min-width: 901px)');
     const state = savedIndexState();
     populateFilter('game-filter', filterOptions.games);
     populateFilter('gpu-filter', filterOptions.gpus);
     populateFilter('cpu-filter', filterOptions.cpus);
     if (state?.filters) {
       ['game-filter', 'gpu-filter', 'cpu-filter'].forEach(id => restoreFilterValue(id, state.filters[id]));
+      if (Number.isInteger(state.page) && state.page > 0) currentPage = state.page;
+      if (state.viewMode === 'list' || state.viewMode === 'grid') preferredViewMode = state.viewMode;
       sessionStorage.removeItem(INDEX_STATE_KEY);
     }
     if (!indexListenersBound) {
-      ['game-filter', 'gpu-filter', 'cpu-filter'].forEach(id => $('#' + id).addEventListener('change', renderFilteredIndex));
+      ['game-filter', 'gpu-filter', 'cpu-filter'].forEach(id => $('#' + id).addEventListener('change', resetPageAndRender));
       list.addEventListener('click', event => {
         if (event.target.closest('.benchmark-card')) saveIndexState();
       });
       $('#clear-filters').addEventListener('click', () => {
         ['game-filter', 'gpu-filter', 'cpu-filter'].forEach(id => $('#' + id).value = '');
-        renderFilteredIndex();
+        resetPageAndRender();
       });
+      document.querySelector('.view-toggle').addEventListener('click', handleViewModeClick);
+      $('#pagination-top').addEventListener('click', handlePaginationClick);
+      $('#pagination-bottom').addEventListener('click', handlePaginationClick);
+      desktopViewMedia.addEventListener('change', () => renderFilteredIndex());
       indexListenersBound = true;
     }
     renderFilteredIndex();
