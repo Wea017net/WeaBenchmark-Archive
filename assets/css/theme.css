@@ -1,0 +1,84 @@
+html[data-theme="dark"] {
+  --bg: #181716;
+  --surface: #211f1d;
+  --ink: #f5f1ef;
+  --muted: #b7b0ac;
+  --line: #413e3b;
+  --accent: #f3815e;
+  --accent-soft: #38241e
+}
+
+html[data-theme="dark"] .tag {
+  color: #ffc7b6
+}
+
+html[data-theme="dark"] .tag-nvidia {
+  background: #29410a;
+  color: #c7ec82
+}
+
+html[data-theme="dark"] .tag-ryzen {
+  background: #4d2717;
+  color: #ff925f
+}
+
+html[data-theme="dark"] .tag-radeon {
+  background: #4d1c20;
+  color: #ffb8bd
+}
+
+html[data-theme="dark"] .tag-intel {
+  background: #123c59;
+  color: #a9ddff
+}
+
+html[data-theme="dark"] .tag-intel-arc {
+  background: #452052;
+  color: #eca8fb
+}
+
+html[data-theme="dark"] .component-name.tag-nvidia {
+  background: transparent;
+  color: #a8d750
+}
+
+html[data-theme="dark"] .component-name.tag-ryzen {
+  background: transparent;
+  color: #ff925f
+}
+
+html[data-theme="dark"] .component-name.tag-radeon {
+  background: transparent;
+  color: #ff8298
+}
+
+html[data-theme="dark"] .component-name.tag-intel {
+  background: transparent;
+  color: #72d9ff
+}
+
+html[data-theme="dark"] .component-name.tag-intel-arc {
+  background: transparent;
+  color: #e59af7
+}
+
+html[data-theme="dark"] .upscaling-dlss {
+  color: #a8d750
+}
+
+html[data-theme="dark"] .upscaling-fsr {
+  color: #ff9ba0
+}
+
+html[data-theme="dark"] .upscaling-xess {
+  color: #72d9ff
+}
+
+html[data-theme="dark"] .post-to-x {
+  border-color: #77828d
+}
+
+html[data-theme="dark"] .results-legend .legend-low::before,
+html[data-theme="dark"] .fps-metric-low .fps-bar {
+  background: #aaa19d
+}

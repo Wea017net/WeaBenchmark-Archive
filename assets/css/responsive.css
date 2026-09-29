@@ -1,0 +1,260 @@
+@media(max-width:900px) and (min-width:701px) {
+  .related-benchmark-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media(max-width:700px) {
+  .header-actions {
+    gap: 4px
+  }
+
+  .theme-toggle {
+    width: 46px;
+    padding: 0;
+    justify-content: center
+  }
+
+  .language-select {
+    width: 54px;
+    padding: 0;
+    justify-content: center;
+    gap: .32rem
+  }
+
+  .theme-toggle span:last-child,.language-current {
+    display: none
+  }
+
+  .language-select > .material-symbols-outlined {
+    font-size: 1.1rem;
+    transform: translateX(3px)
+  }
+
+  .language-select .language-arrow {
+    display: block;
+    margin: 0;
+    pointer-events: none
+  }
+
+  .filters {
+    grid-template-columns: 1fr
+  }
+
+  .filters button {
+    width: fit-content
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr
+  }
+
+  .related-benchmark-grid {
+    grid-template-columns: 1fr
+  }
+
+  .card-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px
+  }
+
+  .hero {
+    padding-top: 40px
+  }
+
+  .hero h1 {
+    font-size: clamp(1rem, 7vw, 2rem)
+  }
+
+  .hero h1 > span {
+    min-width: 0;
+    white-space: nowrap
+  }
+
+  html[lang="en"] .hero h1 {
+    font-size: clamp(1rem, 5vw, 2rem)
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .back-button,
+  .detail-actions:not(.detail-actions-bottom) .copy-link,
+  .detail-actions:not(.detail-actions-bottom) .post-to-x {
+    width: 40px;
+    min-height: 40px;
+    padding: 0;
+    justify-content: center;
+    gap: 0
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .action-label {
+    display: none
+  }
+
+  .detail-actions:not(.detail-actions-bottom) .x-logo {
+    width: 1rem;
+    height: 1rem
+  }
+
+  .table-wrap table {
+    font-size: .86rem
+  }
+
+  .table-wrap th {
+    font-size: .74rem
+  }
+
+  .table-wrap th,
+  .table-wrap td {
+    padding: .62rem
+  }
+
+  .results-panel-heading {
+    align-items: flex-start;
+    padding: 19px 17px 15px;
+    flex-direction: column;
+    gap: 10px
+  }
+
+  .results-panel-heading h2 {
+    font-size: 1.18rem
+  }
+
+  .results-legend {
+    gap: 12px
+  }
+
+  .results-overview {
+    margin: 0 12px 18px
+  }
+
+  .result-stat {
+    padding: 10px
+  }
+
+  .result-stat > span {
+    font-size: .65rem
+  }
+
+  .result-stat strong {
+    font-size: 1.05rem
+  }
+
+  .results-table,
+  .results-table tbody,
+  .results-table tr,
+  .results-table td {
+    display: block;
+    width: 100%
+  }
+
+  .results-table-grouped {
+    margin: 0
+  }
+
+  .results-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap
+  }
+
+  .results-table tbody {
+    padding: 0 12px 12px
+  }
+
+  .results-table tr {
+    margin-bottom: 9px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface)
+  }
+
+  .results-table .result-group-heading {
+    margin: 0 0 8px;
+    border: 0;
+    background: transparent
+  }
+
+  .results-table .result-group-heading:first-child {
+    margin-top: 0
+  }
+
+  .results-table .result-group-heading td {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--accent-soft)
+  }
+
+  .results-table .result-group-gap {
+    height: 14px;
+    margin: 0;
+    border: 0;
+    background: transparent
+  }
+
+  .results-table .result-group-gap td {
+    display: none
+  }
+
+  .results-table-grouped .result-group-member {
+    width: calc(100% - 12px);
+    margin-left: 12px;
+    border-left: 3px solid var(--accent)
+  }
+
+  .results-table-grouped .result-group-member td:first-child,
+  .results-table-grouped .result-group-member td:last-child,
+  .results-table-grouped tbody tr.result-group-end td {
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0
+  }
+
+  .results-table-grouped .result-group-end {
+    margin-bottom: 0
+  }
+
+  .results-table-grouped .result-data-row {
+    background: var(--surface)
+  }
+
+  .result-group-heading-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px
+  }
+
+  .results-table tr:last-child {
+    margin-bottom: 0
+  }
+
+  .results-table td {
+    padding: 12px 13px;
+    border: 0
+  }
+
+  .results-table .result-config-cell {
+    background: var(--surface)
+  }
+
+  .results-table .result-performance-cell {
+    padding-top: 11px;
+    border-top: 1px solid var(--line);
+    background: var(--bg)
+  }
+
+  .result-preset {
+    white-space: normal
+  }
+
+  .fps-metric {
+    grid-template-columns: 48px minmax(52px, 1fr) 64px;
+    gap: 8px
+  }
+}
+

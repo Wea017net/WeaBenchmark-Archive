@@ -1,0 +1,236 @@
+.hero {
+  padding: 56px 0 38px
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  font-weight: 800
+}
+
+.hero h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.2;
+  margin: .35rem 0 1rem;
+  letter-spacing: -.04em
+}
+
+.youtube-channel-link {
+  display: block;
+  flex: 0 0 auto;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  line-height: 0;
+  overflow: hidden
+}
+
+.youtube-channel-link img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover
+}
+
+.hero p:not(.eyebrow) {
+  color: var(--muted);
+  margin: 0
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 12px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  align-items: end
+}
+
+.filters label {
+  font-size: .84rem;
+  font-weight: 650
+}
+
+.filters input,.filters select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: .58rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit
+}
+
+.filters select {
+  padding-right: 2.2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364707d'%3E%3Cpath d='m7 10 5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .72rem center;
+  background-size: 1.15rem
+}
+
+.results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 38px 0 12px
+}
+
+.results-heading h2 {
+  font-size: 1.25rem;
+  margin: 0
+}
+
+.results-heading p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0
+}
+
+.benchmark-list {
+  display: grid;
+  gap: 10px
+}
+
+.benchmark-card {
+  display: block;
+  padding: 15px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: inherit;
+  text-decoration: none
+}
+
+.benchmark-card:hover {
+  border-color: var(--accent)
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline
+}
+
+.benchmark-card h3 {
+  margin: 0;
+  font-size: 1.2rem
+}
+
+.card-game-detail {
+  color: var(--muted);
+  font-size: .88rem;
+  font-weight: 400;
+  letter-spacing: 0
+}
+
+.date,
+.meta {
+  color: var(--muted);
+  font-size: .88rem
+}
+
+.benchmark-card .meta {
+  margin-top: .75em;
+  margin-bottom: .375em;
+  white-space: pre-wrap
+}
+
+.specs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 9px 0 0
+}
+
+.tag {
+  background: var(--accent-soft);
+  color: #8e2707;
+  border-radius: 3px;
+  padding: .18rem .46rem;
+  font-size: .82rem;
+  font-weight: 650
+}
+
+.tag-nvidia {
+  background: #eef7dc;
+  color: #4d7800
+}
+
+.tag-ryzen {
+  background: #fff0e9;
+  color: #aa3f10
+}
+
+.tag-radeon {
+  background: #fdebed;
+  color: #aa1119
+}
+
+.tag-intel {
+  background: #e7f2fb;
+  color: #005493
+}
+
+.tag-intel-arc {
+  background: #f8eafd;
+  color: #9131aa
+}
+
+.driver-version {
+  color: var(--muted);
+  font-size: .72em;
+  font-weight: 500
+}
+
+.component-name.tag-nvidia {
+  background: transparent;
+  color: #5c9000
+}
+
+.component-name.tag-ryzen {
+  background: transparent;
+  color: #c44d17
+}
+
+.component-name.tag-radeon {
+  background: transparent;
+  color: #df1336
+}
+
+.component-name.tag-intel {
+  background: transparent;
+  color: #007ca6
+}
+
+.component-name.tag-intel-arc {
+  background: transparent;
+  color: #a33ac0
+}
+
+footer {
+  margin-top: 64px;
+  padding: 24px 0;
+  color: var(--muted);
+  font-size: .82rem;
+  border-top: 1px solid var(--line)
+}
+
+footer a {
+  color: inherit;
+  text-underline-offset: .15em
+}
+
