@@ -175,6 +175,19 @@ function resetPageAndRender() {
   renderFilteredIndex();
 }
 
+function renderHeroStats() {
+  const stats = {
+    data: indexItems.length,
+    games: filterOptions.games.length,
+    gpus: filterOptions.gpus.length,
+    cpus: filterOptions.cpus.length
+  };
+  Object.entries(stats).forEach(([name, value]) => {
+    const target = $(`#hero-stat-${name}`);
+    if (target) target.textContent = value.toLocaleString(language === 'ja' ? 'ja-JP' : 'en-US');
+  });
+}
+
 async function renderIndex() {
   const list = $('#benchmark-list');
   try {
@@ -182,6 +195,7 @@ async function renderIndex() {
     loadViewPreference();
     if (!desktopViewMedia) desktopViewMedia = window.matchMedia('(min-width: 901px)');
     const state = savedIndexState();
+    renderHeroStats();
     populateFilter('game-filter', filterOptions.games);
     populateFilter('gpu-filter', filterOptions.gpus);
     populateFilter('cpu-filter', filterOptions.cpus);
