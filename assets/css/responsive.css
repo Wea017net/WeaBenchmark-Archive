@@ -1,10 +1,38 @@
 @media(max-width:900px) and (min-width:701px) {
+  .view-toggle {
+    display: none
+  }
+
   .related-benchmark-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 }
 
 @media(max-width:700px) {
+  .view-toggle {
+    display: none
+  }
+
+  .results-heading {
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px
+  }
+
+  .results-heading-title {
+    gap: 6px
+  }
+
+  .pagination {
+    gap: 3px
+  }
+
+  .pagination-button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 8px
+  }
+
   .header-actions {
     gap: 4px
   }
