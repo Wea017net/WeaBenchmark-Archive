@@ -107,7 +107,7 @@ function activeResultGroupFields(display) {
   return [...new Set(requested.filter(field => RESULT_GROUP_FIELDS.has(field)))];
 }
 
-function resultRow(result, maximumFps, resolutionLabels, groupedFields = new Set(), groupClass = '') {
+function resultRow(result, resultIndex, maximumFps, resolutionLabels, groupedFields = new Set(), groupClass = '') {
   const fields = Object.fromEntries([...RESULT_GROUP_FIELDS].map(field => [field, resultField(result, field, resolutionLabels)]));
   const primaryChips = [
     !groupedFields.has('gameMode') ? resultChip(fields.gameMode.key, fields.gameMode.label, fields.gameMode.value) : '',
@@ -119,7 +119,7 @@ function resultRow(result, maximumFps, resolutionLabels, groupedFields = new Set
     !groupedFields.has('graphicsApi') ? resultChip(fields.graphicsApi.key, fields.graphicsApi.label, fields.graphicsApi.value) : ''
   ].join('');
   const chipGroups = `${primaryChips ? `<div class="result-chips result-chips-primary">${primaryChips}</div>` : ''}${technologyChips ? `<div class="result-chips result-chips-technology">${technologyChips}</div>` : ''}`;
-  return `<tr class="result-data-row${groupClass ? ` ${groupClass}` : ''}">
+  return `<tr class="result-data-row${groupClass ? ` ${groupClass}` : ''}" data-result-index="${resultIndex}">
     <td class="result-config-cell">
       <strong class="result-preset">${escapeHtml(localized(result.preset))}</strong>
       ${chipGroups ? `<div class="result-chip-groups">${chipGroups}</div>` : ''}
@@ -138,23 +138,24 @@ function resultGroupHeading(fields, index, count) {
 
 function resultRows(results, maximumFps, resolutionLabels, display) {
   const groupFields = activeResultGroupFields(display);
-  if (!groupFields.length) return results.map(result => resultRow(result, maximumFps, resolutionLabels)).join('');
+  if (!groupFields.length) return results.map((result, resultIndex) => resultRow(result, resultIndex, maximumFps, resolutionLabels)).join('');
 
   const groups = new Map();
-  for (const result of results) {
+  results.forEach((result, resultIndex) => {
     const fields = groupFields.map(field => resultField(result, field, resolutionLabels));
     const identity = JSON.stringify(fields.map(field => field.identity));
     if (!groups.has(identity)) groups.set(identity, { fields, results: [] });
-    groups.get(identity).results.push(result);
-  }
+    groups.get(identity).results.push({ result, resultIndex });
+  });
   const groupedFields = new Set(groupFields);
   return [...groups.values()].map((group, groupIndex) => {
-    const rows = group.results.map((result, resultIndex) => resultRow(
+    const rows = group.results.map(({ result, resultIndex }, indexInGroup) => resultRow(
       result,
+      resultIndex,
       maximumFps,
       resolutionLabels,
       groupedFields,
-      `result-group-member${resultIndex === group.results.length - 1 ? ' result-group-end' : ''}`
+      `result-group-member${indexInGroup === group.results.length - 1 ? ' result-group-end' : ''}`
     )).join('');
     const gap = groupIndex ? '<tr class="result-group-gap" aria-hidden="true"><td colspan="2"></td></tr>' : '';
     return `${gap}${resultGroupHeading(group.fields, groupIndex + 1, group.results.length)}${rows}`;
@@ -162,24 +163,27 @@ function resultRows(results, maximumFps, resolutionLabels, display) {
 }
 
 function resultOverview(results) {
-  const peakResult = results.reduce((best, result) => {
-    if (!best) return result;
-    const averageDifference = numericFps(result.averageFps) - numericFps(best.averageFps);
-    if (averageDifference !== 0) return averageDifference > 0 ? result : best;
-    return numericFps(result.onePercentLowFps) > numericFps(best.onePercentLowFps) ? result : best;
-  }, null);
-  const peakAverage = numericFps(peakResult?.averageFps);
-  const peakLow = numericFps(peakResult?.onePercentLowFps);
+  const peakIndex = (field) => results.reduce((bestIndex, result, index) => (
+    bestIndex < 0 || numericFps(result[field]) > numericFps(results[bestIndex][field]) ? index : bestIndex
+  ), -1);
+  const peakAverageIndex = peakIndex('averageFps');
+  const peakLowIndex = peakIndex('onePercentLowFps');
+  const peakAverageResult = results[peakAverageIndex];
+  const peakLowResult = results[peakLowIndex];
+  const peakAverage = numericFps(peakAverageResult?.averageFps);
+  const peakLow = numericFps(peakLowResult?.onePercentLowFps);
   const maximumFps = Math.max(0, ...results.flatMap(result => [numericFps(result.averageFps), numericFps(result.onePercentLowFps)]));
-  const peakResolution = overviewResolutionLabel(peakResult);
-  const peakUsesFrameGeneration = Boolean(peakResult && frameGenerationClass(peakResult));
-  const resolutionMarkup = peakResolution ? ` <small class="result-stat-resolution">@ ${escapeHtml(peakResolution)}</small>` : '';
-  const frameGenerationMarkup = peakUsesFrameGeneration ? ` <small class="frame-generation-note">${escapeHtml(t('frameGenerationNote'))}</small>` : '';
+  const resultStat = (label, value, result, resultIndex) => {
+    const resolution = overviewResolutionLabel(result);
+    const resolutionMarkup = resolution ? ` <small class="result-stat-resolution">@ ${escapeHtml(resolution)}</small>` : '';
+    const frameGenerationMarkup = result && frameGenerationClass(result) ? ` <small class="frame-generation-note">${escapeHtml(t('frameGenerationNote'))}</small>` : '';
+    return `<div class="result-stat"><span>${label}</span><strong><button class="result-stat-jump" type="button" data-result-index="${resultIndex}" aria-label="${escapeHtml(t('jumpToResult')(label))}">${escapeHtml(value)} <small>FPS</small></button>${resolutionMarkup}${frameGenerationMarkup}</strong></div>`;
+  };
   return {
     maximumFps,
     markup: `<div class="results-overview">
-      <div class="result-stat"><span>${t('peakAverage')}</span><strong>${escapeHtml(peakAverage)} <small>FPS</small>${resolutionMarkup}${frameGenerationMarkup}</strong></div>
-      <div class="result-stat"><span>${t('peakLow')}</span><strong>${escapeHtml(peakLow)} <small>FPS</small>${resolutionMarkup}${frameGenerationMarkup}</strong></div>
+      ${resultStat(t('peakAverage'), peakAverage, peakAverageResult, peakAverageIndex)}
+      ${resultStat(t('peakLow'), peakLow, peakLowResult, peakLowIndex)}
       <div class="result-stat"><span>${t('testPattern')}</span><strong>${escapeHtml(results.length)} <small>${language === 'ja' ? '件' : ''}</small></strong></div>
     </div>`
   };
