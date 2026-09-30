@@ -59,6 +59,36 @@ function setupCopyLink() {
   });
 }
 
+function setupResultNavigation() {
+  const panel = document.querySelector('.results-panel');
+  if (!panel) return;
+  let highlightDelay;
+  let highlightEnd;
+  let highlightedRow;
+  panel.addEventListener('click', event => {
+    const trigger = event.target.closest('.result-stat-jump');
+    if (!trigger) return;
+    const row = panel.querySelector(`.result-data-row[data-result-index="${trigger.dataset.resultIndex}"]`);
+    if (!row) return;
+
+    clearTimeout(highlightDelay);
+    clearTimeout(highlightEnd);
+    highlightedRow?.classList.remove('is-highlighted');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bounds = row.getBoundingClientRect();
+    const isVisible = bounds.top >= 0 && bounds.bottom <= window.innerHeight;
+    row.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
+
+    highlightDelay = setTimeout(() => {
+      highlightedRow = row;
+      row.classList.remove('is-highlighted');
+      void row.offsetWidth;
+      row.classList.add('is-highlighted');
+      highlightEnd = setTimeout(() => row.classList.remove('is-highlighted'), reducedMotion ? 1400 : 2100);
+    }, reducedMotion || isVisible ? 0 : 450);
+  });
+}
+
 function setDetailSearchMetadata(id, data, game, cpu, gpu) {
   const canonicalUrl = new URL(benchmarkPagePath(id));
   const description = language === 'en'
@@ -202,6 +232,7 @@ async function renderDetail() {
       </div>`;
     setupRelatedCardLayout();
     setupCopyLink();
+    setupResultNavigation();
   } catch (e) {
     target.innerHTML = `<p class="error">${escapeHtml(e.message)}</p>`;
   }
