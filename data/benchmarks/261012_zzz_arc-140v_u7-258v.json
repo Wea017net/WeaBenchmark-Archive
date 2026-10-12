@@ -1,0 +1,157 @@
+{
+  "id": "261012_zzz_arc-140v_u7-258v",
+  "game": {
+    "ja": "ゼンレスゾーンゼロ",
+    "en": "Zenless Zone Zero"
+  },
+  "testedAt": "2026-10-12",
+  "summary": {
+    "ja": "720p · 900p · 1200p  |  最低 · 低",
+    "en": "720p · 900p · 1200p  |  Very Low · Low"
+  },
+  "version": {
+    "ja": "Ver.3.2",
+    "en": "Ver.3.2"
+  },
+  "season": {
+    "ja": "",
+    "en": ""
+  },
+  "system": {
+    "pcModel": "Fujitsu FMV WU1-K1 FMVUH06001",
+    "cpu": "Intel Core Ultra 7 258V",
+    "cpuShortName": "Core Ultra 7 258V",
+    "gpu": "Intel Arc 140V",
+    "graphicsCardName": "",
+    "gpuShortName": "Arc 140V",
+    "gpuDriver": "32.0.101.9033",
+    "motherboard": "",
+    "memory": {
+      "frequency": "LPDDR5X-8533",
+      "capacity": "32.0 GB"
+    },
+    "os": "Windows 11 Home 25H2"
+  },
+  "method": {
+    "ja": "元凶殲滅戦をプレイして計測",
+    "en": "Played Perpetrator Battle"
+  },
+  "videoUrl": "https://youtu.be/QsGjM6meh-s",
+  "display": {
+    "showUpscaling": false,
+    "showGraphicsApi": true,
+    "graphicsApiLabel": "Rendering mode",
+    "groupResults": true,
+    "groupBy": ["graphicsApi"]
+  },
+  "results": [
+    {
+      "resolutionX": 1152,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 37,
+      "onePercentLowFps": 10
+    },
+    {
+      "resolutionX": 1152,
+      "resolutionY": 720,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 42,
+      "onePercentLowFps": 13
+    },
+    {
+      "resolutionX": 1440,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 36,
+      "onePercentLowFps": 9
+    },
+    {
+      "resolutionX": 1440,
+      "resolutionY": 900,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 37,
+      "onePercentLowFps": 11
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 31,
+      "onePercentLowFps": 9
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 11",
+      "averageFps": 30,
+      "onePercentLowFps": 10
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "最低",
+        "en": "Very Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 37,
+      "onePercentLowFps": 8
+    },
+    {
+      "resolutionX": 1920,
+      "resolutionY": 1200,
+      "preset": {
+        "ja": "低",
+        "en": "Low"
+      },
+      "upscalingType": "",
+      "upscalingQuality": "",
+      "graphicsApi": "DirectX 12",
+      "averageFps": 37,
+      "onePercentLowFps": 4
+    }
+  ],
+  "notes": {
+    "ja": "",
+    "en": ""
+  }
+}
